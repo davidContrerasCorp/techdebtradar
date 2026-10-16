@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDebtRadar — Analizar repositorio</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="sim-banner">
+  <strong>Prototipo de interfaz — Hito 2.</strong>
+  Navegación funcional, pero con <strong>datos simulados</strong>: todavía no hay análisis real
+  de repositorios ni llamadas a un LLM. Ver Sección 6.7 del documento.
+</div>
+
+<header class="app-header">
+  <div class="brand">TechDebtRadar</div>
+  <a class="help-link" href="#" onclick="showHomeAlert('Prototipo del Hito 2: pega la URL de ejemplo y presiona Analizar para recorrer el flujo completo con datos simulados.'); return false;">[ ? ayuda ]</a>
+</header>
+
+<main>
+  <div class="panel">
+    <h1>Pega la URL de tu repositorio</h1>
+    <form id="analyze-form">
+      <div class="analyze-row">
+        <input type="text" id="repo-url" placeholder="github.com/miequipo/mi-proyecto" autocomplete="off">
+        <button type="submit" class="btn btn-primary">Analizar</button>
+      </div>
+    </form>
+    <p class="hint">
+      Repositorio público de GitHub en Python o JavaScript (ver alcance en Sección 5 del documento).
+      Demo: usa
+      <a href="#" onclick="fillDemoUrl(); return false;">github.com/miequipo/mi-proyecto</a>
+      para recorrer el flujo completo con datos de ejemplo.
+    </p>
+    <div id="home-alert" class="inline-alert"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Análisis recientes</h2>
+    <ul class="recent-list" id="recent-list"></ul>
+  </div>
+</main>
+
+<footer class="app-footer">
+  TechDebtRadar — Proyecto de curso PTIA, Hito 2 · Prototipo navegable con datos simulados
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>initHomeScreen();</script>
+</body>
+</html>

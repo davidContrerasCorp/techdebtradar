@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDebtRadar — Detalle del hallazgo</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="sim-banner">
+  <strong>Prototipo de interfaz — Hito 2.</strong>
+  La explicación y la sugerencia de refactor de esta pantalla son <strong>texto de ejemplo
+  escrito por el equipo</strong>, no una respuesta real de un LLM. Ver Sección 6.7 del documento.
+</div>
+
+<header class="app-header">
+  <div class="brand">TechDebtRadar</div>
+</header>
+
+<div class="breadcrumb">
+  <a id="back-link" href="resultados.html">&larr; volver a la lista</a>
+</div>
+
+<main>
+  <div class="panel">
+    <div class="detail-title-bar">
+      <div class="detail-file" id="detail-file"></div>
+      <div id="detail-score"></div>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-chip">
+        <div class="metric-value" id="metric-cc"></div>
+        <div class="metric-name">Complejidad (CC)</div>
+      </div>
+      <div class="metric-chip">
+        <div class="metric-value" id="metric-satd"></div>
+        <div class="metric-name">SATD (TODO/FIXME)</div>
+      </div>
+      <div class="metric-chip">
+        <div class="metric-value" id="metric-dup"></div>
+        <div class="metric-name">Duplicación</div>
+      </div>
+    </div>
+
+    <div class="block-label">Por qué importa (explicación de ejemplo, estilo LLM):</div>
+    <div class="block-text quote" id="detail-explanation"></div>
+
+    <div class="block-label">Sugerencia de refactor:</div>
+    <div class="block-text" id="detail-suggestion"></div>
+
+    <div class="action-row">
+      <button class="btn btn-primary" id="btn-resolved">Marcar resuelto</button>
+      <button class="btn btn-secondary" id="btn-ignore">Ignorar</button>
+      <button class="btn btn-secondary" id="btn-code">Ver código fuente</button>
+    </div>
+    <div class="action-feedback" id="action-feedback"></div>
+    <pre class="code-box" id="code-box"></pre>
+  </div>
+</main>
+
+<footer class="app-footer">
+  TechDebtRadar — Proyecto de curso PTIA, Hito 2 · Prototipo navegable con datos simulados
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>initDetailScreen();</script>
+</body>
+</html>

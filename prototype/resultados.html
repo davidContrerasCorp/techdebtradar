@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDebtRadar — Deuda técnica priorizada</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="sim-banner">
+  <strong>Prototipo de interfaz — Hito 2.</strong>
+  Esta lista y los <em>scores</em> son <strong>datos simulados</strong> (escritos a mano por el
+  equipo), no el resultado de un análisis real. Ver Sección 6.7 del documento.
+</div>
+
+<header class="app-header">
+  <div class="brand">TechDebtRadar</div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">&larr; <span id="repo-breadcrumb-name"></span> / resultados</a>
+</div>
+
+<main>
+  <div class="panel">
+    <h1>Deuda técnica priorizada</h1>
+    <h2>Ordenado por prioridad sugerida (score simulado = métricas + juicio del LLM, ver Sección 6.6)</h2>
+    <ul class="finding-list" id="finding-list"></ul>
+    <p class="hint">Cada fila es clicable y lleva al detalle del hallazgo, con la explicación generada por el modelo y la sugerencia de refactor.</p>
+  </div>
+</main>
+
+<footer class="app-footer">
+  TechDebtRadar — Proyecto de curso PTIA, Hito 2 · Prototipo navegable con datos simulados
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>initResultsScreen();</script>
+</body>
+</html>
