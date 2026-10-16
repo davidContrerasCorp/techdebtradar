@@ -1,0 +1,24 @@
+\section{Trabajos relacionados}
+\label{sec:trabajos-relacionados}
+
+Para cada uno de los tres problemas presentados en la introducción, identificamos dos trabajos relacionados: uno de corte más académico y uno más cercano a una herramienta o sistema en producción, describiendo en ambos casos la tecnología usada y los resultados obtenidos.
+
+\subsection{Deserción estudiantil}
+
+\textbf{Amaya Torrado et al. \parencite{AmayaTorrado2014}.} Construyeron un modelo predictivo de deserción para la Universidad Francisco de Paula Santander (Ocaña) usando árboles de decisión (algoritmos ID3 y C4.5, implementado como J48 en la herramienta WEKA) sobre 201 registros de estudiantes con 16 atributos académicos, demográficos y socioeconómicos recolectados a lo largo de seis años. Al validar el modelo J48 contra los 14 estudiantes que efectivamente desertaron en 2012, el sistema identificó correctamente a 9 de ellos, con 12 falsos positivos adicionales; los autores concluyen que ID3 logra mayor precisión que J48 al generar más reglas (22 frente a 6).
+
+\textbf{SPADIES \parencite{SPADIES2024}.} El Sistema de Prevención y Análisis de la Deserción en las Instituciones de Educación Superior, operado por el Ministerio de Educación Nacional de Colombia, es la herramienta oficial que centraliza a nivel nacional el seguimiento de la deserción usando modelos estadísticos sobre variables académicas, socioeconómicas e institucionales reportadas por cada universidad. Es un ejemplo de un sistema ya en producción, pero que depende de datos institucionales consolidados a los que un proyecto de curso no tendría acceso directo.
+
+\subsection{Deuda técnica y calidad de código}
+
+\textbf{Potdar y Shihab \parencite{PotdarShihab2014}.} Este es el trabajo seminal sobre \textit{Self-Admitted Technical Debt} (SATD): deuda técnica que el propio desarrollador reconoce en comentarios del código (por ejemplo, \texttt{// TODO: arreglar esto luego}). Analizando los comentarios de cuatro proyectos open source de gran tamaño (Eclipse, Chromium OS, Apache HTTP Server y ArgoUML) mediante patrones de lenguaje natural, encontraron que la SATD está presente en entre el 2.4\,\% y el 31\,\% de los archivos de un proyecto, y que solo entre el 26.3\,\% y el 63.5\,\% de la deuda admitida llega a eliminarse posteriormente. La tecnología usada fue minería de texto sobre comentarios de código, sin modelos de lenguaje modernos.
+
+\textbf{Souza et al. \parencite{Souza2026}.} En un trabajo mucho más reciente, evaluaron cuatro LLM (DeepSeek-R1, GPT-5 mini, Llama-3.3 y Qwen2.5-Coder) en la tarea de detectar \textit{code smells}, usando \textit{chain-of-thought prompting} \parencite{Wei2022} contra un conjunto de 268 candidatos etiquetados manualmente por 76 desarrolladores en 30 proyectos Java. Para smells estructurales como \textit{Large Class} lograron un F1-score de hasta 0.93 combinando los cuatro modelos con herramientas de análisis estático mediante votación; sin embargo, para smells más subjetivos como \textit{Refused Bequest} ningún modelo superó un F1 de 0.40. Este trabajo es la referencia tecnológica más cercana a nuestra propuesta, pues confirma que los LLM son competitivos para deuda técnica ``objetiva'' pero aún tienen margen de mejora en los casos que requieren juicio de diseño.
+
+\subsection{Triage de tickets de soporte técnico}
+
+\textbf{Benitez Pereira et al. \parencite{BenitezPereira2023}.} Entrenaron una red neuronal totalmente conectada (500 neuronas de entrada correspondientes a las palabras más frecuentes, 4 capas ocultas con activación ReLU y \textit{dropout} del 30\,\%, y una capa de salida softmax de 7 categorías) usando TensorFlow sobre 2{,}229 tickets de soporte multilingües. El modelo alcanzó un 75\,\% de precisión promedio entre las 7 categorías (con un máximo de 100\,\% en ``End of Life'' y un mínimo de 41\,\% en ``Active Directory''), y los autores desplegaron un prototipo web funcional con FastAPI, VueJS y PostgreSQL sobre AWS.
+
+\textbf{Kanimozhi Selvi et al. \parencite{KanimozhiSelvi2025}.} Compararon modelos clásicos (Regresión Logística, SVM, Random Forest, XGBoost) y modelos profundos (BERT, RNN, CNN) para categorizar y priorizar 78{,}313 quejas de clientes de una institución financiera, usando TF-IDF y factorización de matrices no negativas (NMF) para la categorización por departamento, y detección de urgencia basada en NLP para la prioridad. La Regresión Logística obtuvo la mejor exactitud en categorización (91.99\,\%, frente a 81\,\% de BERT), mientras que los modelos basados en árboles (Decision Tree y XGBoost) alcanzaron hasta 99.96\,\% de exactitud en la clasificación de urgencia, superando también a BERT (92.64\,\%).
+
+\pagebreak

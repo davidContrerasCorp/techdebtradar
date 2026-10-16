@@ -1,0 +1,130 @@
+\section{Diseño metodológico}
+\label{sec:diseno}
+
+\subsection{Estrategia general}
+
+La estrategia seleccionada es \textbf{híbrida}: combinar reglas deterministas y métricas de análisis estático (que son baratas, reproducibles y ya validadas por la literatura) con un modelo de lenguaje (que aporta lo que las métricas no pueden dar por sí solas: una explicación en lenguaje natural y un juicio cualitativo sobre la severidad real de cada hallazgo en su contexto).
+
+Elegimos esta combinación y no cada extremo por separado por las siguientes razones:
+
+\begin{itemize}
+    \item \textbf{Solo métricas estáticas} (el enfoque de herramientas como SonarQube \parencite{SonarQube}) es reproducible y barato, pero --como se argumentó en la Sección \ref{sec:justificacion}-- produce listados de alertas sin explicación accesible ni priorización orientada a la toma de decisiones de un equipo pequeño.
+    \item \textbf{Solo LLM} (pegar el repositorio completo y pedirle que "encuentre la deuda técnica") es costoso en tokens, poco reproducible --el mismo repositorio puede recibir evaluaciones distintas en cada corrida-- y propenso a que el modelo alucine problemas que no están respaldados por ninguna señal objetiva en el código.
+    \item \textbf{La combinación} usa las métricas deterministas para decidir \emph{qué} mirar (reduciendo drásticamente cuánto código debe leer el LLM) y usa el LLM para decidir \emph{cómo explicarlo y qué tan grave es en contexto}, apoyándose en cada herramienta para lo que mejor hace.
+\end{itemize}
+
+\subsection{¿Dónde se concentra la inteligencia de la solución?}
+
+Distinguimos dos tipos de "inteligencia" en el sistema, siguiendo la misma separación que pide el enunciado de este hito:
+
+\begin{itemize}
+    \item \textbf{Conocimiento}, que proviene de dos fuentes: (1) las métricas de análisis estático, cuyo "conocimiento" está codificado como reglas deterministas bien establecidas en la literatura de ingeniería de software (p.\,ej. los umbrales de complejidad ciclomática de McCabe \parencite{McCabe1976}, o los patrones léxicos de SATD de Potdar y Shihab \parencite{PotdarShihab2014}); y (2) el conocimiento general sobre buenas prácticas de programación que el LLM adquirió durante su preentrenamiento, el cual no re-entrenamos ni ajustamos (ver justificación de no usar \textit{fine-tuning} más abajo).
+    \item \textbf{Razonamiento}, que ocurre en dos puntos distintos del flujo: dentro del LLM, al generar una explicación específica para un fragmento de código concreto y al estimar una severidad en contexto (por qué \emph{este} archivo, con \emph{estas} métricas, es más o menos urgente que otro); y en el \textbf{motor de priorización determinista} (Sección \ref{sec:formula}), que combina explícitamente las métricas con el juicio del LLM mediante una fórmula fija y auditable, en lugar de delegarle al LLM la decisión final de orden.
+\end{itemize}
+
+Es decir: el LLM no decide solo quién va primero en la lista; su salida (una severidad y una explicación) es un insumo más, con un peso definido, dentro de un cálculo determinista y reproducible. Esto es intencional: nos interesa que la priorización final se pueda explicar y auditar, no solo justificar diciendo "porque el modelo lo dijo".
+
+\subsection{Herramienta seleccionada y justificación}
+
+\begin{table}[H]
+\centering
+\caption{Herramientas seleccionadas por componente}
+\label{tab:herramientas}
+\begin{tabular}{p{0.22\textwidth} p{0.33\textwidth} p{0.37\textwidth}}
+\toprule
+\textbf{Componente} & \textbf{Herramienta propuesta} & \textbf{Por qué} \\
+\midrule
+Análisis estático (Python) & \texttt{radon} (complejidad ciclomática, longitud) y detección de duplicados por \textit{hashing} de bloques & Librería de código abierto, mantenida, con salida programática (JSON) fácil de integrar; evita escribir un analizador de AST propio en el tiempo de un semestre. \\[4pt]
+Análisis estático (JavaScript) & \texttt{lizard} (métricas de complejidad multi-lenguaje) & Misma lógica que \texttt{radon} pero con soporte nativo de JavaScript/TypeScript, lo que nos permite reusar un solo flujo de métricas para los dos lenguajes del alcance. \\[4pt]
+Componente LLM & API de un modelo de lenguaje de propósito general, con \textit{prompting} estructurado (código + métricas + contexto) y encadenamiento de razonamiento (\textit{chain-of-thought}) \parencite{Wei2022} & Evita el costo y el riesgo de sobreajuste de entrenar o ajustar (\textit{fine-tune}) un modelo propio con un conjunto de datos etiquetado que no tenemos; un trabajo reciente que comparamos como línea base \parencite{Souza2026} reporta resultados competitivos usando LLMs de propósito general sobre esta misma tarea, sin necesidad de ajuste fino. \\[4pt]
+Interfaz del prototipo & HTML, CSS y JavaScript estático (sin \textit{framework}) & Suficiente para navegar las 3 pantallas con datos simulados en este hito; no requiere backend ni proceso de construcción (\textit{build}), lo que simplifica la entrega y ejecución local (ver Sección \ref{sec:prototipo}). \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Por qué no ajustamos (\textit{fine-tuning}) un modelo propio:} ajustar un LLM requiere un conjunto de datos etiquetado de tamaño considerable (código con severidad de deuda técnica ya evaluada por expertos), que no existe públicamente para esta tarea en la escala que necesitaríamos y que no podríamos construir de forma confiable en el tiempo del curso. Usar \textit{prompting} estructurado sobre un modelo ya entrenado es la alternativa viable dado nuestro presupuesto de tiempo y de cómputo, y es consistente con el enfoque de trabajos recientes sobre el mismo problema \parencite{Souza2026}.
+
+\subsection{Arquitectura: componentes y relaciones}
+
+La Imagen \ref{img:arquitectura} muestra los componentes propuestos y cómo se relacionan. Distinguimos explícitamente, mediante los dos recuadros punteados, qué parte está \textbf{implementada y es navegable en este Hito 2} (solo la interfaz de usuario, con datos simulados) y qué parte está \textbf{diseñada para el Hito 3} (todo el procesamiento real: validación, obtención de código, análisis estático, selección, LLM y priorización), que en este hito no está construida ni probada.
+
+\fig[arquitectura]{Arquitectura propuesta de TechDebtRadar: componentes y relaciones. El recuadro verde indica lo implementado y navegable en el Hito 2; el recuadro rojo indica lo diseñado para el Hito 3.}{width=0.55\textwidth}{img/arquitectura.png}
+
+\begin{table}[H]
+\centering
+\caption{Responsabilidades, entradas y salidas por componente}
+\label{tab:componentes}
+\begin{tabular}{p{0.18\textwidth} p{0.40\textwidth} p{0.35\textwidth}}
+\toprule
+\textbf{Componente} & \textbf{Responsabilidad} & \textbf{Entrada $\to$ Salida} \\
+\midrule
+Interfaz de usuario & Recibir la URL, mostrar la lista priorizada y el detalle de cada hallazgo & Interacción del usuario $\to$ URL / clics \\[3pt]
+Recepción y validación & Verificar formato de la URL y que el repositorio sea público y accesible, con manejo explícito de error si no lo es & URL $\to$ URL validada o mensaje de error \\[3pt]
+Obtención del código & Clonado superficial (\textit{shallow clone}) o uso de la API REST de GitHub, limitando tamaño y rama (\texttt{main}/\texttt{master}) & URL validada $\to$ archivos fuente locales \\[3pt]
+Análisis estático & Calcular complejidad, SATD, duplicación y tamaño por archivo, filtrando por extensión soportada & Archivos fuente $\to$ métricas por archivo \\[3pt]
+Selección de fragmentos & Normalizar métricas y elegir el top-$N$ de archivos más sospechosos, acotando cuánto código se envía al LLM & Métricas por archivo $\to$ subconjunto top-$N$ \\[3pt]
+Componente LLM & Generar explicación en lenguaje natural, severidad (1-5) y sugerencia de refactor por archivo seleccionado, vía \textit{prompting} estructurado & Código + métricas del top-$N$ $\to$ explicación + severidad + sugerencia \\[3pt]
+Motor de priorización & Calcular el \textit{score} final por archivo combinando métricas normalizadas y severidad del LLM (fórmula en \ref{sec:formula}) & Métricas + severidad LLM $\to$ lista ordenada \\[3pt]
+Presentación de resultados & Transformar la lista ordenada y los detalles en las pantallas 2 y 3 & Lista ordenada $\to$ render en la interfaz \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La Imagen \ref{img:flujo} detalla el flujo de datos paso a paso, desde que el usuario pega la URL hasta que llega a la pantalla de detalle de un hallazgo, incluyendo los puntos donde se filtra, normaliza y selecciona información para controlar el costo de la llamada al LLM.
+
+\fig[flujo]{Flujo de datos de TechDebtRadar: de la URL del repositorio a la recomendación priorizada.}{width=0.72\textwidth}{img/flujo_datos.png}
+
+\textbf{Medidas de control consideradas para el Hito 3} (no implementadas todavía, pero incorporadas en el diseño para no tener que rediseñar la arquitectura más adelante): límite de tamaño de repositorio y de número de archivos a clonar; límite de tiempo (\textit{timeout}) para la clonación y para cada llamada al LLM; manejo explícito de URLs inválidas, repositorios privados o inexistentes, y de archivos binarios o generados (p.\,ej. carpetas \texttt{node\_modules}, \texttt{dist}, \texttt{build}) que deben excluirse del análisis; y saneamiento del contenido de archivos antes de incluirlo en el \textit{prompt}, dado que el código de un repositorio de terceros es, en este contexto, una entrada no confiable.
+
+\subsection{Componente principal: LLM y motor de priorización}
+
+Consideramos que el \textbf{componente LLM} y el \textbf{motor de priorización} son, juntos, el componente principal de la solución, porque es donde se concreta la propuesta de valor del proyecto (explicar y priorizar, no solo detectar).
+
+El \textbf{componente LLM} recibe, para cada archivo del top-$N$ seleccionado: el código del archivo (o de sus funciones más largas, si el archivo completo excede un límite de tokens razonable), sus métricas ya calculadas (complejidad, cantidad de SATD, porcentaje de duplicación) y un breve contexto del repositorio (nombre, lenguaje, propósito si está disponible en el \texttt{README}). Con esta información, el \textit{prompt} estructurado le pide tres salidas separadas: (1) una explicación en lenguaje natural de por qué el archivo representa deuda técnica, (2) una severidad en una escala de 1 a 5, y (3) una sugerencia concreta de refactorización. Usamos \textit{prompting} con encadenamiento de razonamiento (\textit{chain-of-thought}) \parencite{Wei2022}, pidiéndole al modelo que primero identifique las señales relevantes del código y luego concluya la severidad, en lugar de pedir la severidad directamente, para reducir la variabilidad de la respuesta.
+
+El \textbf{motor de priorización} toma la severidad devuelta por el LLM junto con las métricas normalizadas y calcula un \textit{score} final por archivo, descrito en la Sección \ref{sec:formula}. Separar este cálculo del LLM (en vez de pedirle directamente al modelo que ordene los archivos) es una decisión deliberada: un cálculo determinista es reproducible y auditable --podemos explicar exactamente por qué un archivo quedó primero--, mientras que pedirle a un LLM que ordene una lista completa es menos estable entre corridas y más difícil de justificar ante el usuario.
+
+\subsection{Propuesta de fórmula de priorización}
+\label{sec:formula}
+
+Proponemos la siguiente fórmula para calcular el \textit{score} de priorización de un archivo:
+
+\begin{equation*}
+\text{Score(archivo)} = w_1 \cdot \text{norm}(CC) + w_2 \cdot \text{norm}(SATD) + w_3 \cdot \text{norm}(DUP) + w_4 \cdot Sev_{LLM}
+\end{equation*}
+
+\begin{table}[H]
+\centering
+\caption{Variables de la fórmula de priorización}
+\label{tab:formula}
+\begin{tabular}{p{0.12\textwidth} p{0.50\textwidth} p{0.30\textwidth}}
+\toprule
+\textbf{Variable} & \textbf{Significado} & \textbf{Escala / normalización} \\
+\midrule
+$CC$ & Complejidad ciclomática promedio del archivo (McCabe) \parencite{McCabe1976} & Normalizada min-max a $[0,10]$ sobre los archivos del repositorio analizado \\[3pt]
+$SATD$ & Número de comentarios de deuda auto-admitida (\texttt{TODO}/\texttt{FIXME}/\texttt{HACK}/\texttt{XXX}) \parencite{PotdarShihab2014} & Normalizada min-max a $[0,10]$ \\[3pt]
+$DUP$ & Porcentaje de líneas del archivo que forman parte de un bloque duplicado en otro archivo & Normalizada min-max a $[0,10]$ \\[3pt]
+$Sev_{LLM}$ & Severidad estimada por el LLM & Escala original $1$-$5$, reescalada linealmente a $[0,10]$ \\[3pt]
+$w_1,w_2,w_3,w_4$ & Pesos de ponderación de cada señal & $w_1=0.25$, $w_2=0.15$, $w_3=0.20$, $w_4=0.40$; $\sum w_i = 1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La normalización min-max se calcula \emph{dentro de cada repositorio analizado} (no contra una base externa fija), para que el \textit{score} sea relativo al resto de archivos del mismo proyecto y así tenga sentido para equipos con bases de código de tamaños muy distintos. Le asignamos el peso más alto ($w_4=0.40$) a la severidad del LLM porque es la única señal que incorpora contexto semántico del código (qué tan crítico es el archivo dentro de la lógica del proyecto), algo que las métricas puramente sintácticas no pueden capturar por sí solas.
+
+\textit{Advertencia explícita: los pesos $w_1,\dots,w_4$ y la propia estructura lineal de la fórmula son una \textbf{propuesta inicial no validada}, construida a partir de nuestro criterio como desarrolladores y de la literatura revisada, no a partir de un experimento con datos. En el Hito 3 planeamos calibrar estos pesos comparando el orden producido por la fórmula contra el orden que asignaría manualmente nuestro equipo sobre un conjunto de repositorios de prueba (ver el criterio de éxito basado en correlación de Spearman en la Tabla \ref{tab:objetivos}), y ajustarlos si la comparación lo justifica. Ningún resultado de esta calibración existe todavía.}
+
+\subsection{Prototipo: qué es navegable, qué es simulado y qué está implementado}
+\label{sec:prototipo}
+
+Para evitar cualquier ambigüedad sobre el estado real del desarrollo, distinguimos explícitamente tres categorías en el prototipo de interfaz entregado con este hito (ver también el documento de prototipo que acompaña esta entrega, y la carpeta \texttt{prototype/} del repositorio):
+
+\begin{itemize}
+    \item \textbf{Navegación funcional:} las 3 pantallas (ingresar URL, lista priorizada, detalle del hallazgo) existen como páginas reales, enlazadas entre sí, y se pueden recorrer haciendo clic como lo haría un usuario final.
+    \item \textbf{Datos simulados:} el contenido que se muestra (nombres de archivos, métricas, severidades, explicaciones y sugerencias de refactor) está \textbf{escrito a mano por el equipo} en archivos de datos de ejemplo, para representar visualmente cómo se vería un resultado real. Ninguno de estos datos proviene de analizar un repositorio real.
+    \item \textbf{Funcionalidad no implementada todavía:} no existe, en este hito, ningún análisis real de un repositorio de GitHub ni ninguna llamada real a un LLM. Si el usuario pega una URL distinta a la de ejemplo, el prototipo no la analiza; esto se indica explícitamente en la propia interfaz (ver Sección \ref{sec:prototipo} del informe de prototipo) para no generar una falsa impresión de funcionalidad.
+\end{itemize}
+
+Esta distinción es la misma que exige el enunciado del hito y se mantiene consistente entre este documento, el prototipo y el guion de video: en ningún entregable se afirma que TechDebtRadar ya analiza repositorios reales o ya usa un LLM en producción.
+
+\pagebreak

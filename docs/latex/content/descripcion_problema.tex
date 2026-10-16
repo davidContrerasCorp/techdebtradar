@@ -1,0 +1,23 @@
+\section{Descripción del problema}
+\label{sec:descripcion-problema}
+
+\subsection{Criterios de selección}
+
+Para escoger, de los tres problemas de la introducción, aquel que desarrollaríamos durante el semestre, definimos los siguientes criterios:
+
+\begin{itemize}
+    \item \textbf{Disponibilidad de datos sin restricciones de privacidad.} En Colombia, los datos académicos y socioeconómicos de estudiantes están protegidos por la Ley 1581 de 2012 (habeas data), por lo que un proyecto de curso difícilmente podría acceder a ellos a tiempo. El código fuente público en GitHub bajo licencias abiertas, en cambio, no tiene esa restricción.
+    \item \textbf{Viabilidad técnica y de tiempo} para un equipo de dos personas dentro de las 16 semanas del curso, sin depender de infraestructura de cómputo costosa.
+    \item \textbf{Relevancia directa con nuestro perfil profesional} como futuros ingenieros de sistemas, y oportunidad de aplicar las técnicas de LLM y \textit{prompting} vistas en el curso.
+    \item \textbf{Existencia de trabajo relacionado reciente} que sirva de línea base cuantitativa (F1-score, precisión) contra la cual comparar nuestros propios resultados.
+    \item \textbf{Potencial de crecimiento incremental}: que el problema permita evolucionar de un PoC simple (Hito 1-2) hacia un prototipo funcional tipo MVP (Hito 3) sin cambiar de enfoque a mitad de camino.
+    \item \textbf{Riesgo ético manejable}: preferimos un problema que no involucre datos personales sensibles ni decisiones que afecten directamente el bienestar de terceros vulnerables sin supervisión humana.
+\end{itemize}
+
+\subsection{Problema seleccionado}
+
+Aplicando estos criterios, descartamos la \textbf{deserción estudiantil} porque exige datos institucionales sensibles a los que no tendríamos acceso oportuno, y el \textbf{triage de tickets de soporte} porque requeriría un convenio con una mesa de ayuda real y sus datos históricos, algo que no podíamos garantizar para el inicio del curso.
+
+Seleccionamos entonces el segundo problema: \textbf{la detección y priorización de deuda técnica en proyectos de software mediante modelos de lenguaje}. Es un problema que podemos estudiar íntegramente sobre repositorios públicos de código, para el cual ya contamos con experiencia previa como desarrolladores para evaluar cualitativamente si las explicaciones generadas por un LLM tienen sentido, y sobre el cual existe trabajo previo reciente con el que podemos comparar cuantitativamente nuestros resultados de F1-score \parencite{Souza2026}.
+
+\pagebreak

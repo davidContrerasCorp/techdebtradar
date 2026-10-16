@@ -1,0 +1,23 @@
+# Artefactos de compilación LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.w18
+*.xdv
+_minted*/
+
+# Node / otros
+node_modules/
+
+# Sistema
+.DS_Store

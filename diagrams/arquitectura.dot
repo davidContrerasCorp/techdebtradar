@@ -1,0 +1,47 @@
+digraph arquitectura {
+  rankdir=TB;
+  bgcolor="white";
+  fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=13, shape=box, style="rounded,filled", color="#7a1f2b", fontcolor="#222222", penwidth=1.4];
+  edge [fontname="Helvetica", fontsize=11, color="#555555", fontcolor="#333333", penwidth=1.2];
+
+  labelloc="t";
+  label="Arquitectura propuesta de TechDebtRadar\n(componentes y relaciones)";
+  fontsize=18;
+  fontcolor="#7a1f2b";
+
+  subgraph cluster_impl {
+    label="Implementado y navegable en el Hito 2 (prototipo, datos simulados)";
+    style="dashed";
+    color="#2e7d32";
+    fontcolor="#2e7d32";
+    fontsize=12;
+    UI [label="Interfaz de usuario\n(3 pantallas: analizar / resultados / detalle)", fillcolor="#eaf6ea"];
+  }
+
+  subgraph cluster_disenado {
+    label="Diseñado para el Hito 3 (aún no implementado ni probado)";
+    style="dashed";
+    color="#7a1f2b";
+    fontcolor="#7a1f2b";
+    fontsize=12;
+
+    VAL [label="Recepción y validación\nde la URL del repositorio", fillcolor="#fdeeee"];
+    FETCH [label="Obtención del código fuente\n(GitHub REST API, clonado superficial)", fillcolor="#fdeeee"];
+    STATIC [label="Análisis estático\n(métricas por archivo/función:\ncomplejidad, SATD, duplicación, tamaño)", fillcolor="#fdeeee"];
+    SELECT [label="Selección de fragmentos relevantes\n(top-N por métrica, control de costo)", fillcolor="#fdeeee"];
+    LLM [label="Componente LLM\n(explicación + sugerencia de refactor\nvía prompting estructurado)", fillcolor="#fde4c8", penwidth=2.2];
+    PRIOR [label="Motor de priorización\n(score = métricas + juicio del LLM)", fillcolor="#fdeeee"];
+  }
+
+  RESULT [label="Presentación de resultados\ny recomendaciones", fillcolor="#eaf6ea"];
+
+  UI -> VAL [label="  URL pegada +\n  clic en Analizar"];
+  VAL -> FETCH [label="  URL válida"];
+  FETCH -> STATIC [label="  archivos fuente"];
+  STATIC -> SELECT [label="  métricas por archivo"];
+  SELECT -> LLM [label="  fragmentos + métricas\n  (top-N, no todo el repo)"];
+  LLM -> PRIOR [label="  explicación +\n  severidad sugerida"];
+  PRIOR -> RESULT [label="  lista ordenada\n  (score final)"];
+  RESULT -> UI [label="  render en pantallas\n  2 y 3", style=dashed];
+}

@@ -1,0 +1,26 @@
+\section{Introducción}
+
+Como equipo evaluamos varias problemáticas del entorno cotidiano de un estudiante de últimos semestres de Ingeniería de Sistemas antes de decidirnos por la que se desarrolla en este documento. A continuación presentamos los tres problemas que más nos interesaría resolver.
+
+\subsection{Tres problemas de interés}
+
+\begin{enumerate}
+    \item \textbf{Detección temprana de riesgo de deserción estudiantil.} Usar datos académicos y socioeconómicos históricos de una institución de educación superior para identificar, desde los primeros semestres, a los estudiantes con mayor probabilidad de abandonar sus estudios, de forma que bienestar universitario pueda intervenir a tiempo.
+    \item \textbf{Detección y priorización automática de deuda técnica en proyectos de software.} Apoyar a equipos de desarrollo pequeños (como el nuestro) a identificar, explicar en lenguaje natural y priorizar qué partes de un código base conviene refactorizar primero, usando modelos de lenguaje de gran escala (LLM) como complemento --no reemplazo-- de las reglas estáticas tradicionales.
+    \item \textbf{Triage inteligente de tickets de soporte técnico.} Clasificar y priorizar automáticamente las solicitudes que llegan a una mesa de ayuda (por ejemplo, la de la Dirección de Tecnologías de Información de la universidad), reduciendo el tiempo de respuesta a incidentes críticos y descargando de trabajo repetitivo al personal de soporte de primer nivel.
+\end{enumerate}
+
+\subsection{¿Por qué como proyecto de PTIA?}
+
+Los tres problemas comparten características que los hacen apropiados para un proyecto del curso de Proyecto en Tecnologías de Inteligencia Artificial:
+
+\begin{itemize}
+    \item Ninguno se resuelve con una simple automatización determinística: los tres requieren \textbf{aprender de datos históricos o de conocimiento experto} para apoyar una decisión que finalmente sigue siendo humana (un asesor de bienestar, un desarrollador, un agente de soporte).
+    \item Los tres permiten combinar \textbf{razonamiento simbólico o reglas de negocio con aprendizaje estadístico o modelos de lenguaje}, que es precisamente el tipo de ``inteligencia híbrida'' (conocimiento + razonamiento) que el curso busca que exploremos.
+    \item Los tres tienen \textbf{relevancia real y trabajo previo documentado} tanto en la academia como en la industria (ver Sección \ref{sec:trabajos-relacionados}), lo que nos da una línea base cuantitativa contra la cual comparar nuestros propios resultados.
+    \item Los tres son \textbf{abordables por un equipo de dos personas en un semestre}: existen conjuntos de datos abiertos o generables, y ninguno exige infraestructura de cómputo costosa, sino el uso de modelos de lenguaje ya entrenados (a través de APIs o modelos open source) y técnicas de \textit{prompting} vistas en el curso.
+\end{itemize}
+
+En la Sección \ref{sec:descripcion-problema} explicamos con qué criterios elegimos, de estos tres, el problema que efectivamente desarrollaremos durante el semestre.
+
+\pagebreak

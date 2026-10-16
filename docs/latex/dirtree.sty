@@ -1,0 +1,17 @@
+% dirtree.sty -- minimal local compatibility stub
+%
+% El paquete CTAN "dirtree" no está instalado en este entorno de
+% compilación y no hay acceso de red a CTAN para instalarlo. style.cls
+% lo carga por si se necesitara dibujar un árbol de directorios, pero
+% ningún archivo de contenido de este proyecto usa \dirtree. Este stub
+% define la macro como una caja de texto monoespaciado simple, para que
+% el documento compile igual si en algún momento se llegara a usar.
+%
+% Si en algún momento se dispone del dirtree.sty oficial de CTAN, basta
+% reemplazar este archivo por el original (la sintaxis real de \dirtree
+% con ".1 ", ".2 ", etc. es más rica que este stub).
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dirtree}[2024/01/01 local compatibility stub]
+
+\newcommand{\dirtree}[1]{\texttt{#1}}

@@ -1,0 +1,61 @@
+\section{Alcance y Objetivos}
+\label{sec:alcance}
+
+\subsection{Problema específico a resolver}
+
+De la problemática general descrita en la Sección \ref{sec:justificacion} --la deuda técnica se acumula y nadie la explica ni la prioriza en lenguaje claro-- en este hito acotamos un problema concreto y medible: \textbf{dado un repositorio público de GitHub escrito en Python o JavaScript, identificar automáticamente los archivos con mayores señales de deuda técnica, explicar en lenguaje natural por qué cada uno importa, y producir una lista ordenada por prioridad de refactorización}, combinando métricas de análisis estático con el criterio de un modelo de lenguaje.
+
+No buscamos resolver la deuda técnica (es decir, no refactorizamos código automáticamente), sino \textbf{apoyar la decisión} de qué atender primero, de la misma forma en que un desarrollador senior orientaría a uno junior al revisar un código base desconocido.
+
+\subsection{¿Por qué es una simplificación adecuada?}
+
+Acotar el problema de esta manera es razonable por cuatro motivos:
+
+\begin{itemize}
+    \item \textbf{Cobertura representativa con esfuerzo acotado.} Las cuatro señales de deuda técnica que elegimos cubrir (complejidad ciclomática alta, comentarios de deuda auto-admitida o SATD, duplicación de código y funciones/archivos excesivamente largos) son, según la literatura revisada en la Sección \ref{sec:trabajos-relacionados}, de las más estudiadas y con mejor soporte de herramientas \parencite{McCabe1976,PotdarShihab2014}, sin pretender cubrir la totalidad de tipos de deuda técnica (por ejemplo, deuda arquitectónica o de pruebas, que quedan fuera de alcance).
+    \item \textbf{Dos lenguajes, no todos.} Limitarnos a Python y JavaScript nos permite usar herramientas de análisis estático maduras y de código abierto para ambos (ver Sección \ref{sec:diseno}), evitando construir analizadores propios para cada lenguaje, mientras seguimos cubriendo dos de los lenguajes más usados en proyectos públicos de GitHub.
+    \item \textbf{Control del costo y el contexto del LLM.} Enviar un repositorio completo a un modelo de lenguaje es costoso y poco preciso. Al usar las métricas estáticas para preseleccionar solo los archivos más sospechosos (ver \textit{selección de fragmentos relevantes}, Sección \ref{sec:diseno}), acotamos cuánto código debe interpretar el LLM, lo que es viable con el presupuesto de un proyecto de curso.
+    \item \textbf{Es un PoC explicable, no una herramienta de producción.} Para un equipo de dos personas en un semestre, es más valioso demostrar que la combinación métricas+LLM produce explicaciones y una priorización razonables en un conjunto acotado de repositorios de prueba, que intentar cubrir todos los lenguajes y tipos de deuda desde el Hito 2.
+\end{itemize}
+
+\subsection{Objetivo general}
+
+Desarrollar un asistente basado en un modelo de lenguaje que, a partir de la URL de un repositorio público de GitHub en Python o JavaScript, detecte, explique en lenguaje natural y priorice los archivos con mayores señales de deuda técnica, de forma que un equipo de desarrollo pequeño pueda decidir en minutos qué refactorizar primero.
+
+\subsection{Objetivos específicos y criterios de éxito}
+
+\begin{table}[H]
+\centering
+\caption{Objetivos específicos y sus criterios de éxito}
+\label{tab:objetivos}
+\begin{tabular}{p{0.30\textwidth} p{0.30\textwidth} p{0.30\textwidth}}
+\toprule
+\textbf{Objetivo específico} & \textbf{Tipo} & \textbf{Criterio de éxito (a medir en el Hito 3)} \\
+\midrule
+Calcular métricas estáticas de complejidad, SATD, duplicación y tamaño por archivo. & Cuantitativo & Las métricas se calculan sin error para el 100\,\% de los archivos soportados (Python/JavaScript) de al menos 5 repositorios de prueba. \\[4pt]
+Generar explicaciones en lenguaje natural de cada hallazgo. & Cualitativo & En una muestra de 20 hallazgos, al menos el 70\,\% son calificados como ``claros y relevantes'' por los dos integrantes del equipo (evaluación ciega, escala Likert 1-5, promedio $\geq 4$). \\[4pt]
+Priorizar los hallazgos combinando métricas y criterio del LLM. & Cuantitativo & El orden de prioridad generado coincide con el orden que el equipo asignaría manualmente en al menos el 70\,\% de los pares comparados, para una muestra de 20 archivos de 3 repositorios conocidos (métrica de concordancia: correlación de rangos de Spearman $\geq 0.7$). \\[4pt]
+Entregar un prototipo navegable de las 3 pantallas del flujo. & Cualitativo & Un usuario que no participó en el desarrollo completa el flujo analizar\,$\to$\,priorizar\,$\to$\,entender sin instrucciones adicionales, en una prueba de usabilidad informal. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textit{Nota importante: estos números son metas que el equipo se propone alcanzar y medir en el Hito 3, no resultados ya obtenidos. En este Hito 2 todavía no existe una implementación funcional del análisis ni del componente LLM --ver la distinción explícita entre lo navegable y lo simulado en la Sección \ref{sec:prototipo}--, por lo que ningún porcentaje de precisión se reporta todavía como logrado.}
+
+\subsection{Delimitación del alcance}
+
+\begin{table}[H]
+\centering
+\caption{Qué entra y qué no entra en el alcance del proyecto}
+\label{tab:alcance}
+\begin{tabular}{p{0.18\textwidth} p{0.78\textwidth}}
+\toprule
+\textbf{Entradas} & URL de un repositorio \textbf{público} de GitHub. El sistema analiza únicamente los archivos \texttt{.py} y \texttt{.js}/\texttt{.ts} de la rama principal (\texttt{main}/\texttt{master}) en el momento del análisis. \\[4pt]
+\textbf{Tipos de deuda técnica cubiertos} & Complejidad ciclomática alta (McCabe), comentarios de deuda auto-admitida (SATD: \texttt{TODO}, \texttt{FIXME}, \texttt{HACK}, \texttt{XXX}), duplicación de código entre archivos, y funciones o archivos excesivamente largos. \\[4pt]
+\textbf{Salidas} & Lista de archivos ordenada por un \textit{score} de prioridad (Sección \ref{sec:diseno}), con una explicación en lenguaje natural y una sugerencia de refactorización por hallazgo. \\[4pt]
+\textbf{Fuera de alcance} & Repositorios privados; análisis de \textit{pull requests} o de más de una rama; lenguajes distintos a Python/JavaScript; vulnerabilidades de seguridad (SAST de seguridad, un problema distinto al de mantenibilidad); aplicar refactors automáticamente; y, en este Hito 2, cualquier integración real y funcional con GitHub o con un LLM --el prototipo de interfaz usa datos simulados, ver Sección \ref{sec:prototipo}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\pagebreak

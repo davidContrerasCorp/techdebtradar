@@ -1,0 +1,16 @@
+\section{Justificación}
+\label{sec:justificacion}
+
+\subsection{¿Cuál es el gran problema que se quiere resolver?}
+
+El problema de fondo es que la \textbf{deuda técnica} --código que funciona pero que fue construido de forma apresurada, duplicada, sin pruebas o difícil de entender-- se acumula silenciosamente en casi cualquier proyecto de software y, cuando no se gestiona a tiempo, termina frenando la capacidad de un equipo para seguir agregando valor: cada nueva funcionalidad tarda más en implementarse, aparecen más errores y el código se vuelve cada vez más difícil de mantener para quien no lo escribió originalmente.
+
+Las herramientas tradicionales de análisis estático (por ejemplo SonarQube \parencite{SonarQube}) ayudan a detectar deuda técnica, pero tienden a generar una gran cantidad de alertas de bajo valor, sin explicar en lenguaje entendible por qué un hallazgo importa ni en qué orden conviene atenderlos. Nuestra propuesta es explorar si un modelo de lenguaje, combinado con métricas de análisis estático, puede no solo detectar estos problemas sino también \textbf{explicarlos y priorizarlos} de una forma más cercana a como lo haría un desarrollador senior revisando el código de un compañero.
+
+\subsection{¿Por qué es importante resolverlo?}
+
+El costo de no gestionar la deuda técnica no es un problema menor ni exclusivamente académico. El reporte de 2022 del \textit{Consortium for Information and Software Quality} (CISQ) estimó que los problemas de baja calidad de software le costaron a la economía de Estados Unidos cerca de USD 2.41 billones en un solo año, de los cuales aproximadamente USD 1.52 billones corresponden directamente al costo acumulado de deuda técnica \parencite{CISQ2022}. A esa escala, es evidente que el problema afecta tanto a grandes empresas como a equipos pequeños.
+
+Y son justamente los equipos pequeños --startups, proyectos académicos como el nuestro, o pymes de desarrollo de software, que representan una parte importante del sector TI en Colombia-- los que menos recursos tienen para dedicar un rol exclusivo a la calidad del código, y quienes más se beneficiarían de una herramienta liviana que les diga, en lenguaje claro, qué archivos o funciones conviene refactorizar primero y por qué. Adicionalmente, para nosotros como estudiantes de últimos semestres de Ingeniería de Sistemas, entender y gestionar la deuda técnica de un proyecto es una habilidad profesional que necesitaremos en cualquier trabajo de desarrollo de software que emprendamos después de graduarnos, lo que hace de este problema una elección tanto pertinente para el curso como útil para nuestra propia formación.
+
+\pagebreak

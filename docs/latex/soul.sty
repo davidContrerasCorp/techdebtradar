@@ -1,0 +1,29 @@
+% soul.sty -- minimal local compatibility stub
+%
+% Igual que ulem.sty en esta misma carpeta: el paquete CTAN "soul" no
+% está instalado en este entorno de compilación y no hay acceso de red
+% a CTAN para instalarlo. Ninguna de las macros de soul se usa en el
+% contenido final de este documento (style.cls solo la carga por si se
+% llegara a necesitar), así que este stub ofrece implementaciones
+% simples y autocontenidas con el núcleo de LaTeX y xcolor, sin
+% depender de ulem.sty para evitar una referencia circular entre los
+% dos stubs.
+%
+% Si en algún momento se dispone del soul.sty oficial de CTAN, basta
+% reemplazar este archivo por el original.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{soul}[2024/01/01 local compatibility stub]
+
+\RequirePackage{xcolor}
+
+\providecommand{\so}[1]{#1}
+\providecommand{\caps}[1]{\MakeUppercase{#1}}
+\providecommand{\ul}[1]{\underline{#1}}
+\newcommand{\@soulstrike}[1]{%
+  \leavevmode
+  \setbox0=\hbox{#1}%
+  \rlap{\raisebox{0.48\ht0}{\rule[0pt]{\wd0}{0.5pt}}}\box0
+}
+\providecommand{\st}[1]{\@soulstrike{#1}}
+\providecommand{\hl}[1]{\colorbox{yellow}{#1}}

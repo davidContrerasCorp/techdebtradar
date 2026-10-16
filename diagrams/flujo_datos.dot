@@ -1,0 +1,29 @@
+digraph flujo {
+  rankdir=TB;
+  bgcolor="white";
+  fontname="Helvetica";
+  nodesep=0.35;
+  ranksep=0.32;
+  node [fontname="Helvetica", fontsize=12.5, shape=box, style="rounded,filled", fillcolor="#fdeeee", color="#7a1f2b", fontcolor="#222222", penwidth=1.2];
+  edge [fontname="Helvetica", fontsize=10.5, color="#555555", fontcolor="#333333", penwidth=1.1];
+
+  labelloc="t";
+  label="Flujo de datos: de la URL del repositorio a la recomendación priorizada";
+  fontsize=16;
+  fontcolor="#7a1f2b";
+
+  U [label="Usuario pega URL pública de GitHub", shape=ellipse, fillcolor="#eaf6ea"];
+  V [label="Validar URL (formato + repo público accesible)"];
+  C [label="Clonado superficial (shallow clone / GitHub API)"];
+  F [label="Filtrar archivos por lenguaje soportado (Python / JS)"];
+  M [label="Calcular métricas estáticas por archivo: complejidad ciclomática, SATD, duplicación, líneas por función"];
+  N [label="Normalizar y ordenar métricas (escala 0-10 por archivo)"];
+  S [label="Seleccionar top-N archivos (ej. N=10) para enviar al LLM"];
+  P [label="Prompt estructurado: código + métricas + contexto del repo"];
+  L [label="LLM genera: explicación · severidad (1-5) · sugerencia de refactor", fillcolor="#fde4c8", penwidth=2.0];
+  SC [label="Score final = f(métricas, severidad LLM)  —  ver fórmula, Sección 6"];
+  R [label="Lista priorizada (pantalla 2)", fillcolor="#eaf6ea"];
+  D [label="Detalle del hallazgo (pantalla 3)", fillcolor="#eaf6ea"];
+
+  U -> V -> C -> F -> M -> N -> S -> P -> L -> SC -> R -> D;
+}

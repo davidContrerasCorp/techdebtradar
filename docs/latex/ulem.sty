@@ -1,0 +1,37 @@
+% ulem.sty -- minimal local compatibility stub
+%
+% El entorno de compilación usado para este proyecto no tiene instalado
+% el paquete CTAN "ulem" y no hay acceso de red a CTAN para instalarlo
+% (solo a los repositorios de paquetes del sistema). Este archivo es un
+% reemplazo local mínimo que define las mismas macros públicas que se
+% usarían (\sout, \uline, \uuline, \uwave, \dashuline, \dotuline, \xout),
+% implementadas con primitivas del núcleo de LaTeX, sin depender de
+% ningún otro paquete externo. Ninguna de estas macros se usa en el
+% contenido final del documento de este proyecto: solo aparecen de
+% ejemplo en content/tutorial.tex, que está deshabilitado en main.tex.
+%
+% Si en algún momento se dispone del ulem.sty oficial de CTAN, basta
+% reemplazar este archivo por el original; la interfaz pública usada
+% aquí seguirá funcionando igual.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ulem}[2024/01/01 local compatibility stub]
+
+% Subrayado simple (aproximación razonable de \uline/\uuline/\uwave/
+% \dashuline/\dotuline, que en el ulem oficial tienen variantes visuales
+% distintas pero que aquí no se usan en el documento final).
+\providecommand{\uline}[1]{\underline{#1}}
+\providecommand{\uuline}[1]{\underline{#1}}
+\providecommand{\uwave}[1]{\underline{#1}}
+\providecommand{\dashuline}[1]{\underline{#1}}
+\providecommand{\dotuline}[1]{\underline{#1}}
+
+% Tachado de texto, sin depender de amsmath ni de ningún otro paquete:
+% se dibuja una regla horizontal superpuesta al texto, del mismo ancho.
+\newcommand{\@ulemstrike}[1]{%
+  \leavevmode
+  \setbox0=\hbox{#1}%
+  \rlap{\raisebox{0.48\ht0}{\rule[0pt]{\wd0}{0.5pt}}}\box0
+}
+\providecommand{\sout}[1]{\@ulemstrike{#1}}
+\providecommand{\xout}[1]{\@ulemstrike{#1}}
