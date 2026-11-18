@@ -1,0 +1,3226 @@
+{
+  "repo": {
+    "slug": "psf/requests",
+    "url": "https://github.com/psf/requests",
+    "branch": "main",
+    "commit": "3c7baaa"
+  },
+  "summary": {
+    "filesAnalyzed": 22,
+    "filesWithErrors": 0,
+    "errors": [],
+    "languages": [
+      "python"
+    ],
+    "totalLoc": 5557,
+    "totalSatd": 9,
+    "findings": 10,
+    "byLevel": {
+      "ALTA": 1,
+      "MEDIA": 3,
+      "BAJA": 6
+    },
+    "level": "ALTA",
+    "provider": "heuristica",
+    "providersUsed": [
+      "heuristica"
+    ],
+    "llmErrors": 0,
+    "model": null,
+    "weights": {
+      "cc": 0.25,
+      "satd": 0.15,
+      "dup": 0.2,
+      "llm": 0.4
+    },
+    "skipped": {
+      "tooLarge": 0,
+      "excluded": 2,
+      "overLimit": 0,
+      "tests": 1
+    },
+    "durationMs": 3659
+  },
+  "findings": [
+    {
+      "id": 1,
+      "path": "src/requests/models.py",
+      "language": "python",
+      "score": 7.2,
+      "level": "ALTA",
+      "severity": 5,
+      "scoreParts": {
+        "cc": 2.2,
+        "satd": 1,
+        "dup": 0,
+        "llm": 4
+      },
+      "norm": {
+        "cc": 8.79,
+        "satd": 6.67,
+        "dup": 0,
+        "size": 6.46
+      },
+      "metrics": {
+        "loc": 988,
+        "totalLines": 1185,
+        "functions": 52,
+        "ccAvg": 3.9,
+        "ccMax": 21,
+        "satd": 2,
+        "longFunctions": 2,
+        "maxFunctionLength": 53,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 687,
+            "marker": "TODO",
+            "text": "TODO: can be fixed by flipping the conditionals"
+          },
+          {
+            "line": 1016,
+            "marker": "TODO",
+            "text": "TODO: remove cast after iter_lines rewrite"
+          }
+        ],
+        "topComplexFunctions": [
+          {
+            "name": "_encode_files",
+            "startLine": 183,
+            "endLine": 251,
+            "length": 52,
+            "cc": 21,
+            "nesting": 4
+          },
+          {
+            "name": "prepare_body",
+            "startLine": 576,
+            "endLine": 652,
+            "length": 49,
+            "cc": 19,
+            "nesting": 4
+          },
+          {
+            "name": "prepare_url",
+            "startLine": 483,
+            "endLine": 563,
+            "length": 53,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "_encode_params",
+            "startLine": 151,
+            "endLine": 180,
+            "length": 24,
+            "cc": 11,
+            "nesting": 4
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "prepare_url",
+            "startLine": 483,
+            "endLine": 563,
+            "length": 53,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "_encode_files",
+            "startLine": 183,
+            "endLine": 251,
+            "length": 52,
+            "cc": 21,
+            "nesting": 4
+          }
+        ],
+        "functions": [
+          {
+            "name": "path_url",
+            "startLine": 112,
+            "endLine": 130,
+            "length": 13,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_encode_params",
+            "startLine": 134,
+            "endLine": 134,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_encode_params",
+            "startLine": 138,
+            "endLine": 138,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_encode_params",
+            "startLine": 142,
+            "endLine": 144,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_encode_params",
+            "startLine": 148,
+            "endLine": 148,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_encode_params",
+            "startLine": 151,
+            "endLine": 180,
+            "length": 24,
+            "cc": 11,
+            "nesting": 4
+          },
+          {
+            "name": "_encode_files",
+            "startLine": 183,
+            "endLine": 251,
+            "length": 52,
+            "cc": 21,
+            "nesting": 4
+          },
+          {
+            "name": "register_hook",
+            "startLine": 257,
+            "endLine": 270,
+            "length": 12,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "deregister_hook",
+            "startLine": 272,
+            "endLine": 281,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 323,
+            "endLine": 355,
+            "length": 30,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "__repr__",
+            "startLine": 357,
+            "endLine": 358,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "prepare",
+            "startLine": 360,
+            "endLine": 375,
+            "length": 16,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 407,
+            "endLine": 422,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "prepare",
+            "startLine": 424,
+            "endLine": 451,
+            "length": 22,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 453,
+            "endLine": 454,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "copy",
+            "startLine": 456,
+            "endLine": 465,
+            "length": 10,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "prepare_method",
+            "startLine": 467,
+            "endLine": 471,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_get_idna_encoded_host",
+            "startLine": 474,
+            "endLine": 481,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "prepare_url",
+            "startLine": 483,
+            "endLine": 563,
+            "length": 53,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "prepare_headers",
+            "startLine": 565,
+            "endLine": 574,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "prepare_body",
+            "startLine": 576,
+            "endLine": 652,
+            "length": 49,
+            "cc": 19,
+            "nesting": 4
+          },
+          {
+            "name": "prepare_content_length",
+            "startLine": 654,
+            "endLine": 668,
+            "length": 11,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "prepare_auth",
+            "startLine": 670,
+            "endLine": 697,
+            "length": 17,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "prepare_cookies",
+            "startLine": 699,
+            "endLine": 720,
+            "length": 12,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "prepare_hooks",
+            "startLine": 722,
+            "endLine": 729,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 765,
+            "endLine": 810,
+            "length": 14,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__enter__",
+            "startLine": 812,
+            "endLine": 813,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__exit__",
+            "startLine": 815,
+            "endLine": 816,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__getstate__",
+            "startLine": 818,
+            "endLine": 824,
+            "length": 4,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__setstate__",
+            "startLine": 826,
+            "endLine": 832,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__repr__",
+            "startLine": 834,
+            "endLine": 835,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__bool__",
+            "startLine": 837,
+            "endLine": 845,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__nonzero__",
+            "startLine": 847,
+            "endLine": 855,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__iter__",
+            "startLine": 857,
+            "endLine": 859,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "ok",
+            "startLine": 862,
+            "endLine": 874,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "is_redirect",
+            "startLine": 877,
+            "endLine": 881,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "is_permanent_redirect",
+            "startLine": 884,
+            "endLine": 889,
+            "length": 6,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "next",
+            "startLine": 892,
+            "endLine": 894,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "apparent_encoding",
+            "startLine": 897,
+            "endLine": 904,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "iter_content",
+            "startLine": 907,
+            "endLine": 909,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iter_content",
+            "startLine": 911,
+            "endLine": 913,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iter_content",
+            "startLine": 914,
+            "endLine": 977,
+            "length": 39,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "generate",
+            "startLine": 935,
+            "endLine": 956,
+            "length": 19,
+            "cc": 8,
+            "nesting": 3
+          },
+          {
+            "name": "iter_lines",
+            "startLine": 980,
+            "endLine": 985,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iter_lines",
+            "startLine": 987,
+            "endLine": 993,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iter_lines",
+            "startLine": 994,
+            "endLine": 1032,
+            "length": 24,
+            "cc": 9,
+            "nesting": 2
+          },
+          {
+            "name": "content",
+            "startLine": 1035,
+            "endLine": 1051,
+            "length": 11,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "text",
+            "startLine": 1054,
+            "endLine": 1089,
+            "length": 13,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "json",
+            "startLine": 1091,
+            "endLine": 1124,
+            "length": 15,
+            "cc": 8,
+            "nesting": 3
+          },
+          {
+            "name": "links",
+            "startLine": 1127,
+            "endLine": 1142,
+            "length": 11,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "raise_for_status",
+            "startLine": 1144,
+            "endLine": 1171,
+            "length": 20,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "close",
+            "startLine": 1173,
+            "endLine": 1184,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 613,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función _encode_files tiene complejidad ciclomática 21 (muy alta, > 20).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función prepare_url ocupa 53 líneas (> 50).",
+          "2 comentario(s) de deuda auto-admitida.",
+          "Archivo extenso: 988 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función _encode_files tiene CC=21), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (prepare_url, 53 líneas) que mezclan varios pasos en un solo bloque. Además, contiene 2 marca(s) de trabajo pendiente dejadas por el propio equipo (TODO). [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir _encode_files en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 21 · función de 53 líneas · 2 SATD",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 1
+    },
+    {
+      "id": 6,
+      "path": "src/requests/utils.py",
+      "language": "python",
+      "score": 5.5,
+      "level": "MEDIA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.49
+      },
+      "metrics": {
+        "loc": 915,
+        "totalLines": 1156,
+        "functions": 47,
+        "ccAvg": 4.3,
+        "ccMax": 19,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 45,
+        "maxNesting": 5,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "should_bypass_proxies",
+            "startLine": 810,
+            "endLine": 870,
+            "length": 39,
+            "cc": 19,
+            "nesting": 5
+          },
+          {
+            "name": "super_len",
+            "startLine": 160,
+            "endLine": 228,
+            "length": 45,
+            "cc": 16,
+            "nesting": 4
+          },
+          {
+            "name": "get_netrc_auth",
+            "startLine": 231,
+            "endLine": 280,
+            "length": 35,
+            "cc": 16,
+            "nesting": 3
+          },
+          {
+            "name": "guess_json_utf",
+            "startLine": 1008,
+            "endLine": 1037,
+            "length": 23,
+            "cc": 11,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "proxy_bypass_registry",
+            "startLine": 99,
+            "endLine": 135,
+            "length": 28,
+            "cc": 9,
+            "nesting": 3
+          },
+          {
+            "name": "proxy_bypass",
+            "startLine": 137,
+            "endLine": 146,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "dict_to_sequence",
+            "startLine": 149,
+            "endLine": 157,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "super_len",
+            "startLine": 160,
+            "endLine": 228,
+            "length": 45,
+            "cc": 16,
+            "nesting": 4
+          },
+          {
+            "name": "get_netrc_auth",
+            "startLine": 231,
+            "endLine": 280,
+            "length": 35,
+            "cc": 16,
+            "nesting": 3
+          },
+          {
+            "name": "guess_filename",
+            "startLine": 283,
+            "endLine": 287,
+            "length": 5,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "extract_zipped_paths",
+            "startLine": 290,
+            "endLine": 325,
+            "length": 22,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "atomic_open",
+            "startLine": 329,
+            "endLine": 338,
+            "length": 10,
+            "cc": 2,
+            "nesting": 2
+          },
+          {
+            "name": "from_key_val_list",
+            "startLine": 341,
+            "endLine": 367,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "to_key_val_list",
+            "startLine": 371,
+            "endLine": 371,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "to_key_val_list",
+            "startLine": 373,
+            "endLine": 375,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "to_key_val_list",
+            "startLine": 376,
+            "endLine": 404,
+            "length": 11,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "parse_list_header",
+            "startLine": 408,
+            "endLine": 436,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "parse_dict_header",
+            "startLine": 440,
+            "endLine": 471,
+            "length": 12,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "unquote_header_value",
+            "startLine": 475,
+            "endLine": 497,
+            "length": 7,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "dict_from_cookiejar",
+            "startLine": 500,
+            "endLine": 508,
+            "length": 4,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "add_dict_to_cookiejar",
+            "startLine": 511,
+            "endLine": 519,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_encodings_from_content",
+            "startLine": 522,
+            "endLine": 544,
+            "length": 18,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_parse_content_type_header",
+            "startLine": 547,
+            "endLine": 566,
+            "length": 13,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "get_encoding_from_headers",
+            "startLine": 569,
+            "endLine": 591,
+            "length": 12,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "stream_decode_response_unicode",
+            "startLine": 594,
+            "endLine": 610,
+            "length": 15,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "iter_slices",
+            "startLine": 614,
+            "endLine": 616,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iter_slices",
+            "startLine": 618,
+            "endLine": 620,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iter_slices",
+            "startLine": 621,
+            "endLine": 630,
+            "length": 10,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "get_unicode_from_response",
+            "startLine": 633,
+            "endLine": 671,
+            "length": 23,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "unquote_unreserved",
+            "startLine": 680,
+            "endLine": 701,
+            "length": 17,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "requote_uri",
+            "startLine": 704,
+            "endLine": 723,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "address_in_network",
+            "startLine": 726,
+            "endLine": 738,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "dotted_netmask",
+            "startLine": 741,
+            "endLine": 749,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "is_ipv4_address",
+            "startLine": 752,
+            "endLine": 760,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "is_valid_cidr",
+            "startLine": 763,
+            "endLine": 784,
+            "length": 16,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "set_environ",
+            "startLine": 788,
+            "endLine": 807,
+            "length": 15,
+            "cc": 4,
+            "nesting": 3
+          },
+          {
+            "name": "should_bypass_proxies",
+            "startLine": 810,
+            "endLine": 870,
+            "length": 39,
+            "cc": 19,
+            "nesting": 5
+          },
+          {
+            "name": "get_proxy",
+            "startLine": 819,
+            "endLine": 820,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "get_environ_proxies",
+            "startLine": 873,
+            "endLine": 882,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "select_proxy",
+            "startLine": 885,
+            "endLine": 908,
+            "length": 18,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "resolve_proxies",
+            "startLine": 911,
+            "endLine": 939,
+            "length": 17,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "default_user_agent",
+            "startLine": 942,
+            "endLine": 948,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "default_headers",
+            "startLine": 951,
+            "endLine": 962,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "parse_header_links",
+            "startLine": 965,
+            "endLine": 999,
+            "length": 21,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "guess_json_utf",
+            "startLine": 1008,
+            "endLine": 1037,
+            "length": 23,
+            "cc": 11,
+            "nesting": 2
+          },
+          {
+            "name": "prepend_scheme_if_needed",
+            "startLine": 1040,
+            "endLine": 1067,
+            "length": 15,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "get_auth_from_url",
+            "startLine": 1070,
+            "endLine": 1084,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "check_header_validity",
+            "startLine": 1087,
+            "endLine": 1095,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_validate_header_part",
+            "startLine": 1098,
+            "endLine": 1119,
+            "length": 20,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "urldefragauth",
+            "startLine": 1122,
+            "endLine": 1136,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "rewind_body",
+            "startLine": 1139,
+            "endLine": 1155,
+            "length": 15,
+            "cc": 4,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 517,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función should_bypass_proxies tiene complejidad ciclomática 19 (> 10).",
+          "Anidamiento de hasta 5 niveles.",
+          "Archivo extenso: 915 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función should_bypass_proxies tiene CC=19), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir should_bypass_proxies en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 19",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 2
+    },
+    {
+      "id": 3,
+      "path": "src/requests/adapters.py",
+      "language": "python",
+      "score": 4.5,
+      "level": "MEDIA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 2.05,
+        "satd": 0.5,
+        "dup": 0,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 8.18,
+        "satd": 3.33,
+        "dup": 0,
+        "size": 10
+      },
+      "metrics": {
+        "loc": 634,
+        "totalLines": 749,
+        "functions": 20,
+        "ccAvg": 3.7,
+        "ccMax": 19,
+        "satd": 1,
+        "longFunctions": 1,
+        "maxFunctionLength": 82,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 715,
+            "marker": "TODO",
+            "text": "TODO: Remove this in 3.0.0: see #2811"
+          }
+        ],
+        "topComplexFunctions": [
+          {
+            "name": "send",
+            "startLine": 634,
+            "endLine": 748,
+            "length": 82,
+            "cc": 19,
+            "nesting": 3
+          },
+          {
+            "name": "cert_verify",
+            "startLine": 307,
+            "endLine": 363,
+            "length": 40,
+            "cc": 14,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "send",
+            "startLine": 634,
+            "endLine": 748,
+            "length": 82,
+            "cc": 19,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "SOCKSProxyManager",
+            "startLine": 66,
+            "endLine": 67,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_urllib3_request_context",
+            "startLine": 85,
+            "endLine": 119,
+            "length": 32,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 125,
+            "endLine": 126,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "send",
+            "startLine": 128,
+            "endLine": 151,
+            "length": 11,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "close",
+            "startLine": 153,
+            "endLine": 155,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 201,
+            "endLine": 221,
+            "length": 18,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__getstate__",
+            "startLine": 223,
+            "endLine": 224,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "__setstate__",
+            "startLine": 226,
+            "endLine": 237,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "init_poolmanager",
+            "startLine": 239,
+            "endLine": 267,
+            "length": 17,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "proxy_manager_for",
+            "startLine": 269,
+            "endLine": 305,
+            "length": 26,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "cert_verify",
+            "startLine": 307,
+            "endLine": 363,
+            "length": 40,
+            "cc": 14,
+            "nesting": 2
+          },
+          {
+            "name": "build_response",
+            "startLine": 365,
+            "endLine": 401,
+            "length": 17,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "build_connection_pool_key_attributes",
+            "startLine": 403,
+            "endLine": 453,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_connection_with_tls_context",
+            "startLine": 455,
+            "endLine": 510,
+            "length": 35,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "get_connection",
+            "startLine": 512,
+            "endLine": 553,
+            "length": 29,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "close",
+            "startLine": 555,
+            "endLine": 563,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "request_url",
+            "startLine": 565,
+            "endLine": 597,
+            "length": 16,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "add_headers",
+            "startLine": 599,
+            "endLine": 611,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "proxy_headers",
+            "startLine": 613,
+            "endLine": 632,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "send",
+            "startLine": 634,
+            "endLine": 748,
+            "length": 82,
+            "cc": 19,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 334,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función send tiene complejidad ciclomática 19 (> 10).",
+          "La función send ocupa 82 líneas (> 50).",
+          "1 comentario(s) de deuda auto-admitida.",
+          "Archivo extenso: 634 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función send tiene CC=19), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (send, 82 líneas) que mezclan varios pasos en un solo bloque. Además, contiene 1 marca(s) de trabajo pendiente dejadas por el propio equipo (TODO). [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir send en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 19 · función de 82 líneas · 1 SATD",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 3
+    },
+    {
+      "id": 4,
+      "path": "src/requests/sessions.py",
+      "language": "python",
+      "score": 4.2,
+      "level": "MEDIA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 2.2,
+        "satd": 0,
+        "dup": 0,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 8.79,
+        "satd": 0,
+        "dup": 0,
+        "size": 10
+      },
+      "metrics": {
+        "loc": 758,
+        "totalLines": 921,
+        "functions": 29,
+        "ccAvg": 3.9,
+        "ccMax": 15,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 82,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "resolve_redirects",
+            "startLine": 186,
+            "endLine": 307,
+            "length": 82,
+            "cc": 15,
+            "nesting": 3
+          },
+          {
+            "name": "send",
+            "startLine": 752,
+            "endLine": 829,
+            "length": 42,
+            "cc": 11,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "resolve_redirects",
+            "startLine": 186,
+            "endLine": 307,
+            "length": 82,
+            "cc": 15,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "merge_setting",
+            "startLine": 76,
+            "endLine": 105,
+            "length": 18,
+            "cc": 8,
+            "nesting": 1
+          },
+          {
+            "name": "merge_hooks",
+            "startLine": 108,
+            "endLine": 124,
+            "length": 11,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "send",
+            "startLine": 132,
+            "endLine": 132,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_redirect_target",
+            "startLine": 134,
+            "endLine": 152,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "should_strip_auth",
+            "startLine": 154,
+            "endLine": 184,
+            "length": 23,
+            "cc": 10,
+            "nesting": 1
+          },
+          {
+            "name": "resolve_redirects",
+            "startLine": 186,
+            "endLine": 307,
+            "length": 82,
+            "cc": 15,
+            "nesting": 3
+          },
+          {
+            "name": "rebuild_auth",
+            "startLine": 309,
+            "endLine": 332,
+            "length": 15,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "rebuild_proxies",
+            "startLine": 334,
+            "endLine": 368,
+            "length": 19,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "rebuild_method",
+            "startLine": 370,
+            "endLine": 392,
+            "length": 12,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 442,
+            "endLine": 503,
+            "length": 15,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__enter__",
+            "startLine": 505,
+            "endLine": 506,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__exit__",
+            "startLine": 508,
+            "endLine": 509,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "prepare_request",
+            "startLine": 511,
+            "endLine": 555,
+            "length": 29,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "request",
+            "startLine": 557,
+            "endLine": 653,
+            "length": 47,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "get",
+            "startLine": 655,
+            "endLine": 671,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "options",
+            "startLine": 673,
+            "endLine": 682,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "head",
+            "startLine": 684,
+            "endLine": 693,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "post",
+            "startLine": 695,
+            "endLine": 712,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "put",
+            "startLine": 714,
+            "endLine": 726,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "patch",
+            "startLine": 728,
+            "endLine": 740,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "delete",
+            "startLine": 742,
+            "endLine": 750,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "send",
+            "startLine": 752,
+            "endLine": 829,
+            "length": 42,
+            "cc": 11,
+            "nesting": 2
+          },
+          {
+            "name": "merge_environment_settings",
+            "startLine": 831,
+            "endLine": 868,
+            "length": 26,
+            "cc": 9,
+            "nesting": 3
+          },
+          {
+            "name": "get_adapter",
+            "startLine": 870,
+            "endLine": 881,
+            "length": 6,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "close",
+            "startLine": 883,
+            "endLine": 886,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "mount",
+            "startLine": 888,
+            "endLine": 897,
+            "length": 6,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "__getstate__",
+            "startLine": 899,
+            "endLine": 901,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "__setstate__",
+            "startLine": 903,
+            "endLine": 905,
+            "length": 3,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "session",
+            "startLine": 908,
+            "endLine": 920,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 415,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función resolve_redirects tiene complejidad ciclomática 15 (> 10).",
+          "La función resolve_redirects ocupa 82 líneas (> 50).",
+          "Archivo extenso: 758 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función resolve_redirects tiene CC=15), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (resolve_redirects, 82 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir resolve_redirects en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 15 · función de 82 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 4
+    },
+    {
+      "id": 2,
+      "path": "src/requests/auth.py",
+      "language": "python",
+      "score": 3.6,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 1.14,
+        "satd": 1.5,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 4.55,
+        "satd": 10,
+        "dup": 0,
+        "size": 10
+      },
+      "metrics": {
+        "loc": 283,
+        "totalLines": 355,
+        "functions": 24,
+        "ccAvg": 2.5,
+        "ccMax": 19,
+        "satd": 3,
+        "longFunctions": 1,
+        "maxFunctionLength": 82,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 213,
+            "marker": "XXX",
+            "text": "XXX not implemented yet"
+          },
+          {
+            "line": 247,
+            "marker": "XXX",
+            "text": "XXX handle auth-int."
+          },
+          {
+            "line": 252,
+            "marker": "XXX",
+            "text": "XXX should the partial digests be encoded too?"
+          }
+        ],
+        "topComplexFunctions": [
+          {
+            "name": "build_digest_header",
+            "startLine": 157,
+            "endLine": 266,
+            "length": 82,
+            "cc": 19,
+            "nesting": 1
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "build_digest_header",
+            "startLine": 157,
+            "endLine": 266,
+            "length": 82,
+            "cc": 19,
+            "nesting": 1
+          }
+        ],
+        "functions": [
+          {
+            "name": "_basic_auth_str",
+            "startLine": 34,
+            "endLine": 75,
+            "length": 28,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "__call__",
+            "startLine": 81,
+            "endLine": 82,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 92,
+            "endLine": 92,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 94,
+            "endLine": 94,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 96,
+            "endLine": 98,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__eq__",
+            "startLine": 100,
+            "endLine": 106,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__ne__",
+            "startLine": 108,
+            "endLine": 109,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__call__",
+            "startLine": 111,
+            "endLine": 113,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__call__",
+            "startLine": 119,
+            "endLine": 121,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 137,
+            "endLine": 137,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 139,
+            "endLine": 139,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 141,
+            "endLine": 145,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "init_per_thread_state",
+            "startLine": 147,
+            "endLine": 155,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "build_digest_header",
+            "startLine": 157,
+            "endLine": 266,
+            "length": 82,
+            "cc": 19,
+            "nesting": 1
+          },
+          {
+            "name": "md5_utf8",
+            "startLine": 176,
+            "endLine": 179,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "sha_utf8",
+            "startLine": 184,
+            "endLine": 187,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "sha256_utf8",
+            "startLine": 192,
+            "endLine": 195,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "sha512_utf8",
+            "startLine": 200,
+            "endLine": 203,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "KD",
+            "startLine": 210,
+            "endLine": 211,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "handle_redirect",
+            "startLine": 268,
+            "endLine": 271,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "handle_401",
+            "startLine": 273,
+            "endLine": 319,
+            "length": 30,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "__call__",
+            "startLine": 321,
+            "endLine": 343,
+            "length": 16,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "__eq__",
+            "startLine": 345,
+            "endLine": 351,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__ne__",
+            "startLine": 353,
+            "endLine": 354,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 196,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función build_digest_header tiene complejidad ciclomática 19 (> 10).",
+          "La función build_digest_header ocupa 82 líneas (> 50).",
+          "3 comentario(s) de deuda auto-admitida."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función build_digest_header tiene CC=19), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (build_digest_header, 82 líneas) que mezclan varios pasos en un solo bloque. Además, contiene 3 marca(s) de trabajo pendiente dejadas por el propio equipo (XXX). [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir build_digest_header en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 19 · función de 82 líneas · 3 SATD",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 5
+    },
+    {
+      "id": 10,
+      "path": "src/requests/cookies.py",
+      "language": "python",
+      "score": 3,
+      "level": "BAJA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 0.98,
+        "satd": 0,
+        "dup": 0,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 3.94,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.41
+      },
+      "metrics": {
+        "loc": 503,
+        "totalLines": 626,
+        "functions": 52,
+        "ccAvg": 2.3,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 28,
+        "maxNesting": 5,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 45,
+            "endLine": 49,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_type",
+            "startLine": 51,
+            "endLine": 52,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_host",
+            "startLine": 54,
+            "endLine": 55,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_origin_req_host",
+            "startLine": 57,
+            "endLine": 58,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_full_url",
+            "startLine": 60,
+            "endLine": 78,
+            "length": 15,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "is_unverifiable",
+            "startLine": 80,
+            "endLine": 81,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "has_header",
+            "startLine": 83,
+            "endLine": 84,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "get_header",
+            "startLine": 86,
+            "endLine": 87,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_header",
+            "startLine": 89,
+            "endLine": 93,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_unredirected_header",
+            "startLine": 95,
+            "endLine": 96,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_new_headers",
+            "startLine": 98,
+            "endLine": 99,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "unverifiable",
+            "startLine": 102,
+            "endLine": 103,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "origin_req_host",
+            "startLine": 106,
+            "endLine": 107,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "host",
+            "startLine": 110,
+            "endLine": 111,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 121,
+            "endLine": 126,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "info",
+            "startLine": 128,
+            "endLine": 129,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "getheaders",
+            "startLine": 131,
+            "endLine": 132,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "extract_cookies_to_jar",
+            "startLine": 135,
+            "endLine": 150,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "get_cookie_header",
+            "startLine": 153,
+            "endLine": 161,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "remove_cookie_by_name",
+            "startLine": 164,
+            "endLine": 182,
+            "length": 15,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "get",
+            "startLine": 211,
+            "endLine": 227,
+            "length": 12,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "set",
+            "startLine": 229,
+            "endLine": 248,
+            "length": 15,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "iterkeys",
+            "startLine": 250,
+            "endLine": 257,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "keys",
+            "startLine": 259,
+            "endLine": 265,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "itervalues",
+            "startLine": 267,
+            "endLine": 274,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "values",
+            "startLine": 276,
+            "endLine": 282,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iteritems",
+            "startLine": 284,
+            "endLine": 291,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "items",
+            "startLine": 293,
+            "endLine": 300,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "list_domains",
+            "startLine": 302,
+            "endLine": 308,
+            "length": 7,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "list_paths",
+            "startLine": 310,
+            "endLine": 316,
+            "length": 7,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "multiple_domains",
+            "startLine": 318,
+            "endLine": 329,
+            "length": 8,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "get_dict",
+            "startLine": 331,
+            "endLine": 346,
+            "length": 11,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "__iter__",
+            "startLine": 348,
+            "endLine": 350,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__contains__",
+            "startLine": 352,
+            "endLine": 356,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__getitem__",
+            "startLine": 358,
+            "endLine": 365,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__setitem__",
+            "startLine": 367,
+            "endLine": 374,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__delitem__",
+            "startLine": 376,
+            "endLine": 380,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "set_cookie",
+            "startLine": 382,
+            "endLine": 389,
+            "length": 8,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "update",
+            "startLine": 391,
+            "endLine": 399,
+            "length": 9,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "_find",
+            "startLine": 401,
+            "endLine": 421,
+            "length": 10,
+            "cc": 7,
+            "nesting": 4
+          },
+          {
+            "name": "_find_no_duplicates",
+            "startLine": 423,
+            "endLine": 452,
+            "length": 17,
+            "cc": 9,
+            "nesting": 5
+          },
+          {
+            "name": "__getstate__",
+            "startLine": 454,
+            "endLine": 459,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__setstate__",
+            "startLine": 461,
+            "endLine": 465,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "copy",
+            "startLine": 467,
+            "endLine": 472,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_policy",
+            "startLine": 474,
+            "endLine": 476,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_copy_cookie_jar",
+            "startLine": 479,
+            "endLine": 491,
+            "length": 10,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "create_cookie",
+            "startLine": 494,
+            "endLine": 528,
+            "length": 28,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "morsel_to_cookie",
+            "startLine": 531,
+            "endLine": 557,
+            "length": 26,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "cookiejar_from_dict",
+            "startLine": 564,
+            "endLine": 568,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "cookiejar_from_dict",
+            "startLine": 572,
+            "endLine": 576,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "cookiejar_from_dict",
+            "startLine": 579,
+            "endLine": 601,
+            "length": 14,
+            "cc": 7,
+            "nesting": 3
+          },
+          {
+            "name": "merge_cookies",
+            "startLine": 604,
+            "endLine": 625,
+            "length": 15,
+            "cc": 6,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 305,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "Anidamiento de hasta 5 niveles.",
+          "Archivo extenso: 503 líneas de código."
+        ],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 6
+    },
+    {
+      "id": 7,
+      "path": "src/requests/hooks.py",
+      "language": "python",
+      "score": 2.8,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 2.27,
+        "satd": 0.5,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 9.09,
+        "satd": 3.33,
+        "dup": 0,
+        "size": 2.07
+      },
+      "metrics": {
+        "loc": 35,
+        "totalLines": 49,
+        "functions": 2,
+        "ccAvg": 4,
+        "ccMax": 6,
+        "satd": 1,
+        "longFunctions": 0,
+        "maxFunctionLength": 17,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 29,
+            "marker": "TODO",
+            "text": "TODO: response is the only one"
+          }
+        ],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "default_hooks",
+            "startLine": 25,
+            "endLine": 26,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "dispatch_hook",
+            "startLine": 32,
+            "endLine": 48,
+            "length": 17,
+            "cc": 6,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 20,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "1 comentario(s) de deuda auto-admitida."
+        ],
+        "explicacion": "Este archivo contiene 1 marca(s) de trabajo pendiente dejadas por el propio equipo (TODO). [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Convertir cada TODO/FIXME en una tarea rastreada (issue) con responsable, o resolverlo si es de bajo esfuerzo.",
+        "resumen": "1 SATD",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 7
+    },
+    {
+      "id": 5,
+      "path": "src/requests/help.py",
+      "language": "python",
+      "score": 2.5,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 6.46
+      },
+      "metrics": {
+        "loc": 110,
+        "totalLines": 133,
+        "functions": 3,
+        "ccAvg": 4.3,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 53,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [
+          {
+            "name": "info",
+            "startLine": 67,
+            "endLine": 123,
+            "length": 53,
+            "cc": 6,
+            "nesting": 1
+          }
+        ],
+        "functions": [
+          {
+            "name": "_implementation",
+            "startLine": 35,
+            "endLine": 64,
+            "length": 19,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "info",
+            "startLine": 67,
+            "endLine": 123,
+            "length": 53,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "main",
+            "startLine": 126,
+            "endLine": 128,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 71,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función info ocupa 53 líneas (> 50)."
+        ],
+        "explicacion": "Este archivo tiene funciones largas (info, 53 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Extraer los pasos de info en funciones auxiliares con una sola responsabilidad.",
+        "resumen": "función de 53 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 8
+    },
+    {
+      "id": 8,
+      "path": "src/requests/status_codes.py",
+      "language": "python",
+      "score": 2.3,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 2.27,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 9.09,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.83
+      },
+      "metrics": {
+        "loc": 116,
+        "totalLines": 129,
+        "functions": 2,
+        "ccAvg": 4,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 15,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "_init",
+            "startLine": 109,
+            "endLine": 125,
+            "length": 15,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "doc",
+            "startLine": 116,
+            "endLine": 118,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 85,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 9
+    },
+    {
+      "id": 9,
+      "path": "src/requests/_types.py",
+      "language": "python",
+      "score": 1.6,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 0.61,
+        "satd": 1,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 2.42,
+        "satd": 6.67,
+        "dup": 0,
+        "size": 0.61
+      },
+      "metrics": {
+        "loc": 148,
+        "totalLines": 189,
+        "functions": 4,
+        "ccAvg": 1.8,
+        "ccMax": 3,
+        "satd": 2,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 60,
+            "marker": "TODO",
+            "text": "TODO: move to collections.abc when Python >= 3.12"
+          },
+          {
+            "line": 61,
+            "marker": "TODO",
+            "text": "TODO: move to typing when Python >= 3.13"
+          }
+        ],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "read",
+            "startLine": 29,
+            "endLine": 29,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "has_read",
+            "startLine": 32,
+            "endLine": 34,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "items",
+            "startLine": 39,
+            "endLine": 39,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "is_prepared",
+            "startLine": 47,
+            "endLine": 52,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 105,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "2 comentario(s) de deuda auto-admitida."
+        ],
+        "explicacion": "Este archivo contiene 2 marca(s) de trabajo pendiente dejadas por el propio equipo (TODO). [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Convertir cada TODO/FIXME en una tarea rastreada (issue) con responsable, o resolverlo si es de bajo esfuerzo.",
+        "resumen": "2 SATD",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 10
+    }
+  ],
+  "fileMetrics": [
+    {
+      "path": "docs/_themes/flask_theme_support.py",
+      "language": "python",
+      "metrics": {
+        "loc": 74,
+        "totalLines": 87,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "docs/conf.py",
+      "language": "python",
+      "metrics": {
+        "loc": 291,
+        "totalLines": 386,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "setup.py",
+      "language": "python",
+      "metrics": {
+        "loc": 6,
+        "totalLines": 10,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/requests/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 184,
+        "totalLines": 220,
+        "functions": 2,
+        "ccAvg": 4,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 28,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 9.09,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.41
+      }
+    },
+    {
+      "path": "src/requests/__version__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 13,
+        "totalLines": 15,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/requests/_internal_utils.py",
+      "language": "python",
+      "metrics": {
+        "loc": 40,
+        "totalLines": 52,
+        "functions": 2,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 8,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.03,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.98
+      }
+    },
+    {
+      "path": "src/requests/_types.py",
+      "language": "python",
+      "metrics": {
+        "loc": 148,
+        "totalLines": 189,
+        "functions": 4,
+        "ccAvg": 1.8,
+        "ccMax": 3,
+        "satd": 2,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.42,
+        "satd": 6.67,
+        "dup": 0,
+        "size": 0.61
+      }
+    },
+    {
+      "path": "src/requests/adapters.py",
+      "language": "python",
+      "metrics": {
+        "loc": 634,
+        "totalLines": 749,
+        "functions": 20,
+        "ccAvg": 3.7,
+        "ccMax": 19,
+        "satd": 1,
+        "longFunctions": 1,
+        "maxFunctionLength": 82,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 8.18,
+        "satd": 3.33,
+        "dup": 0,
+        "size": 10
+      }
+    },
+    {
+      "path": "src/requests/api.py",
+      "language": "python",
+      "metrics": {
+        "loc": 139,
+        "totalLines": 181,
+        "functions": 8,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 8,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.98
+      }
+    },
+    {
+      "path": "src/requests/auth.py",
+      "language": "python",
+      "metrics": {
+        "loc": 283,
+        "totalLines": 355,
+        "functions": 24,
+        "ccAvg": 2.5,
+        "ccMax": 19,
+        "satd": 3,
+        "longFunctions": 1,
+        "maxFunctionLength": 82,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 4.55,
+        "satd": 10,
+        "dup": 0,
+        "size": 10
+      }
+    },
+    {
+      "path": "src/requests/certs.py",
+      "language": "python",
+      "metrics": {
+        "loc": 13,
+        "totalLines": 19,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/requests/compat.py",
+      "language": "python",
+      "metrics": {
+        "loc": 94,
+        "totalLines": 116,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 9.09,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.22
+      }
+    },
+    {
+      "path": "src/requests/cookies.py",
+      "language": "python",
+      "metrics": {
+        "loc": 503,
+        "totalLines": 626,
+        "functions": 52,
+        "ccAvg": 2.3,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 28,
+        "maxNesting": 5,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.94,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.41
+      }
+    },
+    {
+      "path": "src/requests/exceptions.py",
+      "language": "python",
+      "metrics": {
+        "loc": 98,
+        "totalLines": 163,
+        "functions": 3,
+        "ccAvg": 2,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 8,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.03,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.98
+      }
+    },
+    {
+      "path": "src/requests/help.py",
+      "language": "python",
+      "metrics": {
+        "loc": 110,
+        "totalLines": 133,
+        "functions": 3,
+        "ccAvg": 4.3,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 53,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 6.46
+      }
+    },
+    {
+      "path": "src/requests/hooks.py",
+      "language": "python",
+      "metrics": {
+        "loc": 35,
+        "totalLines": 49,
+        "functions": 2,
+        "ccAvg": 4,
+        "ccMax": 6,
+        "satd": 1,
+        "longFunctions": 0,
+        "maxFunctionLength": 17,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 9.09,
+        "satd": 3.33,
+        "dup": 0,
+        "size": 2.07
+      }
+    },
+    {
+      "path": "src/requests/models.py",
+      "language": "python",
+      "metrics": {
+        "loc": 988,
+        "totalLines": 1185,
+        "functions": 52,
+        "ccAvg": 3.9,
+        "ccMax": 21,
+        "satd": 2,
+        "longFunctions": 2,
+        "maxFunctionLength": 53,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 8.79,
+        "satd": 6.67,
+        "dup": 0,
+        "size": 6.46
+      }
+    },
+    {
+      "path": "src/requests/packages.py",
+      "language": "python",
+      "metrics": {
+        "loc": 19,
+        "totalLines": 24,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/requests/sessions.py",
+      "language": "python",
+      "metrics": {
+        "loc": 758,
+        "totalLines": 921,
+        "functions": 29,
+        "ccAvg": 3.9,
+        "ccMax": 15,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 82,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 8.79,
+        "satd": 0,
+        "dup": 0,
+        "size": 10
+      }
+    },
+    {
+      "path": "src/requests/status_codes.py",
+      "language": "python",
+      "metrics": {
+        "loc": 116,
+        "totalLines": 129,
+        "functions": 2,
+        "ccAvg": 4,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 15,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 9.09,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.83
+      }
+    },
+    {
+      "path": "src/requests/structures.py",
+      "language": "python",
+      "metrics": {
+        "loc": 96,
+        "totalLines": 131,
+        "functions": 17,
+        "ccAvg": 1.3,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 9,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.91,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.1
+      }
+    },
+    {
+      "path": "src/requests/utils.py",
+      "language": "python",
+      "metrics": {
+        "loc": 915,
+        "totalLines": 1156,
+        "functions": 47,
+        "ccAvg": 4.3,
+        "ccMax": 19,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 45,
+        "maxNesting": 5,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.49
+      }
+    }
+  ]
+}

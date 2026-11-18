@@ -74,7 +74,7 @@ La Imagen \ref{img:flujo} detalla el flujo de datos paso a paso, desde que el us
 
 \fig[flujo]{Flujo de datos de TechDebtRadar: de la URL del repositorio a la recomendación priorizada.}{width=0.72\textwidth}{img/flujo_datos.png}
 
-\textbf{Medidas de control consideradas para el Hito 3} (no implementadas todavía, pero incorporadas en el diseño para no tener que rediseñar la arquitectura más adelante): límite de tamaño de repositorio y de número de archivos a clonar; límite de tiempo (\textit{timeout}) para la clonación y para cada llamada al LLM; manejo explícito de URLs inválidas, repositorios privados o inexistentes, y de archivos binarios o generados (p.\,ej. carpetas \texttt{node\_modules}, \texttt{dist}, \texttt{build}) que deben excluirse del análisis; y saneamiento del contenido de archivos antes de incluirlo en el \textit{prompt}, dado que el código de un repositorio de terceros es, en este contexto, una entrada no confiable.
+\textbf{Medidas de control consideradas para el Hito 3} (en el Hito 2 no estaban implementadas; en el Hito 3 todas quedaron implementadas, ver Sección \ref{sec:implementacion}): límite de tamaño de repositorio y de número de archivos a clonar; límite de tiempo (\textit{timeout}) para la clonación y para cada llamada al LLM; manejo explícito de URLs inválidas, repositorios privados o inexistentes, y de archivos binarios o generados (p.\,ej. carpetas \texttt{node\_modules}, \texttt{dist}, \texttt{build}) que deben excluirse del análisis; y saneamiento del contenido de archivos antes de incluirlo en el \textit{prompt}, dado que el código de un repositorio de terceros es, en este contexto, una entrada no confiable.
 
 \subsection{Componente principal: LLM y motor de priorización}
 
@@ -126,5 +126,32 @@ Para evitar cualquier ambigüedad sobre el estado real del desarrollo, distingui
 \end{itemize}
 
 Esta distinción es la misma que exige el enunciado del hito y se mantiene consistente entre este documento, el prototipo y el guion de video: en ningún entregable se afirma que TechDebtRadar ya analiza repositorios reales o ya usa un LLM en producción.
+
+\subsection{Implementación final (Hito 3)}
+\label{sec:implementacion}
+
+En el Hito 3 se implementaron todos los componentes de la Tabla \ref{tab:componentes}; el código está en la carpeta \texttt{mvp/} del repositorio. La arquitectura y la fórmula de priorización se mantienen como se diseñaron; los cambios de herramienta respecto a la Tabla \ref{tab:herramientas} y su justificación se resumen en la Tabla \ref{tab:implementacion}. Lo descrito en la sección anterior sobre datos simulados aplica solo al prototipo del Hito 2, que se conserva en la carpeta \texttt{prototype/}.
+
+\begin{table}[H]
+\centering
+\caption{Herramientas usadas en la implementación final}
+\label{tab:implementacion}
+\begin{tabular}{p{0.20\textwidth} p{0.33\textwidth} p{0.39\textwidth}}
+\toprule
+\textbf{Componente} & \textbf{Implementación} & \textbf{Justificación / cambio respecto al diseño} \\
+\midrule
+Servidor e interfaz & Node.js (\texttt{node:http}, sin \textit{frameworks}); las 3 pantallas del prototipo del Hito 2 conectadas a una API REST & Un solo lenguaje para backend e interfaz, sin dependencias nativas; la interfaz conserva la estructura validada en el Hito 2. \\[4pt]
+Obtención del código & \texttt{git clone --depth 1} con \textit{timeout}, sin credenciales ni enlaces simbólicos & Más simple y rápido que recorrer la API REST de GitHub archivo por archivo, y sin límite de peticiones. \\[4pt]
+Análisis estático & Analizador propio basado en \textit{tokens} para Python y JavaScript/TypeScript (CC de McCabe por función, SATD en comentarios, duplicación por \textit{hash} de ventanas de 6 líneas, longitud de funciones) & Reemplaza a radon y lizard (Python) para no exigir un segundo entorno de ejecución. Sigue el mismo enfoque de lizard \parencite{LizardDocs} y se validó contra ESLint (Sección \ref{sec:resultados}). \\[4pt]
+Componente LLM & Claude (\texttt{claude-opus-5-5}) \parencite{AnthropicClaude} mediante el SDK oficial \texttt{@anthropic-ai/sdk}, con salida estructurada (esquema JSON validado con \texttt{zod}) & La salida estructurada garantiza las tres salidas separadas del diseño (explicación, severidad, sugerencia) más las señales observadas, que el \textit{prompt} pide \emph{antes} de la severidad (encadenamiento de razonamiento). \\[4pt]
+Evaluador de respaldo & Reglas deterministas sobre las métricas, con la misma interfaz que el componente LLM & Permite usar el sistema sin credenciales, hace reproducibles las pruebas y sirve como línea base para medir el aporte del LLM. La interfaz siempre indica qué evaluador generó cada hallazgo. \\[4pt]
+Pruebas & \texttt{node:test}: 42 pruebas (unitarias, de integración de la API y 3 de extremo a extremo contra GitHub) & Ejecutables con \texttt{npm test}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Medidas de control implementadas.} Validación estricta de la URL (solo \texttt{github.com}, con nombres de usuario, repositorio y rama restringidos a caracteres permitidos); \textit{timeout} de 120\,s para la clonación y de 120\,s por llamada al LLM, con hasta 2 reintentos; límites de 1.500 archivos, 400\,KB por archivo y 40\,MB en total; exclusión de \texttt{node\_modules}, \texttt{dist}, \texttt{build}, \texttt{vendor}, entornos virtuales, archivos minificados y, por defecto, archivos de pruebas (la deuda en pruebas está fuera del alcance, Sección \ref{sec:alcance}); y tratamiento del código y del README como datos no confiables: van delimitados en el \textit{prompt} y la instrucción de sistema le indica al modelo que no siga instrucciones que aparezcan en ellos. Si una llamada al LLM falla o el modelo rechaza la solicitud, ese archivo se evalúa con el respaldo heurístico y se reporta el error. Los archivos de más de 14.000 caracteres se envían como un extracto con sus funciones más complejas y largas, los comentarios SATD y los bloques duplicados, y el \textit{prompt} indica que es un extracto.
+
+\textbf{Uso del sistema.} El usuario pega la URL en la pantalla 1; la pantalla 2 muestra el progreso por etapas (clonar, leer archivos, métricas, evaluación, priorizar) y luego la lista ordenada con nivel y \textit{score}; la pantalla 3 muestra la explicación, las señales observadas, la sugerencia, el desglose del \textit{score} por término de la fórmula, la evidencia con enlaces a las líneas exactas en GitHub y el código fuente. Las acciones \textit{Marcar resuelto} e \textit{Ignorar}, que en el Hito 2 eran simuladas, ahora se guardan en el servidor.
 
 \pagebreak

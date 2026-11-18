@@ -1,0 +1,3271 @@
+{
+  "repo": {
+    "slug": "pallets/flask",
+    "url": "https://github.com/pallets/flask",
+    "branch": "main",
+    "commit": "49943b5"
+  },
+  "summary": {
+    "filesAnalyzed": 35,
+    "filesWithErrors": 0,
+    "errors": [],
+    "languages": [
+      "python"
+    ],
+    "totalLoc": 8051,
+    "totalSatd": 0,
+    "findings": 10,
+    "byLevel": {
+      "ALTA": 0,
+      "MEDIA": 4,
+      "BAJA": 6
+    },
+    "level": "MEDIA",
+    "provider": "heuristica",
+    "providersUsed": [
+      "heuristica"
+    ],
+    "llmErrors": 0,
+    "model": null,
+    "weights": {
+      "cc": 0.25,
+      "satd": 0.15,
+      "dup": 0.2,
+      "llm": 0.4
+    },
+    "skipped": {
+      "tooLarge": 0,
+      "excluded": 3,
+      "overLimit": 0,
+      "tests": 3
+    },
+    "durationMs": 2681
+  },
+  "findings": [
+    {
+      "id": 1,
+      "path": "src/flask/app.py",
+      "language": "python",
+      "score": 5.6,
+      "level": "MEDIA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 2.29,
+        "satd": 0,
+        "dup": 0.3,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 9.14,
+        "satd": 0,
+        "dup": 1.48,
+        "size": 10
+      },
+      "metrics": {
+        "loc": 1371,
+        "totalLines": 1687,
+        "functions": 40,
+        "ccAvg": 4.2,
+        "ccMax": 16,
+        "satd": 0,
+        "longFunctions": 3,
+        "maxFunctionLength": 66,
+        "maxNesting": 4,
+        "dupPct": 9.2
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "make_response",
+            "startLine": 1267,
+            "endLine": 1407,
+            "length": 66,
+            "cc": 16,
+            "nesting": 3
+          },
+          {
+            "name": "url_for",
+            "startLine": 1145,
+            "endLine": 1265,
+            "length": 56,
+            "cc": 13,
+            "nesting": 3
+          },
+          {
+            "name": "run",
+            "startLine": 641,
+            "endLine": 764,
+            "length": 51,
+            "cc": 12,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "make_response",
+            "startLine": 1267,
+            "endLine": 1407,
+            "length": 66,
+            "cc": 16,
+            "nesting": 3
+          },
+          {
+            "name": "url_for",
+            "startLine": 1145,
+            "endLine": 1265,
+            "length": 56,
+            "cc": 13,
+            "nesting": 3
+          },
+          {
+            "name": "run",
+            "startLine": 641,
+            "endLine": 764,
+            "length": 51,
+            "cc": 12,
+            "nesting": 2
+          }
+        ],
+        "functions": [
+          {
+            "name": "_make_timedelta",
+            "startLine": 72,
+            "endLine": 76,
+            "length": 4,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "remove_ctx",
+            "startLine": 84,
+            "endLine": 91,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapper",
+            "startLine": 85,
+            "endLine": 89,
+            "length": 4,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "add_ctx",
+            "startLine": 96,
+            "endLine": 105,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapper",
+            "startLine": 97,
+            "endLine": 103,
+            "length": 6,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__init_subclass__",
+            "startLine": 251,
+            "endLine": 306,
+            "length": 43,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 308,
+            "endLine": 361,
+            "length": 38,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_send_file_max_age",
+            "startLine": 363,
+            "endLine": 388,
+            "length": 8,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "send_static_file",
+            "startLine": 390,
+            "endLine": 410,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "open_resource",
+            "startLine": 412,
+            "endLine": 443,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "open_instance_resource",
+            "startLine": 445,
+            "endLine": 465,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "create_jinja_environment",
+            "startLine": 467,
+            "endLine": 505,
+            "length": 21,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "create_url_adapter",
+            "startLine": 507,
+            "endLine": 564,
+            "length": 27,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "raise_routing_exception",
+            "startLine": 566,
+            "endLine": 592,
+            "length": 11,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "update_template_context",
+            "startLine": 594,
+            "endLine": 627,
+            "length": 13,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "make_shell_context",
+            "startLine": 629,
+            "endLine": 639,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "run",
+            "startLine": 641,
+            "endLine": 764,
+            "length": 51,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "test_client",
+            "startLine": 766,
+            "endLine": 822,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "test_cli_runner",
+            "startLine": 824,
+            "endLine": 839,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "handle_http_exception",
+            "startLine": 841,
+            "endLine": 878,
+            "length": 12,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "handle_user_exception",
+            "startLine": 880,
+            "endLine": 914,
+            "length": 14,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "handle_exception",
+            "startLine": 916,
+            "endLine": 971,
+            "length": 18,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "log_exception",
+            "startLine": 973,
+            "endLine": 991,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "dispatch_request",
+            "startLine": 993,
+            "endLine": 1021,
+            "length": 13,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "full_dispatch_request",
+            "startLine": 1023,
+            "endLine": 1054,
+            "length": 20,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "finalize_request",
+            "startLine": 1056,
+            "endLine": 1090,
+            "length": 20,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "make_default_options_response",
+            "startLine": 1092,
+            "endLine": 1106,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "ensure_sync",
+            "startLine": 1108,
+            "endLine": 1120,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "async_to_sync",
+            "startLine": 1122,
+            "endLine": 1143,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "url_for",
+            "startLine": 1145,
+            "endLine": 1265,
+            "length": 56,
+            "cc": 13,
+            "nesting": 3
+          },
+          {
+            "name": "make_response",
+            "startLine": 1267,
+            "endLine": 1407,
+            "length": 66,
+            "cc": 16,
+            "nesting": 3
+          },
+          {
+            "name": "preprocess_request",
+            "startLine": 1409,
+            "endLine": 1439,
+            "length": 15,
+            "cc": 8,
+            "nesting": 4
+          },
+          {
+            "name": "process_response",
+            "startLine": 1441,
+            "endLine": 1469,
+            "length": 11,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "do_teardown_request",
+            "startLine": 1471,
+            "endLine": 1507,
+            "length": 13,
+            "cc": 4,
+            "nesting": 4
+          },
+          {
+            "name": "do_teardown_appcontext",
+            "startLine": 1509,
+            "endLine": 1540,
+            "length": 11,
+            "cc": 2,
+            "nesting": 2
+          },
+          {
+            "name": "app_context",
+            "startLine": 1542,
+            "endLine": 1560,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "request_context",
+            "startLine": 1562,
+            "endLine": 1576,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "test_request_context",
+            "startLine": 1578,
+            "endLine": 1625,
+            "length": 9,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "wsgi_app",
+            "startLine": 1627,
+            "endLine": 1677,
+            "length": 27,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "__call__",
+            "startLine": 1679,
+            "endLine": 1686,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 49,
+          "significantLines": 531,
+          "partners": [
+            "src/flask/sansio/app.py",
+            "src/flask/blueprints.py",
+            "src/flask/helpers.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 55,
+              "toLine": 76,
+              "other": "src/flask/sansio/app.py"
+            },
+            {
+              "fromLine": 308,
+              "toLine": 319,
+              "other": "src/flask/sansio/app.py"
+            },
+            {
+              "fromLine": 382,
+              "toLine": 412,
+              "other": "src/flask/blueprints.py"
+            },
+            {
+              "fromLine": 414,
+              "toLine": 443,
+              "other": "src/flask/blueprints.py"
+            },
+            {
+              "fromLine": 1148,
+              "toLine": 1155,
+              "other": "src/flask/helpers.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función make_response tiene complejidad ciclomática 16 (> 10).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función make_response ocupa 66 líneas (> 50).",
+          "9.2% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 1371 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función make_response tiene CC=16), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (make_response, 66 líneas) que mezclan varios pasos en un solo bloque. Además, repite código que también existe en src/flask/sansio/app.py, src/flask/blueprints.py, src/flask/helpers.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir make_response en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 16 · función de 66 líneas · 9.2% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 1
+    },
+    {
+      "id": 2,
+      "path": "src/flask/cli.py",
+      "language": "python",
+      "score": 5.5,
+      "level": "MEDIA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 8.94
+      },
+      "metrics": {
+        "loc": 898,
+        "totalLines": 1127,
+        "functions": 36,
+        "ccAvg": 4.5,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 59,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "routes_command",
+            "startLine": 1060,
+            "endLine": 1106,
+            "length": 36,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "find_app_by_string",
+            "startLine": 120,
+            "endLine": 197,
+            "length": 59,
+            "cc": 14,
+            "nesting": 3
+          },
+          {
+            "name": "load_dotenv",
+            "startLine": 698,
+            "endLine": 763,
+            "length": 28,
+            "cc": 13,
+            "nesting": 3
+          },
+          {
+            "name": "find_best_app",
+            "startLine": 41,
+            "endLine": 91,
+            "length": 37,
+            "cc": 12,
+            "nesting": 4
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "find_app_by_string",
+            "startLine": 120,
+            "endLine": 197,
+            "length": 59,
+            "cc": 14,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "find_best_app",
+            "startLine": 41,
+            "endLine": 91,
+            "length": 37,
+            "cc": 12,
+            "nesting": 4
+          },
+          {
+            "name": "_called_with_wrong_args",
+            "startLine": 94,
+            "endLine": 117,
+            "length": 11,
+            "cc": 3,
+            "nesting": 3
+          },
+          {
+            "name": "find_app_by_string",
+            "startLine": 120,
+            "endLine": 197,
+            "length": 59,
+            "cc": 14,
+            "nesting": 3
+          },
+          {
+            "name": "prepare_import",
+            "startLine": 200,
+            "endLine": 226,
+            "length": 17,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "locate_app",
+            "startLine": 230,
+            "endLine": 232,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "locate_app",
+            "startLine": 236,
+            "endLine": 238,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "locate_app",
+            "startLine": 241,
+            "endLine": 264,
+            "length": 20,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "get_version",
+            "startLine": 267,
+            "endLine": 280,
+            "length": 12,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 305,
+            "endLine": 331,
+            "length": 14,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "load_app",
+            "startLine": 333,
+            "endLine": 372,
+            "length": 31,
+            "cc": 8,
+            "nesting": 4
+          },
+          {
+            "name": "with_appcontext",
+            "startLine": 380,
+            "endLine": 402,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "decorator",
+            "startLine": 395,
+            "endLine": 400,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "command",
+            "startLine": 413,
+            "endLine": 427,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "decorator",
+            "startLine": 422,
+            "endLine": 425,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "group",
+            "startLine": 429,
+            "endLine": 437,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_set_app",
+            "startLine": 440,
+            "endLine": 446,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_set_debug",
+            "startLine": 468,
+            "endLine": 482,
+            "length": 9,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "_env_file_callback",
+            "startLine": 493,
+            "endLine": 512,
+            "length": 15,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 563,
+            "endLine": 598,
+            "length": 25,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "_load_plugin_commands",
+            "startLine": 600,
+            "endLine": 607,
+            "length": 6,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "get_command",
+            "startLine": 609,
+            "endLine": 634,
+            "length": 14,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "list_commands",
+            "startLine": 636,
+            "endLine": 655,
+            "length": 11,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "make_context",
+            "startLine": 657,
+            "endLine": 676,
+            "length": 15,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "parse_args",
+            "startLine": 678,
+            "endLine": 688,
+            "length": 7,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "_path_is_ancestor",
+            "startLine": 691,
+            "endLine": 695,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "load_dotenv",
+            "startLine": 698,
+            "endLine": 763,
+            "length": 28,
+            "cc": 13,
+            "nesting": 3
+          },
+          {
+            "name": "show_server_banner",
+            "startLine": 766,
+            "endLine": 777,
+            "length": 8,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 788,
+            "endLine": 789,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 791,
+            "endLine": 825,
+            "length": 29,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "_validate_key",
+            "startLine": 828,
+            "endLine": 864,
+            "length": 28,
+            "cc": 9,
+            "nesting": 2
+          },
+          {
+            "name": "convert",
+            "startLine": 873,
+            "endLine": 878,
+            "length": 6,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "run_command",
+            "startLine": 934,
+            "endLine": 992,
+            "length": 41,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "app",
+            "startLine": 962,
+            "endLine": 965,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "shell_command",
+            "startLine": 1000,
+            "endLine": 1044,
+            "length": 25,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "routes_command",
+            "startLine": 1060,
+            "endLine": 1106,
+            "length": 36,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "main",
+            "startLine": 1121,
+            "endLine": 1122,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 512,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función routes_command tiene complejidad ciclomática 18 (> 10).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función find_app_by_string ocupa 59 líneas (> 50).",
+          "Archivo extenso: 898 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función routes_command tiene CC=18), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (find_app_by_string, 59 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir routes_command en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 18 · función de 59 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 2
+    },
+    {
+      "id": 6,
+      "path": "src/flask/sansio/app.py",
+      "language": "python",
+      "score": 4.3,
+      "level": "MEDIA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 0.86,
+        "satd": 0,
+        "dup": 0.43,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 3.43,
+        "satd": 0,
+        "dup": 2.16,
+        "size": 6.67
+      },
+      "metrics": {
+        "loc": 833,
+        "totalLines": 1015,
+        "functions": 39,
+        "ccAvg": 2.2,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 44,
+        "maxNesting": 4,
+        "dupPct": 13.4
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "add_url_rule",
+            "startLine": 606,
+            "endLine": 662,
+            "length": 44,
+            "cc": 13,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "_make_timedelta",
+            "startLine": 53,
+            "endLine": 57,
+            "length": 4,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 280,
+            "endLine": 409,
+            "length": 42,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_check_setup_finished",
+            "startLine": 411,
+            "endLine": 421,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "name",
+            "startLine": 424,
+            "endLine": 438,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "logger",
+            "startLine": 441,
+            "endLine": 465,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "jinja_env",
+            "startLine": 468,
+            "endLine": 475,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "create_jinja_environment",
+            "startLine": 477,
+            "endLine": 478,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "make_config",
+            "startLine": 480,
+            "endLine": 494,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "make_aborter",
+            "startLine": 496,
+            "endLine": 506,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "auto_find_instance_path",
+            "startLine": 508,
+            "endLine": 519,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "create_global_jinja_loader",
+            "startLine": 521,
+            "endLine": 532,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "select_jinja_autoescape",
+            "startLine": 534,
+            "endLine": 548,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "debug",
+            "startLine": 551,
+            "endLine": 561,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "debug",
+            "startLine": 564,
+            "endLine": 568,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "register_blueprint",
+            "startLine": 571,
+            "endLine": 596,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "iter_blueprints",
+            "startLine": 598,
+            "endLine": 603,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_url_rule",
+            "startLine": 606,
+            "endLine": 662,
+            "length": 44,
+            "cc": 13,
+            "nesting": 2
+          },
+          {
+            "name": "template_filter",
+            "startLine": 665,
+            "endLine": 665,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "template_filter",
+            "startLine": 667,
+            "endLine": 669,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "template_filter",
+            "startLine": 671,
+            "endLine": 697,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "decorator",
+            "startLine": 693,
+            "endLine": 695,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_template_filter",
+            "startLine": 700,
+            "endLine": 712,
+            "length": 5,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "template_test",
+            "startLine": 715,
+            "endLine": 715,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "template_test",
+            "startLine": 717,
+            "endLine": 719,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "template_test",
+            "startLine": 721,
+            "endLine": 754,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "decorator",
+            "startLine": 750,
+            "endLine": 752,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_template_test",
+            "startLine": 757,
+            "endLine": 771,
+            "length": 5,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "template_global",
+            "startLine": 774,
+            "endLine": 774,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "template_global",
+            "startLine": 776,
+            "endLine": 778,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "template_global",
+            "startLine": 780,
+            "endLine": 808,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "decorator",
+            "startLine": 804,
+            "endLine": 806,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_template_global",
+            "startLine": 811,
+            "endLine": 825,
+            "length": 5,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "teardown_appcontext",
+            "startLine": 828,
+            "endLine": 856,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "shell_context_processor",
+            "startLine": 859,
+            "endLine": 867,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_find_error_handler",
+            "startLine": 869,
+            "endLine": 892,
+            "length": 16,
+            "cc": 7,
+            "nesting": 4
+          },
+          {
+            "name": "trap_http_exception",
+            "startLine": 894,
+            "endLine": 927,
+            "length": 14,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "redirect",
+            "startLine": 940,
+            "endLine": 959,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "inject_url_defaults",
+            "startLine": 961,
+            "endLine": 980,
+            "length": 11,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "handle_url_build_error",
+            "startLine": 982,
+            "endLine": 1014,
+            "length": 15,
+            "cc": 5,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 38,
+          "significantLines": 283,
+          "partners": [
+            "src/flask/app.py",
+            "src/flask/sansio/blueprints.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 37,
+              "toLine": 57,
+              "other": "src/flask/app.py"
+            },
+            {
+              "fromLine": 280,
+              "toLine": 291,
+              "other": "src/flask/app.py"
+            },
+            {
+              "fromLine": 293,
+              "toLine": 298,
+              "other": "src/flask/sansio/blueprints.py"
+            },
+            {
+              "fromLine": 605,
+              "toLine": 613,
+              "other": "src/flask/sansio/blueprints.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función add_url_rule tiene complejidad ciclomática 13 (> 10).",
+          "Anidamiento de hasta 4 niveles.",
+          "13.4% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 833 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función add_url_rule tiene CC=13), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, repite código que también existe en src/flask/app.py, src/flask/sansio/blueprints.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir add_url_rule en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 13 · 13.4% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 3
+    },
+    {
+      "id": 5,
+      "path": "src/flask/sansio/blueprints.py",
+      "language": "python",
+      "score": 4.2,
+      "level": "MEDIA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 0.86,
+        "satd": 0,
+        "dup": 0.32,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 3.43,
+        "satd": 0,
+        "dup": 1.61,
+        "size": 9.39
+      },
+      "metrics": {
+        "loc": 572,
+        "totalLines": 693,
+        "functions": 40,
+        "ccAvg": 2.2,
+        "ccMax": 23,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 62,
+        "maxNesting": 2,
+        "dupPct": 10
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "register",
+            "startLine": 273,
+            "endLine": 377,
+            "length": 62,
+            "cc": 23,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "register",
+            "startLine": 273,
+            "endLine": 377,
+            "length": 62,
+            "cc": 23,
+            "nesting": 2
+          }
+        ],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 41,
+            "endLine": 85,
+            "length": 23,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "add_url_rule",
+            "startLine": 87,
+            "endLine": 116,
+            "length": 26,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 174,
+            "endLine": 211,
+            "length": 33,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "_check_setup_finished",
+            "startLine": 213,
+            "endLine": 221,
+            "length": 9,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "record",
+            "startLine": 224,
+            "endLine": 230,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "record_once",
+            "startLine": 233,
+            "endLine": 244,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapper",
+            "startLine": 240,
+            "endLine": 242,
+            "length": 3,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "make_setup_state",
+            "startLine": 246,
+            "endLine": 253,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "register_blueprint",
+            "startLine": 256,
+            "endLine": 271,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "register",
+            "startLine": 273,
+            "endLine": 377,
+            "length": 62,
+            "cc": 23,
+            "nesting": 2
+          },
+          {
+            "name": "_merge_blueprint_funcs",
+            "startLine": 379,
+            "endLine": 410,
+            "length": 29,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "extend",
+            "startLine": 380,
+            "endLine": 386,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "add_url_rule",
+            "startLine": 413,
+            "endLine": 441,
+            "length": 22,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "app_template_filter",
+            "startLine": 444,
+            "endLine": 444,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_filter",
+            "startLine": 446,
+            "endLine": 448,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_filter",
+            "startLine": 450,
+            "endLine": 473,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "decorator",
+            "startLine": 469,
+            "endLine": 471,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_app_template_filter",
+            "startLine": 476,
+            "endLine": 495,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "register_template_filter",
+            "startLine": 492,
+            "endLine": 493,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_test",
+            "startLine": 498,
+            "endLine": 498,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_test",
+            "startLine": 500,
+            "endLine": 502,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_test",
+            "startLine": 504,
+            "endLine": 529,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "decorator",
+            "startLine": 525,
+            "endLine": 527,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_app_template_test",
+            "startLine": 532,
+            "endLine": 553,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "register_template_test",
+            "startLine": 550,
+            "endLine": 551,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_global",
+            "startLine": 556,
+            "endLine": 556,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_global",
+            "startLine": 558,
+            "endLine": 560,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_template_global",
+            "startLine": 562,
+            "endLine": 587,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "decorator",
+            "startLine": 583,
+            "endLine": 585,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "add_app_template_global",
+            "startLine": 590,
+            "endLine": 611,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "register_template_global",
+            "startLine": 608,
+            "endLine": 609,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "before_app_request",
+            "startLine": 614,
+            "endLine": 621,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "after_app_request",
+            "startLine": 624,
+            "endLine": 631,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "teardown_app_request",
+            "startLine": 634,
+            "endLine": 641,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_context_processor",
+            "startLine": 644,
+            "endLine": 653,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_errorhandler",
+            "startLine": 656,
+            "endLine": 670,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "decorator",
+            "startLine": 663,
+            "endLine": 668,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "from_blueprint",
+            "startLine": 664,
+            "endLine": 665,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_url_value_preprocessor",
+            "startLine": 673,
+            "endLine": 682,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "app_url_defaults",
+            "startLine": 685,
+            "endLine": 692,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 33,
+          "significantLines": 330,
+          "partners": [
+            "src/flask/sansio/scaffold.py",
+            "src/flask/blueprints.py",
+            "src/flask/sansio/app.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 18,
+              "toLine": 23,
+              "other": "src/flask/sansio/scaffold.py"
+            },
+            {
+              "fromLine": 174,
+              "toLine": 185,
+              "other": "src/flask/blueprints.py"
+            },
+            {
+              "fromLine": 187,
+              "toLine": 192,
+              "other": "src/flask/sansio/app.py"
+            },
+            {
+              "fromLine": 412,
+              "toLine": 420,
+              "other": "src/flask/sansio/app.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función register tiene complejidad ciclomática 23 (muy alta, > 20).",
+          "La función register ocupa 62 líneas (> 50).",
+          "10% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 572 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función register tiene CC=23), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (register, 62 líneas) que mezclan varios pasos en un solo bloque. Además, repite código que también existe en src/flask/sansio/scaffold.py, src/flask/blueprints.py, src/flask/sansio/app.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir register en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 23 · función de 62 líneas · 10% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 4
+    },
+    {
+      "id": 3,
+      "path": "src/flask/blueprints.py",
+      "language": "python",
+      "score": 3.9,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 0.93,
+        "satd": 0,
+        "dup": 2,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 3.71,
+        "satd": 0,
+        "dup": 10,
+        "size": 4.09
+      },
+      "metrics": {
+        "loc": 102,
+        "totalLines": 129,
+        "functions": 4,
+        "ccAvg": 2.3,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 27,
+        "maxNesting": 1,
+        "dupPct": 62
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 19,
+            "endLine": 53,
+            "length": 27,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_send_file_max_age",
+            "startLine": 55,
+            "endLine": 80,
+            "length": 8,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "send_static_file",
+            "startLine": 82,
+            "endLine": 102,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "open_resource",
+            "startLine": 104,
+            "endLine": 128,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 31,
+          "significantLines": 50,
+          "partners": [
+            "src/flask/sansio/blueprints.py",
+            "src/flask/app.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 19,
+              "toLine": 30,
+              "other": "src/flask/sansio/blueprints.py"
+            },
+            {
+              "fromLine": 74,
+              "toLine": 104,
+              "other": "src/flask/app.py"
+            },
+            {
+              "fromLine": 106,
+              "toLine": 128,
+              "other": "src/flask/app.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "62% de sus líneas están duplicadas en src/flask/sansio/blueprints.py."
+        ],
+        "explicacion": "Este archivo repite código que también existe en src/flask/sansio/blueprints.py, src/flask/app.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Extraer el bloque repetido a una función compartida y reutilizarla desde src/flask/sansio/blueprints.py y este archivo.",
+        "resumen": "62% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 5
+    },
+    {
+      "id": 4,
+      "path": "src/flask/debughelpers.py",
+      "language": "python",
+      "score": 3.4,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 2.36,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 9.43,
+        "satd": 0,
+        "dup": 0,
+        "size": 7.27
+      },
+      "metrics": {
+        "loc": 146,
+        "totalLines": 180,
+        "functions": 7,
+        "ccAvg": 4.3,
+        "ccMax": 12,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 48,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "explain_template_loading_attempts",
+            "startLine": 124,
+            "endLine": 179,
+            "length": 48,
+            "cc": 12,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 28,
+            "endLine": 44,
+            "length": 17,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__str__",
+            "startLine": 46,
+            "endLine": 47,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 57,
+            "endLine": 78,
+            "length": 20,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "attach_enctype_error_multidict",
+            "startLine": 81,
+            "endLine": 104,
+            "length": 16,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__getitem__",
+            "startLine": 91,
+            "endLine": 100,
+            "length": 9,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "_dump_loader_info",
+            "startLine": 107,
+            "endLine": 121,
+            "length": 15,
+            "cc": 8,
+            "nesting": 3
+          },
+          {
+            "name": "explain_template_loading_attempts",
+            "startLine": 124,
+            "endLine": 179,
+            "length": 48,
+            "cc": 12,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 86,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función explain_template_loading_attempts tiene complejidad ciclomática 12 (> 10)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función explain_template_loading_attempts tiene CC=12), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir explain_template_loading_attempts en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 12",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 6
+    },
+    {
+      "id": 8,
+      "path": "src/flask/config.py",
+      "language": "python",
+      "score": 1.4,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 1.43,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 5.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.79
+      },
+      "metrics": {
+        "loc": 286,
+        "totalLines": 368,
+        "functions": 14,
+        "ccAvg": 3,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 25,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 23,
+            "endLine": 27,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__get__",
+            "startLine": 30,
+            "endLine": 30,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__get__",
+            "startLine": 33,
+            "endLine": 33,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__get__",
+            "startLine": 35,
+            "endLine": 44,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__set__",
+            "startLine": 46,
+            "endLine": 47,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 94,
+            "endLine": 100,
+            "length": 7,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "from_envvar",
+            "startLine": 102,
+            "endLine": 124,
+            "length": 13,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "from_prefixed_env",
+            "startLine": 126,
+            "endLine": 185,
+            "length": 25,
+            "cc": 7,
+            "nesting": 3
+          },
+          {
+            "name": "from_pyfile",
+            "startLine": 187,
+            "endLine": 216,
+            "length": 17,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "from_object",
+            "startLine": 218,
+            "endLine": 254,
+            "length": 7,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "from_file",
+            "startLine": 256,
+            "endLine": 302,
+            "length": 18,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "from_mapping",
+            "startLine": 304,
+            "endLine": 321,
+            "length": 12,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "get_namespace",
+            "startLine": 323,
+            "endLine": 364,
+            "length": 16,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "__repr__",
+            "startLine": 366,
+            "endLine": 367,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 119,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 7
+    },
+    {
+      "id": 7,
+      "path": "src/flask/testing.py",
+      "language": "python",
+      "score": 1.4,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 1.43,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 5.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.15
+      },
+      "metrics": {
+        "loc": 237,
+        "totalLines": 299,
+        "functions": 12,
+        "ccAvg": 3,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 34,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 49,
+            "endLine": 86,
+            "length": 32,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "json_dumps",
+            "startLine": 88,
+            "endLine": 94,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_get_werkzeug_version",
+            "startLine": 100,
+            "endLine": 106,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 125,
+            "endLine": 133,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "session_transaction",
+            "startLine": 136,
+            "endLine": 183,
+            "length": 26,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "_copy_environ",
+            "startLine": 185,
+            "endLine": 191,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_request_from_builder_args",
+            "startLine": 193,
+            "endLine": 202,
+            "length": 9,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "open",
+            "startLine": 204,
+            "endLine": 247,
+            "length": 34,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "__enter__",
+            "startLine": 249,
+            "endLine": 253,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__exit__",
+            "startLine": 255,
+            "endLine": 262,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 271,
+            "endLine": 273,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "invoke",
+            "startLine": 275,
+            "endLine": 298,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 136,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 8
+    },
+    {
+      "id": 10,
+      "path": "examples/tutorial/flaskr/auth.py",
+      "language": "python",
+      "score": 1.3,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 1.29,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 5.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.64
+      },
+      "metrics": {
+        "loc": 90,
+        "totalLines": 117,
+        "functions": 6,
+        "ccAvg": 2.8,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 24,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "login_required",
+            "startLine": 19,
+            "endLine": 29,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapped_view",
+            "startLine": 23,
+            "endLine": 27,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "load_logged_in_user",
+            "startLine": 33,
+            "endLine": 43,
+            "length": 9,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "register",
+            "startLine": 47,
+            "endLine": 81,
+            "length": 24,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "login",
+            "startLine": 85,
+            "endLine": 109,
+            "length": 20,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "logout",
+            "startLine": 113,
+            "endLine": 116,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 59,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 9
+    },
+    {
+      "id": 9,
+      "path": "src/flask/views.py",
+      "language": "python",
+      "score": 1.3,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 1.29,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 5.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.94
+      },
+      "metrics": {
+        "loc": 146,
+        "totalLines": 192,
+        "functions": 6,
+        "ccAvg": 2.8,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 26,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "dispatch_request",
+            "startLine": 78,
+            "endLine": 83,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "as_view",
+            "startLine": 86,
+            "endLine": 135,
+            "length": 26,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "view",
+            "startLine": 106,
+            "endLine": 110,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "view",
+            "startLine": 115,
+            "endLine": 116,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init_subclass__",
+            "startLine": 165,
+            "endLine": 180,
+            "length": 12,
+            "cc": 7,
+            "nesting": 3
+          },
+          {
+            "name": "dispatch_request",
+            "startLine": 182,
+            "endLine": 191,
+            "length": 6,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 53,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 10
+    }
+  ],
+  "fileMetrics": [
+    {
+      "path": "docs/conf.py",
+      "language": "python",
+      "metrics": {
+        "loc": 84,
+        "totalLines": 102,
+        "functions": 2,
+        "ccAvg": 3,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 21,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.18
+      }
+    },
+    {
+      "path": "examples/celery/make_celery.py",
+      "language": "python",
+      "metrics": {
+        "loc": 3,
+        "totalLines": 5,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "examples/celery/src/task_app/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 31,
+        "totalLines": 40,
+        "functions": 4,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 17,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.58
+      }
+    },
+    {
+      "path": "examples/celery/src/task_app/tasks.py",
+      "language": "python",
+      "metrics": {
+        "loc": 15,
+        "totalLines": 24,
+        "functions": 3,
+        "ccAvg": 1.3,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.86,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.76
+      }
+    },
+    {
+      "path": "examples/celery/src/task_app/views.py",
+      "language": "python",
+      "metrics": {
+        "loc": 28,
+        "totalLines": 39,
+        "functions": 4,
+        "ccAvg": 1.5,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 8,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.43,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.21
+      }
+    },
+    {
+      "path": "examples/javascript/js_example/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 3,
+        "totalLines": 6,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "examples/javascript/js_example/views.py",
+      "language": "python",
+      "metrics": {
+        "loc": 13,
+        "totalLines": 19,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 4,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.61
+      }
+    },
+    {
+      "path": "examples/tutorial/flaskr/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 36,
+        "totalLines": 49,
+        "functions": 2,
+        "ccAvg": 1.5,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 23,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.43,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.48
+      }
+    },
+    {
+      "path": "examples/tutorial/flaskr/auth.py",
+      "language": "python",
+      "metrics": {
+        "loc": 90,
+        "totalLines": 117,
+        "functions": 6,
+        "ccAvg": 2.8,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 24,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.64
+      }
+    },
+    {
+      "path": "examples/tutorial/flaskr/blog.py",
+      "language": "python",
+      "metrics": {
+        "loc": 100,
+        "totalLines": 126,
+        "functions": 5,
+        "ccAvg": 2.8,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 19,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.88
+      }
+    },
+    {
+      "path": "examples/tutorial/flaskr/db.py",
+      "language": "python",
+      "metrics": {
+        "loc": 40,
+        "totalLines": 57,
+        "functions": 5,
+        "ccAvg": 1.4,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 8,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.21
+      }
+    },
+    {
+      "path": "src/flask/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 39,
+        "totalLines": 40,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/flask/__main__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 2,
+        "totalLines": 4,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/flask/app.py",
+      "language": "python",
+      "metrics": {
+        "loc": 1371,
+        "totalLines": 1687,
+        "functions": 40,
+        "ccAvg": 4.2,
+        "ccMax": 16,
+        "satd": 0,
+        "longFunctions": 3,
+        "maxFunctionLength": 66,
+        "maxNesting": 4,
+        "dupPct": 9.2
+      },
+      "norm": {
+        "cc": 9.14,
+        "satd": 0,
+        "dup": 1.48,
+        "size": 10
+      }
+    },
+    {
+      "path": "src/flask/blueprints.py",
+      "language": "python",
+      "metrics": {
+        "loc": 102,
+        "totalLines": 129,
+        "functions": 4,
+        "ccAvg": 2.3,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 27,
+        "maxNesting": 1,
+        "dupPct": 62
+      },
+      "norm": {
+        "cc": 3.71,
+        "satd": 0,
+        "dup": 10,
+        "size": 4.09
+      }
+    },
+    {
+      "path": "src/flask/cli.py",
+      "language": "python",
+      "metrics": {
+        "loc": 898,
+        "totalLines": 1127,
+        "functions": 36,
+        "ccAvg": 4.5,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 59,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 8.94
+      }
+    },
+    {
+      "path": "src/flask/config.py",
+      "language": "python",
+      "metrics": {
+        "loc": 286,
+        "totalLines": 368,
+        "functions": 14,
+        "ccAvg": 3,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 25,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.79
+      }
+    },
+    {
+      "path": "src/flask/ctx.py",
+      "language": "python",
+      "metrics": {
+        "loc": 404,
+        "totalLines": 541,
+        "functions": 28,
+        "ccAvg": 1.9,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 30,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.57,
+        "satd": 0,
+        "dup": 0,
+        "size": 4.55
+      }
+    },
+    {
+      "path": "src/flask/debughelpers.py",
+      "language": "python",
+      "metrics": {
+        "loc": 146,
+        "totalLines": 180,
+        "functions": 7,
+        "ccAvg": 4.3,
+        "ccMax": 12,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 48,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 9.43,
+        "satd": 0,
+        "dup": 0,
+        "size": 7.27
+      }
+    },
+    {
+      "path": "src/flask/globals.py",
+      "language": "python",
+      "metrics": {
+        "loc": 58,
+        "totalLines": 78,
+        "functions": 2,
+        "ccAvg": 1.5,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 11,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.43,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.67
+      }
+    },
+    {
+      "path": "src/flask/helpers.py",
+      "language": "python",
+      "metrics": {
+        "loc": 531,
+        "totalLines": 680,
+        "functions": 23,
+        "ccAvg": 2.1,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 31,
+        "maxNesting": 3,
+        "dupPct": 4.1
+      },
+      "norm": {
+        "cc": 3.14,
+        "satd": 0,
+        "dup": 0.66,
+        "size": 4.7
+      }
+    },
+    {
+      "path": "src/flask/json/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 122,
+        "totalLines": 171,
+        "functions": 5,
+        "ccAvg": 1.8,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 7,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.29,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.06
+      }
+    },
+    {
+      "path": "src/flask/json/provider.py",
+      "language": "python",
+      "metrics": {
+        "loc": 163,
+        "totalLines": 216,
+        "functions": 11,
+        "ccAvg": 2.3,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 11,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.67
+      }
+    },
+    {
+      "path": "src/flask/json/tag.py",
+      "language": "python",
+      "metrics": {
+        "loc": 236,
+        "totalLines": 328,
+        "functions": 34,
+        "ccAvg": 1.5,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 17,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.43,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.58
+      }
+    },
+    {
+      "path": "src/flask/logging.py",
+      "language": "python",
+      "metrics": {
+        "loc": 55,
+        "totalLines": 80,
+        "functions": 3,
+        "ccAvg": 3.7,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 11,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 7.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.67
+      }
+    },
+    {
+      "path": "src/flask/sansio/app.py",
+      "language": "python",
+      "metrics": {
+        "loc": 833,
+        "totalLines": 1015,
+        "functions": 39,
+        "ccAvg": 2.2,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 44,
+        "maxNesting": 4,
+        "dupPct": 13.4
+      },
+      "norm": {
+        "cc": 3.43,
+        "satd": 0,
+        "dup": 2.16,
+        "size": 6.67
+      }
+    },
+    {
+      "path": "src/flask/sansio/blueprints.py",
+      "language": "python",
+      "metrics": {
+        "loc": 572,
+        "totalLines": 693,
+        "functions": 40,
+        "ccAvg": 2.2,
+        "ccMax": 23,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 62,
+        "maxNesting": 2,
+        "dupPct": 10
+      },
+      "norm": {
+        "cc": 3.43,
+        "satd": 0,
+        "dup": 1.61,
+        "size": 9.39
+      }
+    },
+    {
+      "path": "src/flask/sansio/scaffold.py",
+      "language": "python",
+      "metrics": {
+        "loc": 647,
+        "totalLines": 801,
+        "functions": 36,
+        "ccAvg": 1.7,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 39,
+        "maxNesting": 3,
+        "dupPct": 6
+      },
+      "norm": {
+        "cc": 2,
+        "satd": 0,
+        "dup": 0.97,
+        "size": 5.91
+      }
+    },
+    {
+      "path": "src/flask/sessions.py",
+      "language": "python",
+      "metrics": {
+        "loc": 310,
+        "totalLines": 386,
+        "functions": 22,
+        "ccAvg": 1.6,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 41,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 6.21
+      }
+    },
+    {
+      "path": "src/flask/signals.py",
+      "language": "python",
+      "metrics": {
+        "loc": 14,
+        "totalLines": 18,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/flask/templating.py",
+      "language": "python",
+      "metrics": {
+        "loc": 166,
+        "totalLines": 213,
+        "functions": 15,
+        "ccAvg": 2.1,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 19,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.88
+      }
+    },
+    {
+      "path": "src/flask/testing.py",
+      "language": "python",
+      "metrics": {
+        "loc": 237,
+        "totalLines": 299,
+        "functions": 12,
+        "ccAvg": 3,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 34,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.71,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.15
+      }
+    },
+    {
+      "path": "src/flask/typing.py",
+      "language": "python",
+      "metrics": {
+        "loc": 77,
+        "totalLines": 88,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "src/flask/views.py",
+      "language": "python",
+      "metrics": {
+        "loc": 146,
+        "totalLines": 192,
+        "functions": 6,
+        "ccAvg": 2.8,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 26,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.94
+      }
+    },
+    {
+      "path": "src/flask/wrappers.py",
+      "language": "python",
+      "metrics": {
+        "loc": 193,
+        "totalLines": 256,
+        "functions": 12,
+        "ccAvg": 2.5,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 4.29,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.52
+      }
+    }
+  ]
+}

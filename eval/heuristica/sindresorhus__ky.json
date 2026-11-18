@@ -1,0 +1,2280 @@
+{
+  "repo": {
+    "slug": "sindresorhus/ky",
+    "url": "https://github.com/sindresorhus/ky",
+    "branch": "main",
+    "commit": "3541888"
+  },
+  "summary": {
+    "filesAnalyzed": 31,
+    "filesWithErrors": 0,
+    "errors": [],
+    "languages": [
+      "javascript"
+    ],
+    "totalLoc": 4004,
+    "totalSatd": 2,
+    "findings": 10,
+    "byLevel": {
+      "ALTA": 1,
+      "MEDIA": 1,
+      "BAJA": 8
+    },
+    "level": "ALTA",
+    "provider": "heuristica",
+    "providersUsed": [
+      "heuristica"
+    ],
+    "llmErrors": 0,
+    "model": null,
+    "weights": {
+      "cc": 0.25,
+      "satd": 0.15,
+      "dup": 0.2,
+      "llm": 0.4
+    },
+    "skipped": {
+      "tooLarge": 0,
+      "excluded": 2,
+      "overLimit": 0,
+      "tests": 2
+    },
+    "durationMs": 1828
+  },
+  "findings": [
+    {
+      "id": 1,
+      "path": "source/utils/merge.ts",
+      "language": "javascript",
+      "score": 6.6,
+      "level": "ALTA",
+      "severity": 5,
+      "scoreParts": {
+        "cc": 1.13,
+        "satd": 1.5,
+        "dup": 0,
+        "llm": 4
+      },
+      "norm": {
+        "cc": 4.53,
+        "satd": 10,
+        "dup": 0,
+        "size": 10
+      },
+      "metrics": {
+        "loc": 416,
+        "totalLines": 502,
+        "functions": 15,
+        "ccAvg": 8.7,
+        "ccMax": 61,
+        "satd": 1,
+        "longFunctions": 2,
+        "maxFunctionLength": 107,
+        "maxNesting": 7,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 339,
+            "marker": "TODO",
+            "text": "TODO: Make this strongly-typed (no `any`)."
+          }
+        ],
+        "topComplexFunctions": [
+          {
+            "name": "deepMergeInternal",
+            "startLine": 340,
+            "endLine": 498,
+            "length": 107,
+            "cc": 61,
+            "nesting": 7
+          },
+          {
+            "name": "appendSearchParameters",
+            "startLine": 273,
+            "endLine": 337,
+            "length": 52,
+            "cc": 17,
+            "nesting": 5
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "deepMergeInternal",
+            "startLine": 340,
+            "endLine": 498,
+            "length": 107,
+            "cc": 61,
+            "nesting": 7
+          },
+          {
+            "name": "appendSearchParameters",
+            "startLine": 273,
+            "endLine": 337,
+            "length": 52,
+            "cc": 17,
+            "nesting": 5
+          }
+        ],
+        "functions": [
+          {
+            "name": "replaceOption",
+            "startLine": 53,
+            "endLine": 61,
+            "length": 8,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "validateAndMerge",
+            "startLine": 63,
+            "endLine": 71,
+            "length": 8,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "mergeHeaders",
+            "startLine": 73,
+            "endLine": 86,
+            "length": 11,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "isPlainObject",
+            "startLine": 88,
+            "endLine": 95,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "cloneShallow",
+            "startLine": 100,
+            "endLine": 122,
+            "length": 18,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "cloneDeep",
+            "startLine": 129,
+            "endLine": 167,
+            "length": 31,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "create",
+            "startLine": 150,
+            "endLine": 150,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "toHeaderObject",
+            "startLine": 170,
+            "endLine": 184,
+            "length": 11,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "mergeHeaderContainers",
+            "startLine": 188,
+            "endLine": 196,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "newHookValue",
+            "startLine": 198,
+            "endLine": 216,
+            "length": 13,
+            "cc": 10,
+            "nesting": 1
+          },
+          {
+            "name": "mergeHooks",
+            "startLine": 218,
+            "endLine": 231,
+            "length": 12,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "resolveItemMarkers",
+            "startLine": 238,
+            "endLine": 250,
+            "length": 11,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "resolveReplaceMarkers",
+            "startLine": 256,
+            "endLine": 271,
+            "length": 13,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "appendSearchParameters",
+            "startLine": 273,
+            "endLine": 337,
+            "length": 52,
+            "cc": 17,
+            "nesting": 5
+          },
+          {
+            "name": "deepMergeInternal",
+            "startLine": 340,
+            "endLine": 498,
+            "length": 107,
+            "cc": 61,
+            "nesting": 7
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 245,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función deepMergeInternal tiene complejidad ciclomática 61 (muy alta, > 20).",
+          "Anidamiento de hasta 7 niveles.",
+          "La función deepMergeInternal ocupa 107 líneas.",
+          "1 comentario(s) de deuda auto-admitida."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función deepMergeInternal tiene CC=61), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (deepMergeInternal, 107 líneas) que mezclan varios pasos en un solo bloque. Además, contiene 1 marca(s) de trabajo pendiente dejadas por el propio equipo (TODO). [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir deepMergeInternal en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 61 · función de 107 líneas · 1 SATD",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 1
+    },
+    {
+      "id": 4,
+      "path": "source/core/Ky.ts",
+      "language": "javascript",
+      "score": 4.6,
+      "level": "MEDIA",
+      "severity": 5,
+      "scoreParts": {
+        "cc": 0.6,
+        "satd": 0,
+        "dup": 0,
+        "llm": 4
+      },
+      "norm": {
+        "cc": 2.41,
+        "satd": 0,
+        "dup": 0,
+        "size": 9.25
+      },
+      "metrics": {
+        "loc": 1144,
+        "totalLines": 1377,
+        "functions": 58,
+        "ccAvg": 5.1,
+        "ccMax": 40,
+        "satd": 0,
+        "longFunctions": 5,
+        "maxFunctionLength": 99,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "constructor",
+            "startLine": 458,
+            "endLine": 588,
+            "length": 99,
+            "cc": 40,
+            "nesting": 3
+          },
+          {
+            "name": "calculateRetryDelay",
+            "startLine": 688,
+            "endLine": 763,
+            "length": 53,
+            "cc": 21,
+            "nesting": 3
+          },
+          {
+            "name": "retryFromError",
+            "startLine": 1125,
+            "endLine": 1216,
+            "length": 61,
+            "cc": 15,
+            "nesting": 3
+          },
+          {
+            "name": "run",
+            "startLine": 590,
+            "endLine": 663,
+            "length": 48,
+            "cc": 14,
+            "nesting": 3
+          },
+          {
+            "name": "applySearchParameters",
+            "startLine": 280,
+            "endLine": 309,
+            "length": 26,
+            "cc": 11,
+            "nesting": 3
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "constructor",
+            "startLine": 458,
+            "endLine": 588,
+            "length": 99,
+            "cc": 40,
+            "nesting": 3
+          },
+          {
+            "name": "create",
+            "startLine": 349,
+            "endLine": 436,
+            "length": 62,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "retryFromError",
+            "startLine": 1125,
+            "endLine": 1216,
+            "length": 61,
+            "cc": 15,
+            "nesting": 3
+          },
+          {
+            "name": "raceWithTotalTimeout",
+            "startLine": 931,
+            "endLine": 1005,
+            "length": 60,
+            "cc": 11,
+            "nesting": 3
+          },
+          {
+            "name": "calculateRetryDelay",
+            "startLine": 688,
+            "endLine": 763,
+            "length": 53,
+            "cc": 21,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "raceWithTimeout",
+            "startLine": 72,
+            "endLine": 79,
+            "length": 8,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "timeoutId",
+            "startLine": 73,
+            "endLine": 75,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 76,
+            "endLine": 78,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "cancelReturnedBody",
+            "startLine": 83,
+            "endLine": 87,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "releaseWhenSettled",
+            "startLine": 90,
+            "endLine": 94,
+            "length": 5,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "releaseWhenSettled",
+            "startLine": 91,
+            "endLine": 93,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "createTextDecoder",
+            "startLine": 101,
+            "endLine": 111,
+            "length": 10,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "isJsonContentType",
+            "startLine": 113,
+            "endLine": 133,
+            "length": 14,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "readResponseText",
+            "startLine": 136,
+            "endLine": 195,
+            "length": 48,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "readAll",
+            "startLine": 160,
+            "endLine": 187,
+            "length": 23,
+            "cc": 7,
+            "nesting": 3
+          },
+          {
+            "name": "validateTimeoutOption",
+            "startLine": 202,
+            "endLine": 215,
+            "length": 11,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "validateCallbackOptions",
+            "startLine": 221,
+            "endLine": 232,
+            "length": 11,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "resolveInput",
+            "startLine": 246,
+            "endLine": 270,
+            "length": 20,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "deleteSearchParameter",
+            "startLine": 273,
+            "endLine": 277,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "applySearchParameters",
+            "startLine": 280,
+            "endLine": 309,
+            "length": 26,
+            "cc": 11,
+            "nesting": 3
+          },
+          {
+            "name": "cloneInitHookOptions",
+            "startLine": 312,
+            "endLine": 327,
+            "length": 11,
+            "cc": 2,
+            "nesting": 2
+          },
+          {
+            "name": "mergeHeaderContainers",
+            "startLine": 318,
+            "endLine": 318,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "validateJsonWithSchema",
+            "startLine": 329,
+            "endLine": 346,
+            "length": 14,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "create",
+            "startLine": 349,
+            "endLine": 436,
+            "length": 62,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "result",
+            "startLine": 359,
+            "endLine": 378,
+            "length": 15,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "mimeType",
+            "startLine": 383,
+            "endLine": 432,
+            "length": 35,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 406,
+            "endLine": 417,
+            "length": 9,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "constructor",
+            "startLine": 458,
+            "endLine": 588,
+            "length": 99,
+            "cc": 40,
+            "nesting": 3
+          },
+          {
+            "name": "run",
+            "startLine": 590,
+            "endLine": 663,
+            "length": 48,
+            "cc": 14,
+            "nesting": 3
+          },
+          {
+            "name": "calculateDelay",
+            "startLine": 665,
+            "endLine": 686,
+            "length": 16,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "calculateRetryDelay",
+            "startLine": 688,
+            "endLine": 763,
+            "length": 53,
+            "cc": 21,
+            "nesting": 3
+          },
+          {
+            "name": "decorateResponse",
+            "startLine": 765,
+            "endLine": 780,
+            "length": 11,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "throwProcessedError",
+            "startLine": 783,
+            "endLine": 812,
+            "length": 21,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "getResponseData",
+            "startLine": 814,
+            "endLine": 853,
+            "length": 28,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "throwIfTotalTimeoutReached",
+            "startLine": 819,
+            "endLine": 825,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "getErrorDataTimeout",
+            "startLine": 855,
+            "endLine": 866,
+            "length": 11,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "getEffectiveTimeout",
+            "startLine": 869,
+            "endLine": 877,
+            "length": 8,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "raceBodyRead",
+            "startLine": 881,
+            "endLine": 929,
+            "length": 35,
+            "cc": 10,
+            "nesting": 4
+          },
+          {
+            "name": "raceWithTotalTimeout",
+            "startLine": 931,
+            "endLine": 1005,
+            "length": 60,
+            "cc": 11,
+            "nesting": 3
+          },
+          {
+            "name": "abortPromise",
+            "startLine": 945,
+            "endLine": 957,
+            "length": 9,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "abortListener",
+            "startLine": 950,
+            "endLine": 953,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "timeoutPromise",
+            "startLine": 964,
+            "endLine": 968,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "timeoutPromise",
+            "startLine": 965,
+            "endLine": 967,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "parseJson",
+            "startLine": 1008,
+            "endLine": 1011,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "createManagedSignal",
+            "startLine": 1013,
+            "endLine": 1017,
+            "length": 5,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "shouldThrowHttpErrors",
+            "startLine": 1020,
+            "endLine": 1028,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "sentRequest",
+            "startLine": 1031,
+            "endLine": 1033,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "throwIfTotalTimeoutExhausted",
+            "startLine": 1035,
+            "endLine": 1039,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "runBeforeRequestHooks",
+            "startLine": 1041,
+            "endLine": 1063,
+            "length": 19,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "runAfterResponseHooks",
+            "startLine": 1065,
+            "endLine": 1115,
+            "length": 36,
+            "cc": 7,
+            "nesting": 3
+          },
+          {
+            "name": "retry",
+            "startLine": 1117,
+            "endLine": 1123,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "retryFromError",
+            "startLine": 1125,
+            "endLine": 1216,
+            "length": 61,
+            "cc": 15,
+            "nesting": 3
+          },
+          {
+            "name": "fetch",
+            "startLine": 1218,
+            "endLine": 1274,
+            "length": 41,
+            "cc": 9,
+            "nesting": 3
+          },
+          {
+            "name": "throwIfAbortedByUser",
+            "startLine": 1277,
+            "endLine": 1279,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "getRemainingTotalTimeout",
+            "startLine": 1282,
+            "endLine": 1284,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "applyBeforeRetryOptions",
+            "startLine": 1287,
+            "endLine": 1305,
+            "length": 16,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "getNormalizedOptions",
+            "startLine": 1307,
+            "endLine": 1328,
+            "length": 19,
+            "cc": 2,
+            "nesting": 2
+          },
+          {
+            "name": "assignRequest",
+            "startLine": 1330,
+            "endLine": 1339,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "withManagedSignal",
+            "startLine": 1342,
+            "endLine": 1352,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "getResponseRequest",
+            "startLine": 1355,
+            "endLine": 1357,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "setResponseRequest",
+            "startLine": 1359,
+            "endLine": 1362,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "limitResponseSize",
+            "startLine": 1364,
+            "endLine": 1367,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapRequestWithUploadProgress",
+            "startLine": 1369,
+            "endLine": 1375,
+            "length": 6,
+            "cc": 4,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 763,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función constructor tiene complejidad ciclomática 40 (muy alta, > 20).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función constructor ocupa 99 líneas (> 50).",
+          "Archivo extenso: 1144 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función constructor tiene CC=40), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (constructor, 99 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir constructor en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 40 · función de 99 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 2
+    },
+    {
+      "id": 2,
+      "path": "source/utils/normalize.ts",
+      "language": "javascript",
+      "score": 3.5,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 4.58
+      },
+      "metrics": {
+        "loc": 81,
+        "totalLines": 101,
+        "functions": 1,
+        "ccAvg": 18,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 49,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "normalizeRetryOptions",
+            "startLine": 37,
+            "endLine": 100,
+            "length": 49,
+            "cc": 18,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "normalizeRetryOptions",
+            "startLine": 37,
+            "endLine": 100,
+            "length": 49,
+            "cc": 18,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 53,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función normalizeRetryOptions tiene complejidad ciclomática 18 (> 10)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función normalizeRetryOptions tiene CC=18), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir normalizeRetryOptions en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 18",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 3
+    },
+    {
+      "id": 3,
+      "path": "source/utils/is-network-error.ts",
+      "language": "javascript",
+      "score": 2.8,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 1.76,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 7.06,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.96
+      },
+      "metrics": {
+        "loc": 38,
+        "totalLines": 47,
+        "functions": 1,
+        "ccAvg": 13,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 21,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "isRawNetworkError",
+            "startLine": 15,
+            "endLine": 46,
+            "length": 21,
+            "cc": 13,
+            "nesting": 1
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "isRawNetworkError",
+            "startLine": 15,
+            "endLine": 46,
+            "length": 21,
+            "cc": 13,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 17,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función isRawNetworkError tiene complejidad ciclomática 13 (> 10)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función isRawNetworkError tiene CC=13), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir isRawNetworkError en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 13",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 4
+    },
+    {
+      "id": 5,
+      "path": "source/errors/ForceRetryError.ts",
+      "language": "javascript",
+      "score": 2.5,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 1.47,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 5.88,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.15
+      },
+      "metrics": {
+        "loc": 43,
+        "totalLines": 53,
+        "functions": 1,
+        "ccAvg": 11,
+        "ccMax": 11,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 23,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "constructor",
+            "startLine": 17,
+            "endLine": 51,
+            "length": 23,
+            "cc": 11,
+            "nesting": 1
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "constructor",
+            "startLine": 17,
+            "endLine": 51,
+            "length": 23,
+            "cc": 11,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 22,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función constructor tiene complejidad ciclomática 11 (> 10)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función constructor tiene CC=11), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir constructor en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 11",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 5
+    },
+    {
+      "id": 6,
+      "path": "source/core/retry-timing.ts",
+      "language": "javascript",
+      "score": 2,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 0.96,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 3.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.23
+      },
+      "metrics": {
+        "loc": 149,
+        "totalLines": 174,
+        "functions": 4,
+        "ccAvg": 7.5,
+        "ccMax": 12,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 56,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "createTimestamp",
+            "startLine": 51,
+            "endLine": 84,
+            "length": 30,
+            "cc": 12,
+            "nesting": 1
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "parseDate",
+            "startLine": 88,
+            "endLine": 149,
+            "length": 56,
+            "cc": 7,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "getRetryTimingHeader",
+            "startLine": 25,
+            "endLine": 49,
+            "length": 20,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "createTimestamp",
+            "startLine": 51,
+            "endLine": 84,
+            "length": 30,
+            "cc": 12,
+            "nesting": 1
+          },
+          {
+            "name": "parseDate",
+            "startLine": 88,
+            "endLine": 149,
+            "length": 56,
+            "cc": 7,
+            "nesting": 3
+          },
+          {
+            "name": "calculateRetryTimingDelay",
+            "startLine": 151,
+            "endLine": 173,
+            "length": 17,
+            "cc": 5,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 115,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función createTimestamp tiene complejidad ciclomática 12 (> 10).",
+          "La función parseDate ocupa 56 líneas (> 50)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función createTimestamp tiene CC=12), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (parseDate, 56 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir createTimestamp en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 12 · función de 56 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 6
+    },
+    {
+      "id": 8,
+      "path": "source/utils/body.ts",
+      "language": "javascript",
+      "score": 1.5,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 0.51,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 2.06,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.83
+      },
+      "metrics": {
+        "loc": 202,
+        "totalLines": 243,
+        "functions": 13,
+        "ccAvg": 4.5,
+        "ccMax": 12,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 41,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "getBodySize",
+            "startLine": 29,
+            "endLine": 76,
+            "length": 35,
+            "cc": 12,
+            "nesting": 3
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "cancelBody",
+            "startLine": 15,
+            "endLine": 20,
+            "length": 6,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "getBodySize",
+            "startLine": 29,
+            "endLine": 76,
+            "length": 35,
+            "cc": 12,
+            "nesting": 3
+          },
+          {
+            "name": "withProgress",
+            "startLine": 78,
+            "endLine": 110,
+            "length": 24,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "transform",
+            "startLine": 83,
+            "endLine": 103,
+            "length": 13,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "flush",
+            "startLine": 104,
+            "endLine": 108,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "copyResponseMetadata",
+            "startLine": 112,
+            "endLine": 164,
+            "length": 41,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "value",
+            "startLine": 126,
+            "endLine": 132,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "value",
+            "startLine": 149,
+            "endLine": 157,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "wrappableBody",
+            "startLine": 167,
+            "endLine": 174,
+            "length": 7,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "limitResponseSize",
+            "startLine": 176,
+            "endLine": 198,
+            "length": 20,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "transform",
+            "startLine": 186,
+            "endLine": 194,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "streamResponse",
+            "startLine": 200,
+            "endLine": 214,
+            "length": 11,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "streamRequest",
+            "startLine": 217,
+            "endLine": 242,
+            "length": 20,
+            "cc": 9,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 129,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función getBodySize tiene complejidad ciclomática 12 (> 10)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función getBodySize tiene CC=12), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir getBodySize en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 12",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 7
+    },
+    {
+      "id": 7,
+      "path": "source/types/ResponsePromise.ts",
+      "language": "javascript",
+      "score": 1.5,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 0,
+        "satd": 1.5,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 10,
+        "dup": 0,
+        "size": 0
+      },
+      "metrics": {
+        "loc": 53,
+        "totalLines": 72,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 1,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 23,
+            "marker": "TODO",
+            "text": "TODO: Use `json<T extends JSONValue>(): Promise<T>;` when it's fixed in TS."
+          }
+        ],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 10,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "1 comentario(s) de deuda auto-admitida."
+        ],
+        "explicacion": "Este archivo contiene 1 marca(s) de trabajo pendiente dejadas por el propio equipo (TODO). [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Convertir cada TODO/FIXME en una tarea rastreada (issue) con responsable, o resolverlo si es de bajo esfuerzo.",
+        "resumen": "1 SATD",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 8
+    },
+    {
+      "id": 9,
+      "path": "source/utils/options.ts",
+      "language": "javascript",
+      "score": 0.7,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 0.74,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 2.94,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.96
+      },
+      "metrics": {
+        "loc": 51,
+        "totalLines": 62,
+        "functions": 2,
+        "ccAvg": 6,
+        "ccMax": 8,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 21,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "findUnknownOptions",
+            "startLine": 7,
+            "endLine": 30,
+            "length": 14,
+            "cc": 4,
+            "nesting": 3
+          },
+          {
+            "name": "hasSearchParameters",
+            "startLine": 32,
+            "endLine": 61,
+            "length": 21,
+            "cc": 8,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 26,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 9
+    },
+    {
+      "id": 10,
+      "path": "source/errors/NonError.ts",
+      "language": "javascript",
+      "score": 0.5,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 0.51,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 2.06,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.21
+      },
+      "metrics": {
+        "loc": 30,
+        "totalLines": 38,
+        "functions": 2,
+        "ccAvg": 4.5,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 13,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "wrap",
+            "startLine": 12,
+            "endLine": 14,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "constructor",
+            "startLine": 19,
+            "endLine": 36,
+            "length": 13,
+            "cc": 7,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 15,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 10
+    }
+  ],
+  "fileMetrics": [
+    {
+      "path": "source/core/constants.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 259,
+        "totalLines": 308,
+        "functions": 4,
+        "ccAvg": 2.5,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 22,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.88,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.06
+      }
+    },
+    {
+      "path": "source/core/Ky.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 1144,
+        "totalLines": 1377,
+        "functions": 58,
+        "ccAvg": 5.1,
+        "ccMax": 40,
+        "satd": 0,
+        "longFunctions": 5,
+        "maxFunctionLength": 99,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.41,
+        "satd": 0,
+        "dup": 0,
+        "size": 9.25
+      }
+    },
+    {
+      "path": "source/core/retry-timing.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 149,
+        "totalLines": 174,
+        "functions": 4,
+        "ccAvg": 7.5,
+        "ccMax": 12,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 56,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.23
+      }
+    },
+    {
+      "path": "source/errors/ForceRetryError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 43,
+        "totalLines": 53,
+        "functions": 1,
+        "ccAvg": 11,
+        "ccMax": 11,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 23,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.88,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.15
+      }
+    },
+    {
+      "path": "source/errors/HTTPError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 27,
+        "totalLines": 35,
+        "functions": 1,
+        "ccAvg": 5,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.35,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.93
+      }
+    },
+    {
+      "path": "source/errors/KyError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 11,
+        "totalLines": 15,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.28
+      }
+    },
+    {
+      "path": "source/errors/NetworkError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 15,
+        "totalLines": 20,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 4,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.37
+      }
+    },
+    {
+      "path": "source/errors/NonError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 30,
+        "totalLines": 38,
+        "functions": 2,
+        "ccAvg": 4.5,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 13,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.06,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.21
+      }
+    },
+    {
+      "path": "source/errors/ResponseSizeError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 26,
+        "totalLines": 31,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.47
+      }
+    },
+    {
+      "path": "source/errors/SchemaValidationError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 27,
+        "totalLines": 34,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 4,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.37
+      }
+    },
+    {
+      "path": "source/errors/TimeoutError.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 13,
+        "totalLines": 16,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 4,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.37
+      }
+    },
+    {
+      "path": "source/index.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 98,
+        "totalLines": 115,
+        "functions": 3,
+        "ccAvg": 2.3,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 16,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.76,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.5
+      }
+    },
+    {
+      "path": "source/types/common.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 5,
+        "totalLines": 7,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/hooks.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 333,
+        "totalLines": 425,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/ky.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 155,
+        "totalLines": 206,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/options.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 421,
+        "totalLines": 556,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/request.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 4,
+        "totalLines": 5,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/response.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 4,
+        "totalLines": 5,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/ResponsePromise.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 53,
+        "totalLines": 72,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 1,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 10,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/retry.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 141,
+        "totalLines": 190,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/types/standard-schema.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 41,
+        "totalLines": 49,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/utils/body.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 202,
+        "totalLines": 243,
+        "functions": 13,
+        "ccAvg": 4.5,
+        "ccMax": 12,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 41,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.06,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.83
+      }
+    },
+    {
+      "path": "source/utils/delay.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 24,
+        "totalLines": 30,
+        "functions": 4,
+        "ccAvg": 1.3,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 16,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.18,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.5
+      }
+    },
+    {
+      "path": "source/utils/is-network-error.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 38,
+        "totalLines": 47,
+        "functions": 1,
+        "ccAvg": 13,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 21,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 7.06,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.96
+      }
+    },
+    {
+      "path": "source/utils/is.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 18,
+        "totalLines": 25,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "source/utils/merge.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 416,
+        "totalLines": 502,
+        "functions": 15,
+        "ccAvg": 8.7,
+        "ccMax": 61,
+        "satd": 1,
+        "longFunctions": 2,
+        "maxFunctionLength": 107,
+        "maxNesting": 7,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 4.53,
+        "satd": 10,
+        "dup": 0,
+        "size": 10
+      }
+    },
+    {
+      "path": "source/utils/normalize.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 81,
+        "totalLines": 101,
+        "functions": 1,
+        "ccAvg": 18,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 49,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 4.58
+      }
+    },
+    {
+      "path": "source/utils/options.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 51,
+        "totalLines": 62,
+        "functions": 2,
+        "ccAvg": 6,
+        "ccMax": 8,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 21,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.94,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.96
+      }
+    },
+    {
+      "path": "source/utils/timeout.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 39,
+        "totalLines": 47,
+        "functions": 4,
+        "ccAvg": 1.5,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 23,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.29,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.15
+      }
+    },
+    {
+      "path": "source/utils/type-guards.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 133,
+        "totalLines": 156,
+        "functions": 6,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.28
+      }
+    },
+    {
+      "path": "source/utils/types.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 3,
+        "totalLines": 4,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    }
+  ]
+}

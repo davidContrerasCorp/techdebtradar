@@ -1,11 +1,130 @@
 \section{Análisis de resultados}
+\label{sec:resultados}
 
-\begin{tcolorbox}[colback=yellow!10!white,colframe=red!75!black,title=Recomendaciones]
-Detallar los resultados
-  \begin{itemize}
-      \item ¿Cuáles son los dos mejores casos de prueba? (Secuencia de entradas y salidas esperadas y logradas)
-      \item ¿Cuál es el caso de prueba más significativo? (Además de la secuencia de entradas y salidas, analicen el resultado)
-  \end{itemize}
+En este hito el prototipo funcional (MVP) está implementado de extremo a extremo (ver Sección \ref{sec:implementacion}): recibe la URL de un repositorio público de GitHub, lo clona, calcula las métricas estáticas, selecciona el top-$N$, obtiene la evaluación de cada archivo (explicación, severidad y sugerencia), calcula el \textit{score} y muestra la lista priorizada en las tres pantallas del prototipo. Las pruebas se organizaron en tres niveles: (1) pruebas automáticas con un repositorio de prueba cuyas métricas conocemos de antemano, (2) validación de la métrica de complejidad contra una herramienta de referencia sobre repositorios reales, y (3) análisis de extremo a extremo de seis repositorios públicos.
+
+\begin{tcolorbox}[colback=yellow!10!white,colframe=red!75!black,title=Estado de la evaluación (leer antes de entregar)]
+Los resultados de esta sección se obtuvieron con el \textbf{evaluador heurístico} del sistema (reglas sobre las métricas, sin LLM), porque al momento de la ejecución no había credenciales de la API de Claude configuradas. El componente LLM está implementado y probado con un cliente simulado (Sección \ref{sec:implementacion}), pero sus resultados sobre repositorios reales y la evaluación humana de los objetivos 2, 3 y 4 están \textbf{pendientes}. Para completarlos: definir \texttt{ANTHROPIC\_API\_KEY}, ejecutar \texttt{npm run evaluate}, llenar las plantillas \texttt{eval/anthropic/ratings-template.csv} y \texttt{ranking-template.csv}, y ejecutar \texttt{npm run spearman -- ../eval/anthropic}. Reemplazar este recuadro y las marcas \textbf{[PENDIENTE]} con los resultados obtenidos.
 \end{tcolorbox}
 
-\pagebreak
+\subsection{Cumplimiento de los objetivos específicos}
+
+\begin{table}[H]
+\centering
+\caption{Estado de los criterios de éxito definidos en la Tabla \ref{tab:objetivos}}
+\label{tab:cumplimiento}
+\begin{tabular}{p{0.28\textwidth} p{0.46\textwidth} p{0.16\textwidth}}
+\toprule
+\textbf{Objetivo} & \textbf{Resultado medido} & \textbf{Estado} \\
+\midrule
+1. Métricas sin error en el 100\,\% de los archivos de $\geq 5$ repositorios & 263 archivos soportados en 6 repositorios (3 Python, 2 JavaScript, 1 TypeScript), 0 archivos con error. Exactitud de la complejidad validada contra ESLint (Tabla \ref{tab:validacion-cc}). & Cumple \\[4pt]
+2. $\geq 70\,\%$ de 20 hallazgos ``claros y relevantes'' (Likert promedio $\geq 4$) & Plantilla de 20 hallazgos generada (\texttt{ratings-template.csv}); falta ejecutar con el LLM y calificar. & \textbf{[PENDIENTE]} \\[4pt]
+3. Spearman $\geq 0.7$ entre el orden del sistema y el manual (20 archivos, 3 repos) & Plantilla ciega de 20 archivos de \texttt{psf/requests}, \texttt{expressjs/express} y \texttt{sindresorhus/ky} generada; falta el orden manual. & \textbf{[PENDIENTE]} \\[4pt]
+4. Un usuario externo completa el flujo sin instrucciones & El flujo analizar $\to$ priorizar $\to$ entender funciona de extremo a extremo (verificado en navegador de escritorio y en vista móvil); falta la prueba con un usuario externo. & \textbf{[PENDIENTE]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Los dos mejores casos de prueba}
+
+\subsubsection*{Caso 1: repositorio de prueba controlado (métricas conocidas de antemano)}
+
+Construimos un repositorio pequeño (\texttt{mvp/test/fixtures/sample-repo}) con deuda técnica intencional y calculamos a mano el valor esperado de cada métrica. La entrada es el conjunto de archivos; la salida esperada y la lograda se resumen en la Tabla \ref{tab:caso1}. Este caso hace parte de la batería de 42 pruebas automáticas del MVP (\texttt{npm test}), que pasan en su totalidad.
+
+\begin{table}[H]
+\centering
+\caption{Caso 1: entradas, salidas esperadas y logradas sobre el repositorio de prueba}
+\label{tab:caso1}
+\begin{tabular}{p{0.30\textwidth} p{0.40\textwidth} p{0.08\textwidth} p{0.08\textwidth}}
+\toprule
+\textbf{Entrada} & \textbf{Qué se verifica} & \textbf{Esperado} & \textbf{Logrado} \\
+\midrule
+\texttt{orders.py}: \texttt{process\_order} & CC: \texttt{if}, \texttt{for}, \texttt{if}, \texttt{and}, \texttt{if}, \texttt{or}, \texttt{elif}, \texttt{while}, \texttt{except} (+1); las palabras dentro de un string no cuentan & 10 & 10 \\[3pt]
+\texttt{cart.js}: \texttt{cartTotal} & CC con \texttt{for}, \texttt{if}, \texttt{\&\&}, \texttt{else if}, \texttt{||}, ternario; \texttt{?.} y una regex con palabras clave no cuentan & 7 & 7 \\[3pt]
+\texttt{cart.js}: \texttt{applyCoupon} & CC de \texttt{switch} con 2 \texttt{case}, \texttt{default} y \texttt{??} & 4 & 4 \\[3pt]
+\texttt{util.ts}: \texttt{clamp<T>} & CC en TypeScript con genéricos y parámetros opcionales (\texttt{min?:} no es un ternario) & 5 & 5 \\[3pt]
+\texttt{orders.py} & SATD: \texttt{TODO} y \texttt{FIXME} en comentarios; el \texttt{TODO} dentro del \textit{docstring} no cuenta & 2 & 2 \\[3pt]
+\texttt{customers.py} & Duplicación: 8 de 11 líneas significativas repetidas en \texttt{orders.py} & 72.7\,\% & 72.7\,\% \\[3pt]
+Repositorio completo & Exclusiones: \texttt{node\_modules/}, \texttt{*.min.js} y \texttt{tests/} no se analizan & 4 arch. & 4 arch. \\[3pt]
+Repositorio completo & Prioridad: \texttt{orders.py} (mayor CC, \texttt{FIXME}, duplicación) queda primero; \texttt{util.ts} (sin señales) no aparece & 1.º & 1.º \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Además, el caso incluye la verificación de que el desglose del \textit{score} de cada hallazgo suma exactamente el \textit{score} mostrado, y de que si la llamada al LLM falla para un archivo, ese archivo se evalúa con el respaldo heurístico y la interfaz lo indica, sin interrumpir el análisis.
+
+\subsubsection*{Caso 2: validación de la complejidad ciclomática contra ESLint}
+
+Como el analizador de complejidad es propio (Sección \ref{sec:implementacion}), no basta con que funcione en ejemplos construidos por nosotros. Lo comparamos función por función contra la regla \texttt{complexity} de ESLint \parencite{ESLintComplexity}, que usa un analizador sintáctico (AST) completo, sobre tres repositorios reales de JavaScript/TypeScript. La entrada es la URL de cada repositorio; la salida esperada es la CC de ESLint para cada función y la lograda es la de TechDebtRadar (\texttt{scripts/validate-cc.js}, resultados en \texttt{eval/cc-validation.json}).
+
+\begin{table}[H]
+\centering
+\caption{Caso 2: complejidad ciclomática de TechDebtRadar frente a ESLint}
+\label{tab:validacion-cc}
+\small
+\begin{tabular}{p{0.20\textwidth} r r r r r r c}
+\toprule
+\textbf{Repositorio} & \textbf{Func.} & \textbf{Emparej.} & \textbf{Exactas} & \textbf{$\pm 1$} & \textbf{MAE} & \textbf{$\rho$} & \textbf{CC$>$10 (T/E/ambos)} \\
+\midrule
+expressjs/express & 275 & 274 & 98.5\,\% & 99.6\,\% & 0.02 & 0.986 & 3 / 3 / 3 \\
+axios/axios & 654 & 522 & 94.6\,\% & 97.9\,\% & 0.08 & 0.987 & 37 / 38 / 37 \\
+sindresorhus/ky & 218 & 135 & 79.3\,\% & 93.3\,\% & 0.47 & 0.977 & 13 / 14 / 13 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+En los tres repositorios la correlación de rangos es $\rho \geq 0.977$ y, lo más importante para el propósito del sistema, de las funciones que ESLint marca como complejas (CC $> 10$) TechDebtRadar identifica 53 de 55, y todas las funciones que TechDebtRadar marca como complejas también lo son para ESLint. La cobertura del emparejamiento es menor en \texttt{axios} y \texttt{ky} porque TechDebtRadar no separa las funciones flecha de una sola expresión (\texttt{x => x.y}): su complejidad se suma a la función que las contiene. Las diferencias restantes son esperables por definición: ESLint 9 también cuenta valores por defecto de parámetros y encadenamiento opcional, mientras que TechDebtRadar sigue la definición clásica de McCabe \parencite{McCabe1976}, igual que radon y lizard.
+
+\subsection{Caso de prueba más significativo: análisis de extremo a extremo de \texttt{psf/requests}}
+
+El caso más significativo es el uso real del sistema: un usuario pega \texttt{github.com/psf/requests} (commit \texttt{3c7baaa}) en la pantalla 1. El sistema clonó el repositorio, analizó 22 archivos de Python (5.557 líneas de código; omitió 1 archivo de pruebas y 2 rutas excluidas por las reglas de archivos generados), encontró 9 comentarios SATD y devolvió la lista priorizada en 3.7 segundos. La Tabla \ref{tab:requests} muestra los primeros puestos.
+
+\begin{table}[H]
+\centering
+\caption{Caso más significativo: lista priorizada de \texttt{psf/requests} (evaluador heurístico)}
+\label{tab:requests}
+\small
+\begin{tabular}{c p{0.25\textwidth} r r r r r c}
+\toprule
+\textbf{\#} & \textbf{Archivo} & \textbf{CC prom.} & \textbf{CC máx.} & \textbf{SATD} & \textbf{Sev.} & \textbf{Score} & \textbf{Nivel} \\
+\midrule
+1 & models.py & 3.9 & 21 & 2 & 5 & 7.2 & ALTA \\
+2 & utils.py & 4.3 & 19 & 0 & 4 & 5.5 & MEDIA \\
+3 & adapters.py & 3.7 & 19 & 1 & 3 & 4.5 & MEDIA \\
+4 & sessions.py & 3.9 & 15 & 0 & 3 & 4.2 & MEDIA \\
+5 & auth.py & 2.5 & 19 & 3 & 2 & 3.6 & BAJA \\
+\vdots & & & & & & & \\
+7 & hooks.py & 4.0 & 6 & 1 & 1 & 2.8 & BAJA \\
+9 & status\_codes.py & 4.0 & 6 & 0 & 1 & 2.3 & BAJA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Análisis.} Los cuatro primeros puestos coinciden con lo que un desarrollador que conoce \texttt{requests} señalaría: \texttt{models.py} concentra la construcción de las peticiones (\texttt{\_encode\_files} con CC 21 y \texttt{prepare\_body} con CC 19, más dos comentarios de deuda), y \texttt{adapters.py} y \texttt{sessions.py} contienen \texttt{send} y \texttt{resolve\_redirects}, los métodos con más caminos de ejecución de la librería. La pantalla de detalle permite verificar cada afirmación: muestra el desglose del \textit{score} (por ejemplo, para \texttt{models.py}: $2.20 + 1.00 + 0 + 4.00 = 7.2$) y enlaza a las líneas exactas de GitHub.
+
+El caso también expuso una debilidad de la fórmula propuesta en el Hito 2. \texttt{hooks.py} y \texttt{status\_codes.py} aparecen en la lista con una CC \emph{promedio} (4.0) tan alta como la de \texttt{models.py}, aunque cada uno tiene una sola función de CC 6: al ser archivos pequeños, su promedio no se ``diluye''. En cambio \texttt{auth.py}, que tiene \texttt{build\_digest\_header} con CC 19 y tres comentarios SATD, queda en el puesto 5 porque sus otras funciones son simples y bajan su promedio. Es decir, usar la complejidad \emph{promedio} como $CC$ en la fórmula sesga la prioridad hacia archivos pequeños. Este hallazgo, que no era visible en los ejemplos construidos a mano, es justamente el tipo de evidencia que el Hito 2 anticipó para calibrar la fórmula (ver Sección \ref{sec:conclusiones}).
+
+\textbf{[PENDIENTE]} \textit{Repetir este caso con el componente LLM activo (\texttt{ANTHROPIC\_API\_KEY}) y comparar: (a) si la severidad del LLM corrige el sesgo anterior (p.\,ej. bajando la severidad de \texttt{status\_codes.py}, que es una tabla de constantes), (b) la calidad de las explicaciones frente a las del evaluador heurístico, y (c) el costo en tokens y el tiempo del análisis (reportados en \texttt{eval/anthropic/summary.md}).}
+
+\subsection{Resultados agregados en seis repositorios}
+
+\begin{table}[H]
+\centering
+\caption{Análisis de extremo a extremo de seis repositorios públicos (evaluador heurístico, top-$N$ = 10)}
+\label{tab:eval-repos}
+\small
+\begin{tabular}{p{0.20\textwidth} r r r r c r p{0.22\textwidth}}
+\toprule
+\textbf{Repositorio} & \textbf{Arch.} & \textbf{Error} & \textbf{LOC} & \textbf{SATD} & \textbf{A/M/B} & \textbf{s} & \textbf{Primer puesto} \\
+\midrule
+pallets/flask & 35 & 0 & 8051 & 0 & 0/4/6 & 2.7 & app.py (5.6) \\
+psf/requests & 22 & 0 & 5557 & 9 & 1/3/6 & 3.7 & models.py (7.2) \\
+pallets/click & 32 & 0 & 11329 & 1 & 1/2/7 & 2.2 & core.py (6.8) \\
+expressjs/express & 50 & 0 & 4058 & 0 & 0/0/10 & 1.8 & response.js (3.8) \\
+axios/axios & 93 & 0 & 10366 & 0 & 1/3/6 & 3.5 & adapters/fetch.js (6.8) \\
+sindresorhus/ky & 31 & 0 & 4004 & 2 & 1/1/8 & 1.9 & utils/merge.ts (6.6) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Sin la llamada al LLM, el análisis completo (incluida la clonación) toma entre 2 y 4 segundos por repositorio. Como solo se envían al LLM los $N = 10$ archivos con más señales, el número de llamadas al modelo no depende del tamaño del repositorio, que era el objetivo de la etapa de selección de fragmentos del diseño.

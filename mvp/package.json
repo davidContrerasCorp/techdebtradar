@@ -1,0 +1,27 @@
+{
+  "name": "techdebtradar-mvp",
+  "version": "1.0.0",
+  "description": "TechDebtRadar MVP (Hito 3): detecta, explica y prioriza deuda técnica en repos de GitHub",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test \"test/*.test.js\"",
+    "analyze": "node scripts/analyze-cli.js",
+    "evaluate": "node scripts/evaluate.js",
+    "spearman": "node scripts/spearman.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0",
+    "zod": "^4.6.7"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "typescript-eslint": "^8.73.0"
+  }
+}

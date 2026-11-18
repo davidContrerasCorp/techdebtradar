@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDebtRadar — Analizar repositorio</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="mode-banner" id="mode-banner">Conectando con el servidor…</div>
+
+<header class="app-header">
+  <div class="brand">TechDebtRadar</div>
+  <a class="help-link" href="#" id="help-link">[ ? ayuda ]</a>
+</header>
+
+<main>
+  <div class="panel">
+    <h1>Pega la URL de tu repositorio</h1>
+    <form id="analyze-form">
+      <div class="analyze-row">
+        <input type="text" id="repo-url" placeholder="github.com/usuario/repositorio" autocomplete="off" spellcheck="false">
+        <button type="submit" class="btn btn-primary" id="analyze-btn">Analizar</button>
+      </div>
+      <label class="check"><input type="checkbox" id="force"> Volver a analizar aunque exista un análisis reciente</label>
+    </form>
+    <p class="hint">
+      Repositorio <strong>público</strong> de GitHub en Python o JavaScript/TypeScript. Se analiza la rama
+      principal. Ejemplos:
+      <a href="#" data-example="github.com/pallets/flask">pallets/flask</a> ·
+      <a href="#" data-example="github.com/expressjs/express">expressjs/express</a> ·
+      <a href="#" data-example="github.com/sindresorhus/ky">sindresorhus/ky</a>
+    </p>
+    <div id="home-alert" class="inline-alert"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Análisis recientes</h2>
+    <ul class="recent-list" id="recent-list"></ul>
+    <p class="hint" id="recent-empty" hidden>Todavía no hay análisis. Pega una URL arriba para empezar.</p>
+  </div>
+</main>
+
+<footer class="app-footer">TechDebtRadar — Proyecto de curso PTIA · MVP (Hito 3)</footer>
+
+<script src="js/app.js"></script>
+<script>initHomeScreen();</script>
+</body>
+</html>

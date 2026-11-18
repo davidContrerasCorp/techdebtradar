@@ -1,0 +1,164 @@
+{
+  "generatedAt": "2026-11-18T16:13:39.976Z",
+  "provider": "heuristica",
+  "model": null,
+  "repos": [
+    {
+      "repo": "pallets/flask",
+      "commit": "49943b5",
+      "ok": true,
+      "files": 35,
+      "analyzed": 35,
+      "metricErrors": 0,
+      "coveragePct": 100,
+      "loc": 8051,
+      "satd": 0,
+      "findings": 10,
+      "byLevel": {
+        "ALTA": 0,
+        "MEDIA": 4,
+        "BAJA": 6
+      },
+      "llmErrors": 0,
+      "seconds": 2.7,
+      "tokens": 0,
+      "top3": [
+        "src/flask/app.py (5.6)",
+        "src/flask/cli.py (5.5)",
+        "src/flask/sansio/app.py (4.3)"
+      ]
+    },
+    {
+      "repo": "psf/requests",
+      "commit": "3c7baaa",
+      "ok": true,
+      "files": 22,
+      "analyzed": 22,
+      "metricErrors": 0,
+      "coveragePct": 100,
+      "loc": 5557,
+      "satd": 9,
+      "findings": 10,
+      "byLevel": {
+        "ALTA": 1,
+        "MEDIA": 3,
+        "BAJA": 6
+      },
+      "llmErrors": 0,
+      "seconds": 3.7,
+      "tokens": 0,
+      "top3": [
+        "src/requests/models.py (7.2)",
+        "src/requests/utils.py (5.5)",
+        "src/requests/adapters.py (4.5)"
+      ]
+    },
+    {
+      "repo": "pallets/click",
+      "commit": "08b803c",
+      "ok": true,
+      "files": 32,
+      "analyzed": 32,
+      "metricErrors": 0,
+      "coveragePct": 100,
+      "loc": 11329,
+      "satd": 1,
+      "findings": 10,
+      "byLevel": {
+        "ALTA": 1,
+        "MEDIA": 2,
+        "BAJA": 7
+      },
+      "llmErrors": 0,
+      "seconds": 2.2,
+      "tokens": 0,
+      "top3": [
+        "src/click/core.py (6.8)",
+        "src/click/__init__.py (5.5)",
+        "src/click/testing.py (4.6)"
+      ]
+    },
+    {
+      "repo": "expressjs/express",
+      "commit": "43fca52",
+      "ok": true,
+      "files": 50,
+      "analyzed": 50,
+      "metricErrors": 0,
+      "coveragePct": 100,
+      "loc": 4058,
+      "satd": 0,
+      "findings": 10,
+      "byLevel": {
+        "ALTA": 0,
+        "MEDIA": 0,
+        "BAJA": 10
+      },
+      "llmErrors": 0,
+      "seconds": 1.8,
+      "tokens": 0,
+      "top3": [
+        "lib/response.js (3.8)",
+        "examples/mvc/lib/boot.js (3.5)",
+        "examples/session/index.js (3.3)"
+      ]
+    },
+    {
+      "repo": "axios/axios",
+      "commit": "9f0f4dd",
+      "ok": true,
+      "files": 93,
+      "analyzed": 93,
+      "metricErrors": 0,
+      "coveragePct": 100,
+      "loc": 10366,
+      "satd": 0,
+      "findings": 10,
+      "byLevel": {
+        "ALTA": 1,
+        "MEDIA": 3,
+        "BAJA": 6
+      },
+      "llmErrors": 0,
+      "seconds": 3.5,
+      "tokens": 0,
+      "top3": [
+        "lib/adapters/fetch.js (6.8)",
+        "lib/adapters/http.js (5.6)",
+        "lib/helpers/resolveConfig.js (4.5)"
+      ]
+    },
+    {
+      "repo": "sindresorhus/ky",
+      "commit": "3541888",
+      "ok": true,
+      "files": 31,
+      "analyzed": 31,
+      "metricErrors": 0,
+      "coveragePct": 100,
+      "loc": 4004,
+      "satd": 2,
+      "findings": 10,
+      "byLevel": {
+        "ALTA": 1,
+        "MEDIA": 1,
+        "BAJA": 8
+      },
+      "llmErrors": 0,
+      "seconds": 1.9,
+      "tokens": 0,
+      "top3": [
+        "source/utils/merge.ts (6.6)",
+        "source/core/Ky.ts (4.6)",
+        "source/utils/normalize.ts (3.5)"
+      ]
+    }
+  ],
+  "objective1": {
+    "criterio": "Métricas sin error para el 100% de los archivos soportados de al menos 5 repositorios",
+    "reposAnalizados": 6,
+    "archivosSoportados": 263,
+    "archivosConError": 0,
+    "cumple": true
+  }
+}

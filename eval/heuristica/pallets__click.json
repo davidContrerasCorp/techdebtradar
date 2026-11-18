@@ -1,0 +1,5295 @@
+{
+  "repo": {
+    "slug": "pallets/click",
+    "url": "https://github.com/pallets/click",
+    "branch": "main",
+    "commit": "08b803c"
+  },
+  "summary": {
+    "filesAnalyzed": 32,
+    "filesWithErrors": 0,
+    "errors": [],
+    "languages": [
+      "python"
+    ],
+    "totalLoc": 11329,
+    "totalSatd": 1,
+    "findings": 10,
+    "byLevel": {
+      "ALTA": 1,
+      "MEDIA": 2,
+      "BAJA": 7
+    },
+    "level": "ALTA",
+    "provider": "heuristica",
+    "providersUsed": [
+      "heuristica"
+    ],
+    "llmErrors": 0,
+    "model": null,
+    "weights": {
+      "cc": 0.25,
+      "satd": 0.15,
+      "dup": 0.2,
+      "llm": 0.4
+    },
+    "skipped": {
+      "tooLarge": 0,
+      "excluded": 3,
+      "overLimit": 0,
+      "tests": 1
+    },
+    "durationMs": 2158
+  },
+  "findings": [
+    {
+      "id": 2,
+      "path": "src/click/core.py",
+      "language": "python",
+      "score": 6.8,
+      "level": "ALTA",
+      "severity": 5,
+      "scoreParts": {
+        "cc": 1.29,
+        "satd": 1.5,
+        "dup": 0.06,
+        "llm": 4
+      },
+      "norm": {
+        "cc": 5.17,
+        "satd": 10,
+        "dup": 0.29,
+        "size": 6.95
+      },
+      "metrics": {
+        "loc": 3298,
+        "totalLines": 4019,
+        "functions": 161,
+        "ccAvg": 4.1,
+        "ccMax": 35,
+        "satd": 1,
+        "longFunctions": 7,
+        "maxFunctionLength": 89,
+        "maxNesting": 4,
+        "dupPct": 1
+      },
+      "details": {
+        "satd": [
+          {
+            "line": 2402,
+            "marker": "XXX",
+            "text": "XXX The default historically embed two concepts:"
+          }
+        ],
+        "topComplexFunctions": [
+          {
+            "name": "get_help_extra",
+            "startLine": 3599,
+            "endLine": 3680,
+            "length": 63,
+            "cc": 35,
+            "nesting": 3
+          },
+          {
+            "name": "__init__",
+            "startLine": 368,
+            "endLine": 541,
+            "length": 89,
+            "cc": 28,
+            "nesting": 2
+          },
+          {
+            "name": "main",
+            "startLine": 1506,
+            "endLine": 1640,
+            "length": 57,
+            "cc": 19,
+            "nesting": 4
+          },
+          {
+            "name": "_parse_decls",
+            "startLine": 3434,
+            "endLine": 3499,
+            "length": 58,
+            "cc": 18,
+            "nesting": 4
+          },
+          {
+            "name": "consume_value",
+            "startLine": 3803,
+            "endLine": 3857,
+            "length": 33,
+            "cc": 18,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "__init__",
+            "startLine": 368,
+            "endLine": 541,
+            "length": 89,
+            "cc": 28,
+            "nesting": 2
+          },
+          {
+            "name": "get_help_extra",
+            "startLine": 3599,
+            "endLine": 3680,
+            "length": 63,
+            "cc": 35,
+            "nesting": 3
+          },
+          {
+            "name": "__init__",
+            "startLine": 2397,
+            "endLine": 2476,
+            "length": 59,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "_parse_decls",
+            "startLine": 3434,
+            "endLine": 3499,
+            "length": 58,
+            "cc": 18,
+            "nesting": 4
+          },
+          {
+            "name": "main",
+            "startLine": 1506,
+            "endLine": 1640,
+            "length": 57,
+            "cc": 19,
+            "nesting": 4
+          }
+        ],
+        "functions": [
+          {
+            "name": "_complete_visible_commands",
+            "startLine": 62,
+            "endLine": 78,
+            "length": 10,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "_check_nested_chain",
+            "startLine": 81,
+            "endLine": 98,
+            "length": 16,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "_echo_aborted",
+            "startLine": 101,
+            "endLine": 103,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_outside_click_stacklevel",
+            "startLine": 106,
+            "endLine": 127,
+            "length": 11,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "_format_deprecated_label",
+            "startLine": 130,
+            "endLine": 135,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_format_deprecated_suffix",
+            "startLine": 138,
+            "endLine": 144,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "batch",
+            "startLine": 147,
+            "endLine": 148,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "augment_usage_errors",
+            "startLine": 152,
+            "endLine": 167,
+            "length": 16,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "iter_params_for_processing",
+            "startLine": 170,
+            "endLine": 194,
+            "length": 12,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "sort_key",
+            "startLine": 186,
+            "endLine": 192,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 368,
+            "endLine": 541,
+            "length": 89,
+            "cc": 28,
+            "nesting": 2
+          },
+          {
+            "name": "protected_args",
+            "startLine": 544,
+            "endLine": 553,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 555,
+            "endLine": 574,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__enter__",
+            "startLine": 576,
+            "endLine": 579,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__exit__",
+            "startLine": 581,
+            "endLine": 593,
+            "length": 12,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "scope",
+            "startLine": 596,
+            "endLine": 631,
+            "length": 10,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "meta",
+            "startLine": 634,
+            "endLine": 659,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "make_formatter",
+            "startLine": 661,
+            "endLine": 673,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "with_resource",
+            "startLine": 675,
+            "endLine": 702,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "call_on_close",
+            "startLine": 704,
+            "endLine": 714,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "close",
+            "startLine": 716,
+            "endLine": 721,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_close_with_exception_info",
+            "startLine": 723,
+            "endLine": 739,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "command_path",
+            "startLine": 742,
+            "endLine": 758,
+            "length": 12,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "find_root",
+            "startLine": 760,
+            "endLine": 765,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "find_object",
+            "startLine": 767,
+            "endLine": 777,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "ensure_object",
+            "startLine": 779,
+            "endLine": 786,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_default_map_has",
+            "startLine": 788,
+            "endLine": 800,
+            "length": 8,
+            "cc": 4,
+            "nesting": 0
+          },
+          {
+            "name": "lookup_default",
+            "startLine": 803,
+            "endLine": 805,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "lookup_default",
+            "startLine": 808,
+            "endLine": 810,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "lookup_default",
+            "startLine": 812,
+            "endLine": 832,
+            "length": 9,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "fail",
+            "startLine": 834,
+            "endLine": 840,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "abort",
+            "startLine": 842,
+            "endLine": 844,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "exit",
+            "startLine": 846,
+            "endLine": 854,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_usage",
+            "startLine": 856,
+            "endLine": 860,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_help",
+            "startLine": 862,
+            "endLine": 866,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_make_sub_context",
+            "startLine": 868,
+            "endLine": 874,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "invoke",
+            "startLine": 877,
+            "endLine": 879,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "invoke",
+            "startLine": 882,
+            "endLine": 882,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "invoke",
+            "startLine": 884,
+            "endLine": 934,
+            "length": 24,
+            "cc": 7,
+            "nesting": 4
+          },
+          {
+            "name": "forward",
+            "startLine": 936,
+            "endLine": 953,
+            "length": 8,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "set_parameter_source",
+            "startLine": 955,
+            "endLine": 962,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_parameter_source",
+            "startLine": 964,
+            "endLine": 980,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 1059,
+            "endLine": 1101,
+            "length": 30,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 1103,
+            "endLine": 1112,
+            "length": 10,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 1114,
+            "endLine": 1115,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_usage",
+            "startLine": 1117,
+            "endLine": 1124,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_params",
+            "startLine": 1126,
+            "endLine": 1180,
+            "length": 44,
+            "cc": 17,
+            "nesting": 3
+          },
+          {
+            "name": "format_usage",
+            "startLine": 1182,
+            "endLine": 1188,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "collect_usage_pieces",
+            "startLine": 1190,
+            "endLine": 1199,
+            "length": 6,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "get_help_option_names",
+            "startLine": 1201,
+            "endLine": 1214,
+            "length": 7,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "get_help_option",
+            "startLine": 1216,
+            "endLine": 1248,
+            "length": 10,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "make_parser",
+            "startLine": 1250,
+            "endLine": 1255,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_help",
+            "startLine": 1257,
+            "endLine": 1264,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_short_help_str",
+            "startLine": 1266,
+            "endLine": 1280,
+            "length": 11,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "format_help",
+            "startLine": 1282,
+            "endLine": 1299,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "format_help_text",
+            "startLine": 1301,
+            "endLine": 1317,
+            "length": 13,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "format_options",
+            "startLine": 1319,
+            "endLine": 1329,
+            "length": 10,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "format_arguments",
+            "startLine": 1331,
+            "endLine": 1342,
+            "length": 6,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "format_epilog",
+            "startLine": 1344,
+            "endLine": 1351,
+            "length": 7,
+            "cc": 2,
+            "nesting": 2
+          },
+          {
+            "name": "make_context",
+            "startLine": 1353,
+            "endLine": 1388,
+            "length": 15,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "parse_args",
+            "startLine": 1390,
+            "endLine": 1421,
+            "length": 21,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "invoke",
+            "startLine": 1423,
+            "endLine": 1437,
+            "length": 12,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "shell_complete",
+            "startLine": 1439,
+            "endLine": 1484,
+            "length": 30,
+            "cc": 15,
+            "nesting": 3
+          },
+          {
+            "name": "main",
+            "startLine": 1487,
+            "endLine": 1494,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "main",
+            "startLine": 1497,
+            "endLine": 1504,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "main",
+            "startLine": 1506,
+            "endLine": 1640,
+            "length": 57,
+            "cc": 19,
+            "nesting": 4
+          },
+          {
+            "name": "_main_shell_completion",
+            "startLine": 1642,
+            "endLine": 1672,
+            "length": 16,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__call__",
+            "startLine": 1674,
+            "endLine": 1676,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__subclasscheck__",
+            "startLine": 1680,
+            "endLine": 1681,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__instancecheck__",
+            "startLine": 1683,
+            "endLine": 1684,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 1753,
+            "endLine": 1806,
+            "length": 42,
+            "cc": 14,
+            "nesting": 3
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 1808,
+            "endLine": 1824,
+            "length": 12,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "add_command",
+            "startLine": 1826,
+            "endLine": 1834,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "command",
+            "startLine": 1837,
+            "endLine": 1837,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "command",
+            "startLine": 1840,
+            "endLine": 1842,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "command",
+            "startLine": 1844,
+            "endLine": 1883,
+            "length": 21,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "decorator",
+            "startLine": 1875,
+            "endLine": 1878,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "group",
+            "startLine": 1886,
+            "endLine": 1886,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "group",
+            "startLine": 1889,
+            "endLine": 1891,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "group",
+            "startLine": 1893,
+            "endLine": 1935,
+            "length": 24,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "decorator",
+            "startLine": 1927,
+            "endLine": 1930,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "result_callback",
+            "startLine": 1937,
+            "endLine": 1980,
+            "length": 13,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "decorator",
+            "startLine": 1966,
+            "endLine": 1978,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "function",
+            "startLine": 1973,
+            "endLine": 1975,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_command",
+            "startLine": 1982,
+            "endLine": 1986,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "list_commands",
+            "startLine": 1988,
+            "endLine": 1990,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "collect_usage_pieces",
+            "startLine": 1992,
+            "endLine": 1995,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "format_options",
+            "startLine": 1997,
+            "endLine": 1999,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "format_commands",
+            "startLine": 2001,
+            "endLine": 2027,
+            "length": 19,
+            "cc": 8,
+            "nesting": 3
+          },
+          {
+            "name": "parse_args",
+            "startLine": 2029,
+            "endLine": 2041,
+            "length": 10,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "invoke",
+            "startLine": 2043,
+            "endLine": 2109,
+            "length": 44,
+            "cc": 8,
+            "nesting": 3
+          },
+          {
+            "name": "_process_result",
+            "startLine": 2044,
+            "endLine": 2047,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "resolve_command",
+            "startLine": 2111,
+            "endLine": 2135,
+            "length": 13,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "shell_complete",
+            "startLine": 2137,
+            "endLine": 2154,
+            "length": 9,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 2182,
+            "endLine": 2190,
+            "length": 8,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "add_source",
+            "startLine": 2192,
+            "endLine": 2194,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_command",
+            "startLine": 2196,
+            "endLine": 2211,
+            "length": 11,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "list_commands",
+            "startLine": 2213,
+            "endLine": 2219,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_check_iter",
+            "startLine": 2222,
+            "endLine": 2229,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__init_subclass__",
+            "startLine": 2383,
+            "endLine": 2395,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 2397,
+            "endLine": 2476,
+            "length": 59,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "_hide_unset",
+            "startLine": 2479,
+            "endLine": 2484,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 2486,
+            "endLine": 2510,
+            "length": 15,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 2512,
+            "endLine": 2513,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_parse_decls",
+            "startLine": 2516,
+            "endLine": 2518,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_check_name_is_usable",
+            "startLine": 2520,
+            "endLine": 2555,
+            "length": 17,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "spec",
+            "startLine": 2558,
+            "endLine": 2571,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "human_readable_name",
+            "startLine": 2574,
+            "endLine": 2591,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_help_spec",
+            "startLine": 2593,
+            "endLine": 2606,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "make_metavar",
+            "startLine": 2608,
+            "endLine": 2620,
+            "length": 9,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "get_default",
+            "startLine": 2623,
+            "endLine": 2625,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_default",
+            "startLine": 2628,
+            "endLine": 2630,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_default",
+            "startLine": 2632,
+            "endLine": 2663,
+            "length": 10,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "add_to_parser",
+            "startLine": 2666,
+            "endLine": 2666,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "consume_value",
+            "startLine": 2668,
+            "endLine": 2714,
+            "length": 28,
+            "cc": 11,
+            "nesting": 3
+          },
+          {
+            "name": "type_cast_value",
+            "startLine": 2716,
+            "endLine": 2770,
+            "length": 37,
+            "cc": 9,
+            "nesting": 2
+          },
+          {
+            "name": "check_iter",
+            "startLine": 2726,
+            "endLine": 2735,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "convert",
+            "startLine": 2741,
+            "endLine": 2742,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 2746,
+            "endLine": 2747,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 2751,
+            "endLine": 2765,
+            "length": 13,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "value_is_missing",
+            "startLine": 2772,
+            "endLine": 2788,
+            "length": 7,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "process_value",
+            "startLine": 2790,
+            "endLine": 2850,
+            "length": 27,
+            "cc": 14,
+            "nesting": 3
+          },
+          {
+            "name": "resolve_envvar_value",
+            "startLine": 2852,
+            "endLine": 2895,
+            "length": 14,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "value_from_envvar",
+            "startLine": 2897,
+            "endLine": 2911,
+            "length": 6,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "handle_parse_result",
+            "startLine": 2913,
+            "endLine": 2999,
+            "length": 51,
+            "cc": 17,
+            "nesting": 3
+          },
+          {
+            "name": "get_help_record",
+            "startLine": 3001,
+            "endLine": 3002,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_usage_pieces",
+            "startLine": 3004,
+            "endLine": 3005,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_error_hint",
+            "startLine": 3007,
+            "endLine": 3015,
+            "length": 4,
+            "cc": 3,
+            "nesting": 0
+          },
+          {
+            "name": "shell_complete",
+            "startLine": 3017,
+            "endLine": 3038,
+            "length": 9,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 3133,
+            "endLine": 3208,
+            "length": 55,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "is_bool_flag",
+            "startLine": 3211,
+            "endLine": 3217,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "flag_activation_value",
+            "startLine": 3220,
+            "endLine": 3230,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_infer_flag_kind",
+            "startLine": 3232,
+            "endLine": 3263,
+            "length": 16,
+            "cc": 9,
+            "nesting": 2
+          },
+          {
+            "name": "_pick_type",
+            "startLine": 3265,
+            "endLine": 3302,
+            "length": 24,
+            "cc": 9,
+            "nesting": 1
+          },
+          {
+            "name": "_resolve_lazy_default",
+            "startLine": 3304,
+            "endLine": 3326,
+            "length": 10,
+            "cc": 11,
+            "nesting": 2
+          },
+          {
+            "name": "_validate",
+            "startLine": 3328,
+            "endLine": 3348,
+            "length": 17,
+            "cc": 13,
+            "nesting": 2
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 3350,
+            "endLine": 3370,
+            "length": 12,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_default",
+            "startLine": 3372,
+            "endLine": 3402,
+            "length": 9,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "get_error_hint",
+            "startLine": 3404,
+            "endLine": 3412,
+            "length": 7,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "_check_name_is_normalized",
+            "startLine": 3414,
+            "endLine": 3432,
+            "length": 13,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_parse_decls",
+            "startLine": 3434,
+            "endLine": 3499,
+            "length": 58,
+            "cc": 18,
+            "nesting": 4
+          },
+          {
+            "name": "add_to_parser",
+            "startLine": 3501,
+            "endLine": 3541,
+            "length": 36,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "get_help_spec",
+            "startLine": 3543,
+            "endLine": 3572,
+            "length": 15,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_write_opts",
+            "startLine": 3554,
+            "endLine": 3565,
+            "length": 8,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "get_help_record",
+            "startLine": 3574,
+            "endLine": 3597,
+            "length": 20,
+            "cc": 9,
+            "nesting": 1
+          },
+          {
+            "name": "get_help_extra",
+            "startLine": 3599,
+            "endLine": 3680,
+            "length": 63,
+            "cc": 35,
+            "nesting": 3
+          },
+          {
+            "name": "prompt_for_value",
+            "startLine": 3682,
+            "endLine": 3729,
+            "length": 23,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "resolve_envvar_value",
+            "startLine": 3731,
+            "endLine": 3753,
+            "length": 11,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "value_from_envvar",
+            "startLine": 3755,
+            "endLine": 3801,
+            "length": 19,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "consume_value",
+            "startLine": 3803,
+            "endLine": 3857,
+            "length": 33,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "process_value",
+            "startLine": 3859,
+            "endLine": 3871,
+            "length": 7,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 3889,
+            "endLine": 3909,
+            "length": 15,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "spec",
+            "startLine": 3912,
+            "endLine": 3922,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "make_metavar",
+            "startLine": 3924,
+            "endLine": 3941,
+            "length": 14,
+            "cc": 8,
+            "nesting": 1
+          },
+          {
+            "name": "_parse_decls",
+            "startLine": 3943,
+            "endLine": 3962,
+            "length": 20,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "get_usage_pieces",
+            "startLine": 3964,
+            "endLine": 3965,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_help_spec",
+            "startLine": 3967,
+            "endLine": 3973,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_help_record",
+            "startLine": 3975,
+            "endLine": 3986,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "get_error_hint",
+            "startLine": 3988,
+            "endLine": 3991,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "add_to_parser",
+            "startLine": 3993,
+            "endLine": 3994,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 3997,
+            "endLine": 4018,
+            "length": 19,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 17,
+          "significantLines": 1713,
+          "partners": [
+            "src/click/_compat.py",
+            "src/click/__init__.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 579,
+              "toLine": 585,
+              "other": "src/click/_compat.py"
+            },
+            {
+              "fromLine": 3997,
+              "toLine": 4016,
+              "other": "src/click/__init__.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función get_help_extra tiene complejidad ciclomática 35 (muy alta, > 20).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función __init__ ocupa 89 líneas (> 50).",
+          "1 comentario(s) de deuda auto-admitida.",
+          "1% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 3298 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función get_help_extra tiene CC=35), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (__init__, 89 líneas) que mezclan varios pasos en un solo bloque. Además, contiene 1 marca(s) de trabajo pendiente dejadas por el propio equipo (XXX). Además, repite código que también existe en src/click/_compat.py, src/click/__init__.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir get_help_extra en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 35 · función de 89 líneas · 1 SATD · 1% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 1
+    },
+    {
+      "id": 1,
+      "path": "src/click/__init__.py",
+      "language": "python",
+      "score": 5.5,
+      "level": "MEDIA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 2,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 10,
+        "size": 4.38
+      },
+      "metrics": {
+        "loc": 127,
+        "totalLines": 145,
+        "functions": 1,
+        "ccAvg": 7,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 56,
+        "maxNesting": 1,
+        "dupPct": 34.4
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [
+          {
+            "name": "__getattr__",
+            "startLine": 76,
+            "endLine": 144,
+            "length": 56,
+            "cc": 7,
+            "nesting": 1
+          }
+        ],
+        "functions": [
+          {
+            "name": "__getattr__",
+            "startLine": 76,
+            "endLine": 144,
+            "length": 56,
+            "cc": 7,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 11,
+          "significantLines": 32,
+          "partners": [
+            "src/click/core.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 76,
+              "toLine": 99,
+              "other": "src/click/core.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función __getattr__ ocupa 56 líneas (> 50).",
+          "34.4% de sus líneas están duplicadas en src/click/core.py."
+        ],
+        "explicacion": "Este archivo tiene funciones largas (__getattr__, 56 líneas) que mezclan varios pasos en un solo bloque. Además, repite código que también existe en src/click/core.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Extraer los pasos de __getattr__ en funciones auxiliares con una sola responsabilidad.",
+        "resumen": "función de 56 líneas · 34.4% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 2
+    },
+    {
+      "id": 4,
+      "path": "src/click/testing.py",
+      "language": "python",
+      "score": 4.6,
+      "level": "MEDIA",
+      "severity": 5,
+      "scoreParts": {
+        "cc": 0.58,
+        "satd": 0,
+        "dup": 0,
+        "llm": 4
+      },
+      "norm": {
+        "cc": 2.33,
+        "satd": 0,
+        "dup": 0,
+        "size": 10
+      },
+      "metrics": {
+        "loc": 692,
+        "totalLines": 841,
+        "functions": 39,
+        "ccAvg": 2.4,
+        "ccMax": 20,
+        "satd": 0,
+        "longFunctions": 2,
+        "maxFunctionLength": 128,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "invoke",
+            "startLine": 625,
+            "endLine": 782,
+            "length": 86,
+            "cc": 20,
+            "nesting": 4
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "isolation",
+            "startLine": 428,
+            "endLine": 623,
+            "length": 128,
+            "cc": 9,
+            "nesting": 4
+          },
+          {
+            "name": "invoke",
+            "startLine": 625,
+            "endLine": 782,
+            "length": 86,
+            "cc": 20,
+            "nesting": 4
+          }
+        ],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 46,
+            "endLine": 49,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 51,
+            "endLine": 52,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_echo",
+            "startLine": 54,
+            "endLine": 70,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "read",
+            "startLine": 72,
+            "endLine": 73,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "read1",
+            "startLine": 75,
+            "endLine": 76,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "readline",
+            "startLine": 78,
+            "endLine": 79,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "readlines",
+            "startLine": 81,
+            "endLine": 84,
+            "length": 2,
+            "cc": 3,
+            "nesting": 0
+          },
+          {
+            "name": "__iter__",
+            "startLine": 86,
+            "endLine": 88,
+            "length": 2,
+            "cc": 3,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 90,
+            "endLine": 91,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_pause_echo",
+            "startLine": 95,
+            "endLine": 101,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 119,
+            "endLine": 122,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "start",
+            "startLine": 124,
+            "endLine": 127,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "stop",
+            "startLine": 129,
+            "endLine": 138,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 149,
+            "endLine": 151,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "flush",
+            "startLine": 153,
+            "endLine": 155,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "write",
+            "startLine": 157,
+            "endLine": 159,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 174,
+            "endLine": 177,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 196,
+            "endLine": 206,
+            "length": 11,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "close",
+            "startLine": 208,
+            "endLine": 209,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "fileno",
+            "startLine": 216,
+            "endLine": 224,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "name",
+            "startLine": 227,
+            "endLine": 228,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "mode",
+            "startLine": 231,
+            "endLine": 232,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "make_input_stream",
+            "startLine": 235,
+            "endLine": 252,
+            "length": 13,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 286,
+            "endLine": 304,
+            "length": 19,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "output",
+            "startLine": 307,
+            "endLine": 316,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "stdout",
+            "startLine": 319,
+            "endLine": 323,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "stderr",
+            "startLine": 326,
+            "endLine": 334,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 336,
+            "endLine": 338,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 389,
+            "endLine": 409,
+            "length": 21,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "get_default_prog_name",
+            "startLine": 411,
+            "endLine": 416,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "make_env",
+            "startLine": 418,
+            "endLine": 425,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "isolation",
+            "startLine": 428,
+            "endLine": 623,
+            "length": 128,
+            "cc": 9,
+            "nesting": 4
+          },
+          {
+            "name": "visible_input",
+            "startLine": 504,
+            "endLine": 512,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "hidden_input",
+            "startLine": 515,
+            "endLine": 521,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_getchar",
+            "startLine": 524,
+            "endLine": 531,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "should_strip_ansi",
+            "startLine": 535,
+            "endLine": 540,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_patched_pdb_init",
+            "startLine": 554,
+            "endLine": 589,
+            "length": 15,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "invoke",
+            "startLine": 625,
+            "endLine": 782,
+            "length": 86,
+            "cc": 20,
+            "nesting": 4
+          },
+          {
+            "name": "isolated_filesystem",
+            "startLine": 785,
+            "endLine": 840,
+            "length": 25,
+            "cc": 3,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 406,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función invoke tiene complejidad ciclomática 20 (> 10).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función isolation ocupa 128 líneas.",
+          "Archivo extenso: 692 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función invoke tiene CC=20), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (isolation, 128 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir invoke en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 20 · función de 128 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 3
+    },
+    {
+      "id": 10,
+      "path": "src/click/types.py",
+      "language": "python",
+      "score": 3.7,
+      "level": "BAJA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 0.71,
+        "satd": 0,
+        "dup": 0,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 2.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.08
+      },
+      "metrics": {
+        "loc": 1123,
+        "totalLines": 1409,
+        "functions": 73,
+        "ccAvg": 2.7,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 65,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "convert",
+            "startLine": 1132,
+            "endLine": 1204,
+            "length": 65,
+            "cc": 18,
+            "nesting": 3
+          },
+          {
+            "name": "convert",
+            "startLine": 637,
+            "endLine": 668,
+            "length": 27,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "convert_type",
+            "startLine": 1327,
+            "endLine": 1368,
+            "length": 29,
+            "cc": 12,
+            "nesting": 3
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "convert",
+            "startLine": 1132,
+            "endLine": 1204,
+            "length": 65,
+            "cc": 18,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "__class_getitem__",
+            "startLine": 113,
+            "endLine": 120,
+            "length": 7,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 122,
+            "endLine": 141,
+            "length": 9,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__call__",
+            "startLine": 144,
+            "endLine": 149,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__call__",
+            "startLine": 152,
+            "endLine": 157,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__call__",
+            "startLine": 159,
+            "endLine": 167,
+            "length": 9,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_metavar",
+            "startLine": 169,
+            "endLine": 170,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_missing_message",
+            "startLine": 172,
+            "endLine": 173,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 179,
+            "endLine": 203,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "split_envvar_value",
+            "startLine": 205,
+            "endLine": 213,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "fail",
+            "startLine": 215,
+            "endLine": 222,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "shell_complete",
+            "startLine": 224,
+            "endLine": 239,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "arity",
+            "startLine": 247,
+            "endLine": 247,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 258,
+            "endLine": 260,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 262,
+            "endLine": 263,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 265,
+            "endLine": 279,
+            "length": 13,
+            "cc": 4,
+            "nesting": 3
+          },
+          {
+            "name": "convert",
+            "startLine": 285,
+            "endLine": 288,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 290,
+            "endLine": 291,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 297,
+            "endLine": 313,
+            "length": 17,
+            "cc": 5,
+            "nesting": 4
+          },
+          {
+            "name": "__repr__",
+            "startLine": 315,
+            "endLine": 316,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 357,
+            "endLine": 361,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 363,
+            "endLine": 368,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_normalized_mapping",
+            "startLine": 370,
+            "endLine": 386,
+            "length": 11,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "normalize_choice",
+            "startLine": 388,
+            "endLine": 406,
+            "length": 8,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "get_metavar",
+            "startLine": 408,
+            "endLine": 424,
+            "length": 13,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "get_missing_message",
+            "startLine": 426,
+            "endLine": 434,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 436,
+            "endLine": 458,
+            "length": 18,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "get_invalid_choice_message",
+            "startLine": 460,
+            "endLine": 472,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 474,
+            "endLine": 475,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "shell_complete",
+            "startLine": 477,
+            "endLine": 497,
+            "length": 12,
+            "cc": 8,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 529,
+            "endLine": 534,
+            "length": 6,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 536,
+            "endLine": 537,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_metavar",
+            "startLine": 539,
+            "endLine": 540,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_try_to_convert_date",
+            "startLine": 542,
+            "endLine": 546,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "convert",
+            "startLine": 548,
+            "endLine": 569,
+            "length": 19,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "__repr__",
+            "startLine": 571,
+            "endLine": 572,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 580,
+            "endLine": 592,
+            "length": 13,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 613,
+            "endLine": 625,
+            "length": 13,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 627,
+            "endLine": 635,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 637,
+            "endLine": 668,
+            "length": 27,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "_clamp",
+            "startLine": 671,
+            "endLine": 686,
+            "length": 8,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_describe_range",
+            "startLine": 688,
+            "endLine": 700,
+            "length": 11,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "__repr__",
+            "startLine": 702,
+            "endLine": 704,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 711,
+            "endLine": 712,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_clamp",
+            "startLine": 732,
+            "endLine": 736,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__repr__",
+            "startLine": 743,
+            "endLine": 744,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 765,
+            "endLine": 778,
+            "length": 13,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "_clamp",
+            "startLine": 780,
+            "endLine": 787,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "str_to_bool",
+            "startLine": 827,
+            "endLine": 839,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "convert",
+            "startLine": 841,
+            "endLine": 853,
+            "length": 13,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__repr__",
+            "startLine": 855,
+            "endLine": 856,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 862,
+            "endLine": 875,
+            "length": 12,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__repr__",
+            "startLine": 877,
+            "endLine": 878,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 925,
+            "endLine": 937,
+            "length": 13,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 939,
+            "endLine": 944,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "resolve_lazy_flag",
+            "startLine": 946,
+            "endLine": 953,
+            "length": 8,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "convert",
+            "startLine": 955,
+            "endLine": 998,
+            "length": 32,
+            "cc": 7,
+            "nesting": 3
+          },
+          {
+            "name": "shell_complete",
+            "startLine": 1000,
+            "endLine": 1014,
+            "length": 6,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_is_file_like",
+            "startLine": 1017,
+            "endLine": 1018,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 1078,
+            "endLine": 1105,
+            "length": 27,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 1107,
+            "endLine": 1116,
+            "length": 10,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "coerce_path_result",
+            "startLine": 1118,
+            "endLine": 1130,
+            "length": 11,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "convert",
+            "startLine": 1132,
+            "endLine": 1204,
+            "length": 65,
+            "cc": 18,
+            "nesting": 3
+          },
+          {
+            "name": "shell_complete",
+            "startLine": 1206,
+            "endLine": 1222,
+            "length": 7,
+            "cc": 3,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 1243,
+            "endLine": 1244,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "to_info_dict",
+            "startLine": 1246,
+            "endLine": 1250,
+            "length": 5,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "name",
+            "startLine": 1253,
+            "endLine": 1254,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "arity",
+            "startLine": 1257,
+            "endLine": 1258,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert",
+            "startLine": 1260,
+            "endLine": 1279,
+            "length": 18,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_guess_type",
+            "startLine": 1282,
+            "endLine": 1314,
+            "length": 17,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "convert_type",
+            "startLine": 1318,
+            "endLine": 1318,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert_type",
+            "startLine": 1320,
+            "endLine": 1322,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert_type",
+            "startLine": 1324,
+            "endLine": 1326,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "convert_type",
+            "startLine": 1327,
+            "endLine": 1368,
+            "length": 29,
+            "cc": 12,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 696,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función convert tiene complejidad ciclomática 18 (> 10).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función convert ocupa 65 líneas (> 50).",
+          "Archivo extenso: 1123 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función convert tiene CC=18), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (convert, 65 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir convert en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 18 · función de 65 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 4
+    },
+    {
+      "id": 5,
+      "path": "src/click/_termui_impl.py",
+      "language": "python",
+      "score": 3.3,
+      "level": "BAJA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 1.21,
+        "satd": 0,
+        "dup": 0.08,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 4.83,
+        "satd": 0,
+        "dup": 0.38,
+        "size": 4.84
+      },
+      "metrics": {
+        "loc": 805,
+        "totalLines": 971,
+        "functions": 45,
+        "ccAvg": 3.9,
+        "ccMax": 19,
+        "satd": 0,
+        "longFunctions": 2,
+        "maxFunctionLength": 62,
+        "maxNesting": 3,
+        "dupPct": 1.3
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "open_url",
+            "startLine": 797,
+            "endLine": 864,
+            "length": 61,
+            "cc": 19,
+            "nesting": 3
+          },
+          {
+            "name": "_pipepager",
+            "startLine": 547,
+            "endLine": 630,
+            "length": 44,
+            "cc": 12,
+            "nesting": 3
+          },
+          {
+            "name": "render_progress",
+            "startLine": 250,
+            "endLine": 294,
+            "length": 35,
+            "cc": 11,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "__init__",
+            "startLine": 44,
+            "endLine": 113,
+            "length": 62,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "open_url",
+            "startLine": 797,
+            "endLine": 864,
+            "length": 61,
+            "cc": 19,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "__init__",
+            "startLine": 44,
+            "endLine": 113,
+            "length": 62,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "__enter__",
+            "startLine": 115,
+            "endLine": 118,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__exit__",
+            "startLine": 120,
+            "endLine": 126,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__iter__",
+            "startLine": 128,
+            "endLine": 132,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__next__",
+            "startLine": 134,
+            "endLine": 140,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "render_finish",
+            "startLine": 142,
+            "endLine": 154,
+            "length": 9,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "pct",
+            "startLine": 157,
+            "endLine": 160,
+            "length": 4,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "time_per_iteration",
+            "startLine": 163,
+            "endLine": 166,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "eta",
+            "startLine": 169,
+            "endLine": 172,
+            "length": 4,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "format_eta",
+            "startLine": 174,
+            "endLine": 193,
+            "length": 20,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "format_pos",
+            "startLine": 195,
+            "endLine": 199,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "format_pct",
+            "startLine": 201,
+            "endLine": 202,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "format_bar",
+            "startLine": 204,
+            "endLine": 221,
+            "length": 18,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "format_progress_line",
+            "startLine": 223,
+            "endLine": 248,
+            "length": 23,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "render_progress",
+            "startLine": 250,
+            "endLine": 294,
+            "length": 35,
+            "cc": 11,
+            "nesting": 2
+          },
+          {
+            "name": "make_step",
+            "startLine": 296,
+            "endLine": 316,
+            "length": 13,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "update",
+            "startLine": 318,
+            "endLine": 342,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "finish",
+            "startLine": 344,
+            "endLine": 347,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "generator",
+            "startLine": 349,
+            "endLine": 380,
+            "length": 15,
+            "cc": 5,
+            "nesting": 3
+          },
+          {
+            "name": "__init__",
+            "startLine": 397,
+            "endLine": 399,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "write",
+            "startLine": 401,
+            "endLine": 405,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "writelines",
+            "startLine": 407,
+            "endLine": 409,
+            "length": 3,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "flush",
+            "startLine": 411,
+            "endLine": 412,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "close",
+            "startLine": 414,
+            "endLine": 417,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 419,
+            "endLine": 420,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_resolve_pager_command",
+            "startLine": 423,
+            "endLine": 446,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_pager_contextmanager",
+            "startLine": 449,
+            "endLine": 491,
+            "length": 24,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "get_pager_file",
+            "startLine": 495,
+            "endLine": 515,
+            "length": 8,
+            "cc": 1,
+            "nesting": 2
+          },
+          {
+            "name": "_less_uses_raw_mode",
+            "startLine": 518,
+            "endLine": 543,
+            "length": 15,
+            "cc": 8,
+            "nesting": 3
+          },
+          {
+            "name": "_pipepager",
+            "startLine": 547,
+            "endLine": 630,
+            "length": 44,
+            "cc": 12,
+            "nesting": 3
+          },
+          {
+            "name": "_tempfilepager",
+            "startLine": 634,
+            "endLine": 665,
+            "length": 18,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "_nullpager",
+            "startLine": 669,
+            "endLine": 678,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 682,
+            "endLine": 692,
+            "length": 11,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_editor",
+            "startLine": 694,
+            "endLine": 709,
+            "length": 14,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "edit_files",
+            "startLine": 711,
+            "endLine": 739,
+            "length": 23,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "edit",
+            "startLine": 742,
+            "endLine": 742,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "edit",
+            "startLine": 747,
+            "endLine": 747,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "edit",
+            "startLine": 749,
+            "endLine": 794,
+            "length": 30,
+            "cc": 9,
+            "nesting": 2
+          },
+          {
+            "name": "open_url",
+            "startLine": 797,
+            "endLine": 864,
+            "length": 61,
+            "cc": 19,
+            "nesting": 3
+          },
+          {
+            "name": "_unquote_file",
+            "startLine": 800,
+            "endLine": 806,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_translate_ch_to_exc",
+            "startLine": 867,
+            "endLine": 875,
+            "length": 7,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "raw_terminal",
+            "startLine": 882,
+            "endLine": 883,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "getchar",
+            "startLine": 885,
+            "endLine": 929,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "raw_terminal",
+            "startLine": 936,
+            "endLine": 960,
+            "length": 21,
+            "cc": 4,
+            "nesting": 3
+          },
+          {
+            "name": "getchar",
+            "startLine": 962,
+            "endLine": 970,
+            "length": 7,
+            "cc": 3,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 7,
+          "significantLines": 519,
+          "partners": [
+            "src/click/_compat.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 118,
+              "toLine": 125,
+              "other": "src/click/_compat.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función open_url tiene complejidad ciclomática 19 (> 10).",
+          "La función __init__ ocupa 62 líneas (> 50).",
+          "1.3% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 805 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función open_url tiene CC=19), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (__init__, 62 líneas) que mezclan varios pasos en un solo bloque. Además, repite código que también existe en src/click/_compat.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir open_url en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 19 · función de 62 líneas · 1.3% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 5
+    },
+    {
+      "id": 6,
+      "path": "src/click/termui.py",
+      "language": "python",
+      "score": 3.2,
+      "level": "BAJA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 1.21,
+        "satd": 0,
+        "dup": 0,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 4.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 4.22
+      },
+      "metrics": {
+        "loc": 842,
+        "totalLines": 1025,
+        "functions": 28,
+        "ccAvg": 3.9,
+        "ccMax": 16,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 54,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "prompt",
+            "startLine": 168,
+            "endLine": 286,
+            "length": 54,
+            "cc": 16,
+            "nesting": 3
+          },
+          {
+            "name": "style",
+            "startLine": 641,
+            "endLine": 765,
+            "length": 42,
+            "cc": 13,
+            "nesting": 1
+          },
+          {
+            "name": "_interpret_color",
+            "startLine": 616,
+            "endLine": 638,
+            "length": 18,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "confirm",
+            "startLine": 289,
+            "endLine": 345,
+            "length": 33,
+            "cc": 11,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "prompt",
+            "startLine": 168,
+            "endLine": 286,
+            "length": 54,
+            "cc": 16,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "_mask_hidden_input",
+            "startLine": 61,
+            "endLine": 76,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "hidden_prompt_func",
+            "startLine": 79,
+            "endLine": 82,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_readline_prompt",
+            "startLine": 85,
+            "endLine": 105,
+            "length": 9,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "_build_prompt",
+            "startLine": 108,
+            "endLine": 125,
+            "length": 18,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "_format_default",
+            "startLine": 128,
+            "endLine": 135,
+            "length": 6,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "prompt",
+            "startLine": 139,
+            "endLine": 150,
+            "length": 12,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "prompt",
+            "startLine": 154,
+            "endLine": 165,
+            "length": 12,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "prompt",
+            "startLine": 168,
+            "endLine": 286,
+            "length": 54,
+            "cc": 16,
+            "nesting": 3
+          },
+          {
+            "name": "prompt_func",
+            "startLine": 235,
+            "endLine": 245,
+            "length": 8,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "confirm",
+            "startLine": 289,
+            "endLine": 345,
+            "length": 33,
+            "cc": 11,
+            "nesting": 2
+          },
+          {
+            "name": "get_pager_file",
+            "startLine": 348,
+            "endLine": 364,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "echo_via_pager",
+            "startLine": 367,
+            "endLine": 399,
+            "length": 16,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "progressbar",
+            "startLine": 403,
+            "endLine": 419,
+            "length": 17,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "progressbar",
+            "startLine": 423,
+            "endLine": 440,
+            "length": 18,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "progressbar",
+            "startLine": 443,
+            "endLine": 599,
+            "length": 39,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "clear",
+            "startLine": 602,
+            "endLine": 613,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_interpret_color",
+            "startLine": 616,
+            "endLine": 638,
+            "length": 18,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "style",
+            "startLine": 641,
+            "endLine": 765,
+            "length": 42,
+            "cc": 13,
+            "nesting": 1
+          },
+          {
+            "name": "unstyle",
+            "startLine": 768,
+            "endLine": 777,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "secho",
+            "startLine": 780,
+            "endLine": 811,
+            "length": 12,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "edit",
+            "startLine": 815,
+            "endLine": 821,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "edit",
+            "startLine": 825,
+            "endLine": 831,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "edit",
+            "startLine": 835,
+            "endLine": 845,
+            "length": 11,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "edit",
+            "startLine": 848,
+            "endLine": 920,
+            "length": 20,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "launch",
+            "startLine": 923,
+            "endLine": 949,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "getchar",
+            "startLine": 957,
+            "endLine": 984,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "raw_terminal",
+            "startLine": 987,
+            "endLine": 990,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "pause",
+            "startLine": 993,
+            "endLine": 1024,
+            "length": 16,
+            "cc": 7,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 391,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función prompt tiene complejidad ciclomática 16 (> 10).",
+          "La función prompt ocupa 54 líneas (> 50).",
+          "Archivo extenso: 842 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función prompt tiene CC=16), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (prompt, 54 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir prompt en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 16 · función de 54 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 6
+    },
+    {
+      "id": 3,
+      "path": "src/click/_textwrap.py",
+      "language": "python",
+      "score": 3.2,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 2.21,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 8.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.34
+      },
+      "metrics": {
+        "loc": 74,
+        "totalLines": 103,
+        "functions": 3,
+        "ccAvg": 6.3,
+        "ccMax": 15,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 30,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "_wrap_chunks",
+            "startLine": 20,
+            "endLine": 76,
+            "length": 30,
+            "cc": 15,
+            "nesting": 3
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "_wrap_chunks",
+            "startLine": 20,
+            "endLine": 76,
+            "length": 30,
+            "cc": 15,
+            "nesting": 3
+          },
+          {
+            "name": "extra_indent",
+            "startLine": 79,
+            "endLine": 89,
+            "length": 10,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "indent_only",
+            "startLine": 91,
+            "endLine": 102,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 44,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función _wrap_chunks tiene complejidad ciclomática 15 (> 10)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función _wrap_chunks tiene CC=15), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir _wrap_chunks en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 15",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 7
+    },
+    {
+      "id": 8,
+      "path": "src/click/utils.py",
+      "language": "python",
+      "score": 3.1,
+      "level": "BAJA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 0.75,
+        "satd": 0,
+        "dup": 0.36,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 3,
+        "satd": 0,
+        "dup": 1.8,
+        "size": 3.2
+      },
+      "metrics": {
+        "loc": 532,
+        "totalLines": 673,
+        "functions": 32,
+        "ccAvg": 2.8,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 41,
+        "maxNesting": 2,
+        "dupPct": 6.2
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "echo",
+            "startLine": 236,
+            "endLine": 330,
+            "length": 41,
+            "cc": 13,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "_posixify",
+            "startLine": 28,
+            "endLine": 29,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_safecall",
+            "startLine": 32,
+            "endLine": 45,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapper",
+            "startLine": 38,
+            "endLine": 43,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "make_str",
+            "startLine": 48,
+            "endLine": 55,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "_make_default_short_help",
+            "startLine": 58,
+            "endLine": 96,
+            "length": 19,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 116,
+            "endLine": 139,
+            "length": 20,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 141,
+            "endLine": 142,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 144,
+            "endLine": 147,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "open",
+            "startLine": 149,
+            "endLine": 165,
+            "length": 13,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "close",
+            "startLine": 167,
+            "endLine": 170,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "close_intelligently",
+            "startLine": 172,
+            "endLine": 177,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__enter__",
+            "startLine": 179,
+            "endLine": 180,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__exit__",
+            "startLine": 182,
+            "endLine": 188,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__iter__",
+            "startLine": 190,
+            "endLine": 192,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 212,
+            "endLine": 213,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 215,
+            "endLine": 216,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__enter__",
+            "startLine": 218,
+            "endLine": 219,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__exit__",
+            "startLine": 221,
+            "endLine": 227,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 229,
+            "endLine": 230,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__iter__",
+            "startLine": 232,
+            "endLine": 233,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "echo",
+            "startLine": 236,
+            "endLine": 330,
+            "length": 41,
+            "cc": 13,
+            "nesting": 2
+          },
+          {
+            "name": "_get_binary_stream",
+            "startLine": 333,
+            "endLine": 347,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_get_text_stream",
+            "startLine": 350,
+            "endLine": 374,
+            "length": 10,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "open_file",
+            "startLine": 377,
+            "endLine": 423,
+            "length": 17,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "format_filename",
+            "startLine": 426,
+            "endLine": 465,
+            "length": 16,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "get_app_dir",
+            "startLine": 468,
+            "endLine": 514,
+            "length": 18,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 530,
+            "endLine": 531,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "flush",
+            "startLine": 533,
+            "endLine": 540,
+            "length": 7,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 542,
+            "endLine": 543,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_detect_program_name",
+            "startLine": 546,
+            "endLine": 598,
+            "length": 20,
+            "cc": 9,
+            "nesting": 1
+          },
+          {
+            "name": "_expand_args",
+            "startLine": 601,
+            "endLine": 650,
+            "length": 24,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 653,
+            "endLine": 672,
+            "length": 18,
+            "cc": 2,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 16,
+          "significantLines": 257,
+          "partners": [
+            "src/click/_compat.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 179,
+              "toLine": 187,
+              "other": "src/click/_compat.py"
+            },
+            {
+              "fromLine": 218,
+              "toLine": 226,
+              "other": "src/click/_compat.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función echo tiene complejidad ciclomática 13 (> 10).",
+          "6.2% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 532 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función echo tiene CC=13), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, repite código que también existe en src/click/_compat.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir echo en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 13 · 6.2% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 8
+    },
+    {
+      "id": 9,
+      "path": "src/click/_compat.py",
+      "language": "python",
+      "score": 2.8,
+      "level": "BAJA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 0.67,
+        "satd": 0,
+        "dup": 0.13,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 2.67,
+        "satd": 0,
+        "dup": 0.64,
+        "size": 4.77
+      },
+      "metrics": {
+        "loc": 472,
+        "totalLines": 591,
+        "functions": 47,
+        "ccAvg": 2.6,
+        "ccMax": 21,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 61,
+        "maxNesting": 3,
+        "dupPct": 2.2
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "open_stream",
+            "startLine": 374,
+            "endLine": 452,
+            "length": 61,
+            "cc": 21,
+            "nesting": 3
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "open_stream",
+            "startLine": 374,
+            "endLine": 452,
+            "length": 61,
+            "cc": 21,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "_make_text_stream",
+            "startLine": 22,
+            "endLine": 40,
+            "length": 19,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "is_ascii_encoding",
+            "startLine": 43,
+            "endLine": 48,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_best_encoding",
+            "startLine": 51,
+            "endLine": 56,
+            "length": 6,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 60,
+            "endLine": 72,
+            "length": 13,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__del__",
+            "startLine": 74,
+            "endLine": 78,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "isatty",
+            "startLine": 80,
+            "endLine": 82,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 95,
+            "endLine": 103,
+            "length": 9,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 105,
+            "endLine": 106,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "read1",
+            "startLine": 108,
+            "endLine": 114,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "readable",
+            "startLine": 116,
+            "endLine": 126,
+            "length": 11,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "writable",
+            "startLine": 128,
+            "endLine": 141,
+            "length": 14,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "seekable",
+            "startLine": 143,
+            "endLine": 151,
+            "length": 9,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_is_binary_reader",
+            "startLine": 154,
+            "endLine": 158,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_is_binary_writer",
+            "startLine": 163,
+            "endLine": 173,
+            "length": 11,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "_find_binary_reader",
+            "startLine": 176,
+            "endLine": 191,
+            "length": 7,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "_find_binary_writer",
+            "startLine": 194,
+            "endLine": 209,
+            "length": 7,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "_stream_is_misconfigured",
+            "startLine": 212,
+            "endLine": 218,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "_is_compat_stream_attr",
+            "startLine": 221,
+            "endLine": 227,
+            "length": 4,
+            "cc": 3,
+            "nesting": 0
+          },
+          {
+            "name": "_is_compatible_text_stream",
+            "startLine": 230,
+            "endLine": 238,
+            "length": 7,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "_force_correct_text_stream",
+            "startLine": 241,
+            "endLine": 284,
+            "length": 30,
+            "cc": 7,
+            "nesting": 2
+          },
+          {
+            "name": "_force_correct_text_reader",
+            "startLine": 287,
+            "endLine": 300,
+            "length": 14,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_force_correct_text_writer",
+            "startLine": 303,
+            "endLine": 316,
+            "length": 14,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "get_binary_stdin",
+            "startLine": 319,
+            "endLine": 323,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_binary_stdout",
+            "startLine": 326,
+            "endLine": 330,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_binary_stderr",
+            "startLine": 333,
+            "endLine": 337,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_text_stdin",
+            "startLine": 340,
+            "endLine": 344,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_text_stdout",
+            "startLine": 347,
+            "endLine": 351,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "get_text_stderr",
+            "startLine": 354,
+            "endLine": 358,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_wrap_io_open",
+            "startLine": 361,
+            "endLine": 371,
+            "length": 10,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "open_stream",
+            "startLine": 374,
+            "endLine": 452,
+            "length": 61,
+            "cc": 21,
+            "nesting": 3
+          },
+          {
+            "name": "__init__",
+            "startLine": 456,
+            "endLine": 460,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "name",
+            "startLine": 463,
+            "endLine": 464,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "close",
+            "startLine": 466,
+            "endLine": 471,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 473,
+            "endLine": 474,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__enter__",
+            "startLine": 476,
+            "endLine": 477,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__exit__",
+            "startLine": 479,
+            "endLine": 485,
+            "length": 7,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__repr__",
+            "startLine": 487,
+            "endLine": 488,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "strip_ansi",
+            "startLine": 491,
+            "endLine": 492,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_is_jupyter_kernel_output",
+            "startLine": 495,
+            "endLine": 499,
+            "length": 4,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "should_strip_ansi",
+            "startLine": 502,
+            "endLine": 513,
+            "length": 10,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "_get_argv_encoding",
+            "startLine": 520,
+            "endLine": 523,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_get_argv_encoding",
+            "startLine": 527,
+            "endLine": 528,
+            "length": 2,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "_get_windows_console_stream",
+            "startLine": 530,
+            "endLine": 533,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "term_len",
+            "startLine": 536,
+            "endLine": 537,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "isatty",
+            "startLine": 540,
+            "endLine": 544,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "_make_cached_stream_func",
+            "startLine": 547,
+            "endLine": 572,
+            "length": 22,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "func",
+            "startLine": 553,
+            "endLine": 570,
+            "length": 16,
+            "cc": 5,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 8,
+          "significantLines": 359,
+          "partners": [
+            "src/click/utils.py",
+            "src/click/_termui_impl.py"
+          ],
+          "blocks": [
+            {
+              "fromLine": 476,
+              "toLine": 482,
+              "other": "src/click/utils.py"
+            },
+            {
+              "fromLine": 477,
+              "toLine": 484,
+              "other": "src/click/_termui_impl.py"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función open_stream tiene complejidad ciclomática 21 (muy alta, > 20).",
+          "La función open_stream ocupa 61 líneas (> 50).",
+          "2.2% de líneas duplicadas con otro archivo."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función open_stream tiene CC=21), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (open_stream, 61 líneas) que mezclan varios pasos en un solo bloque. Además, repite código que también existe en src/click/utils.py, src/click/_termui_impl.py, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir open_stream en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 21 · función de 61 líneas · 2.2% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 9
+    },
+    {
+      "id": 7,
+      "path": "src/click/parser.py",
+      "language": "python",
+      "score": 1.4,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 1.37,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 5.5,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.97
+      },
+      "metrics": {
+        "loc": 447,
+        "totalLines": 534,
+        "functions": 21,
+        "ccAvg": 4.3,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 38,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "_unpack_args",
+            "startLine": 51,
+            "endLine": 108,
+            "length": 38,
+            "cc": 10,
+            "nesting": 3
+          },
+          {
+            "name": "_fetch",
+            "startLine": 68,
+            "endLine": 75,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "_split_opt",
+            "startLine": 111,
+            "endLine": 117,
+            "length": 7,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_normalize_opt",
+            "startLine": 120,
+            "endLine": 124,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 128,
+            "endLine": 163,
+            "length": 33,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "takes_value",
+            "startLine": 166,
+            "endLine": 167,
+            "length": 2,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "process",
+            "startLine": 169,
+            "endLine": 182,
+            "length": 14,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "__init__",
+            "startLine": 186,
+            "endLine": 189,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "process",
+            "startLine": 191,
+            "endLine": 213,
+            "length": 20,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "__init__",
+            "startLine": 217,
+            "endLine": 221,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "__init__",
+            "startLine": 241,
+            "endLine": 263,
+            "length": 11,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "add_option",
+            "startLine": 265,
+            "endLine": 288,
+            "length": 17,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "add_argument",
+            "startLine": 290,
+            "endLine": 296,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "parse_args",
+            "startLine": 298,
+            "endLine": 314,
+            "length": 12,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "_process_args_for_args",
+            "startLine": 316,
+            "endLine": 325,
+            "length": 8,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "_process_args_for_options",
+            "startLine": 327,
+            "endLine": 341,
+            "length": 13,
+            "cc": 6,
+            "nesting": 2
+          },
+          {
+            "name": "_match_long_opt",
+            "startLine": 363,
+            "endLine": 388,
+            "length": 17,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "_match_short_opt",
+            "startLine": 390,
+            "endLine": 428,
+            "length": 26,
+            "cc": 9,
+            "nesting": 3
+          },
+          {
+            "name": "_get_value_from_state",
+            "startLine": 430,
+            "endLine": 468,
+            "length": 32,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "_process_opts",
+            "startLine": 470,
+            "endLine": 500,
+            "length": 16,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "__getattr__",
+            "startLine": 503,
+            "endLine": 533,
+            "length": 27,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 268,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 10
+    }
+  ],
+  "fileMetrics": [
+    {
+      "path": "docs/conf.py",
+      "language": "python",
+      "metrics": {
+        "loc": 53,
+        "totalLines": 60,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "examples/aliases/aliases.py",
+      "language": "python",
+      "metrics": {
+        "loc": 111,
+        "totalLines": 144,
+        "functions": 14,
+        "ccAvg": 1.6,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 16,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.25
+      }
+    },
+    {
+      "path": "examples/colors/colors.py",
+      "language": "python",
+      "metrics": {
+        "loc": 33,
+        "totalLines": 40,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.78
+      }
+    },
+    {
+      "path": "examples/completion/completion.py",
+      "language": "python",
+      "metrics": {
+        "loc": 37,
+        "totalLines": 57,
+        "functions": 7,
+        "ccAvg": 1.7,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 7,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.17,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.55
+      }
+    },
+    {
+      "path": "examples/complex/complex/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 0,
+        "totalLines": 1,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "examples/complex/complex/cli.py",
+      "language": "python",
+      "metrics": {
+        "loc": 46,
+        "totalLines": 61,
+        "functions": 6,
+        "ccAvg": 2.2,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 7,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.55
+      }
+    },
+    {
+      "path": "examples/complex/complex/commands/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 0,
+        "totalLines": 1,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "examples/complex/complex/commands/cmd_init.py",
+      "language": "python",
+      "metrics": {
+        "loc": 10,
+        "totalLines": 14,
+        "functions": 1,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.67,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.39
+      }
+    },
+    {
+      "path": "examples/complex/complex/commands/cmd_status.py",
+      "language": "python",
+      "metrics": {
+        "loc": 8,
+        "totalLines": 12,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 4,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.31
+      }
+    },
+    {
+      "path": "examples/imagepipe/imagepipe.py",
+      "language": "python",
+      "metrics": {
+        "loc": 237,
+        "totalLines": 289,
+        "functions": 21,
+        "ccAvg": 2.6,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 17,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.67,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.33
+      }
+    },
+    {
+      "path": "examples/inout/inout.py",
+      "language": "python",
+      "metrics": {
+        "loc": 25,
+        "totalLines": 31,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 9,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.7
+      }
+    },
+    {
+      "path": "examples/naval/naval.py",
+      "language": "python",
+      "metrics": {
+        "loc": 55,
+        "totalLines": 73,
+        "functions": 8,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.23
+      }
+    },
+    {
+      "path": "examples/repo/repo.py",
+      "language": "python",
+      "metrics": {
+        "loc": 141,
+        "totalLines": 167,
+        "functions": 9,
+        "ccAvg": 2.1,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 19,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.48
+      }
+    },
+    {
+      "path": "examples/termui/termui.py",
+      "language": "python",
+      "metrics": {
+        "loc": 140,
+        "totalLines": 170,
+        "functions": 13,
+        "ccAvg": 2.5,
+        "ccMax": 8,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 54,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "size": 4.22
+      }
+    },
+    {
+      "path": "examples/validation/validation.py",
+      "language": "python",
+      "metrics": {
+        "loc": 39,
+        "totalLines": 49,
+        "functions": 3,
+        "ccAvg": 3,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.33,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.78
+      }
+    },
+    {
+      "path": "src/click/__init__.py",
+      "language": "python",
+      "metrics": {
+        "loc": 127,
+        "totalLines": 145,
+        "functions": 1,
+        "ccAvg": 7,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 56,
+        "maxNesting": 1,
+        "dupPct": 34.4
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 10,
+        "size": 4.38
+      }
+    },
+    {
+      "path": "src/click/_compat.py",
+      "language": "python",
+      "metrics": {
+        "loc": 472,
+        "totalLines": 591,
+        "functions": 47,
+        "ccAvg": 2.6,
+        "ccMax": 21,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 61,
+        "maxNesting": 3,
+        "dupPct": 2.2
+      },
+      "norm": {
+        "cc": 2.67,
+        "satd": 0,
+        "dup": 0.64,
+        "size": 4.77
+      }
+    },
+    {
+      "path": "src/click/_termui_impl.py",
+      "language": "python",
+      "metrics": {
+        "loc": 805,
+        "totalLines": 971,
+        "functions": 45,
+        "ccAvg": 3.9,
+        "ccMax": 19,
+        "satd": 0,
+        "longFunctions": 2,
+        "maxFunctionLength": 62,
+        "maxNesting": 3,
+        "dupPct": 1.3
+      },
+      "norm": {
+        "cc": 4.83,
+        "satd": 0,
+        "dup": 0.38,
+        "size": 4.84
+      }
+    },
+    {
+      "path": "src/click/_textwrap.py",
+      "language": "python",
+      "metrics": {
+        "loc": 74,
+        "totalLines": 103,
+        "functions": 3,
+        "ccAvg": 6.3,
+        "ccMax": 15,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 30,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 8.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.34
+      }
+    },
+    {
+      "path": "src/click/_utils.py",
+      "language": "python",
+      "metrics": {
+        "loc": 25,
+        "totalLines": 40,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 2,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.16
+      }
+    },
+    {
+      "path": "src/click/_winconsole.py",
+      "language": "python",
+      "metrics": {
+        "loc": 236,
+        "totalLines": 293,
+        "functions": 20,
+        "ccAvg": 2.1,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 25,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.95
+      }
+    },
+    {
+      "path": "src/click/core.py",
+      "language": "python",
+      "metrics": {
+        "loc": 3298,
+        "totalLines": 4019,
+        "functions": 161,
+        "ccAvg": 4.1,
+        "ccMax": 35,
+        "satd": 1,
+        "longFunctions": 7,
+        "maxFunctionLength": 89,
+        "maxNesting": 4,
+        "dupPct": 1
+      },
+      "norm": {
+        "cc": 5.17,
+        "satd": 10,
+        "dup": 0.29,
+        "size": 6.95
+      }
+    },
+    {
+      "path": "src/click/decorators.py",
+      "language": "python",
+      "metrics": {
+        "loc": 480,
+        "totalLines": 622,
+        "functions": 35,
+        "ccAvg": 2.3,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 69,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.17,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.39
+      }
+    },
+    {
+      "path": "src/click/exceptions.py",
+      "language": "python",
+      "metrics": {
+        "loc": 287,
+        "totalLines": 379,
+        "functions": 23,
+        "ccAvg": 2.5,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 32,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.5
+      }
+    },
+    {
+      "path": "src/click/formatting.py",
+      "language": "python",
+      "metrics": {
+        "loc": 272,
+        "totalLines": 330,
+        "functions": 17,
+        "ccAvg": 2.8,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 50,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.91
+      }
+    },
+    {
+      "path": "src/click/globals.py",
+      "language": "python",
+      "metrics": {
+        "loc": 45,
+        "totalLines": 68,
+        "functions": 6,
+        "ccAvg": 1.7,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 8,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.17,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.63
+      }
+    },
+    {
+      "path": "src/click/parser.py",
+      "language": "python",
+      "metrics": {
+        "loc": 447,
+        "totalLines": 534,
+        "functions": 21,
+        "ccAvg": 4.3,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 38,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 5.5,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.97
+      }
+    },
+    {
+      "path": "src/click/shell_completion.py",
+      "language": "python",
+      "metrics": {
+        "loc": 637,
+        "totalLines": 797,
+        "functions": 33,
+        "ccAvg": 2.5,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 43,
+        "maxNesting": 6,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.36
+      }
+    },
+    {
+      "path": "src/click/termui.py",
+      "language": "python",
+      "metrics": {
+        "loc": 842,
+        "totalLines": 1025,
+        "functions": 28,
+        "ccAvg": 3.9,
+        "ccMax": 16,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 54,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 4.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 4.22
+      }
+    },
+    {
+      "path": "src/click/testing.py",
+      "language": "python",
+      "metrics": {
+        "loc": 692,
+        "totalLines": 841,
+        "functions": 39,
+        "ccAvg": 2.4,
+        "ccMax": 20,
+        "satd": 0,
+        "longFunctions": 2,
+        "maxFunctionLength": 128,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.33,
+        "satd": 0,
+        "dup": 0,
+        "size": 10
+      }
+    },
+    {
+      "path": "src/click/types.py",
+      "language": "python",
+      "metrics": {
+        "loc": 1123,
+        "totalLines": 1409,
+        "functions": 73,
+        "ccAvg": 2.7,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 65,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.83,
+        "satd": 0,
+        "dup": 0,
+        "size": 5.08
+      }
+    },
+    {
+      "path": "src/click/utils.py",
+      "language": "python",
+      "metrics": {
+        "loc": 532,
+        "totalLines": 673,
+        "functions": 32,
+        "ccAvg": 2.8,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 41,
+        "maxNesting": 2,
+        "dupPct": 6.2
+      },
+      "norm": {
+        "cc": 3,
+        "satd": 0,
+        "dup": 1.8,
+        "size": 3.2
+      }
+    }
+  ]
+}

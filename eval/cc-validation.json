@@ -1,0 +1,171 @@
+{
+  "generatedAt": "2026-11-18T16:12:45.212Z",
+  "reference": "ESLint 9 complexity (classic)",
+  "results": [
+    {
+      "repo": "expressjs/express",
+      "commit": "43fca52",
+      "files": 50,
+      "parseErrors": 0,
+      "functionsEslint": 275,
+      "functionsTdr": 276,
+      "matched": 274,
+      "exactPct": 98.5,
+      "within1Pct": 99.6,
+      "mae": 0.02,
+      "spearman": 0.986,
+      "highCcAgreement": {
+        "tdr": 3,
+        "eslint": 3,
+        "both": 3
+      },
+      "largestDiffs": [
+        {
+          "file": "examples/downloads/index.js",
+          "name": "join",
+          "line": 27,
+          "ours": 1,
+          "eslint": 3
+        },
+        {
+          "file": "examples/search/index.js",
+          "name": "(anónima)",
+          "line": 52,
+          "ours": 3,
+          "eslint": 2
+        },
+        {
+          "file": "lib/utils.js",
+          "name": "acceptParams",
+          "line": 64,
+          "ours": 2,
+          "eslint": 1
+        },
+        {
+          "file": "lib/utils.js",
+          "name": "generateETag",
+          "line": 250,
+          "ours": 2,
+          "eslint": 3
+        },
+        {
+          "file": "examples/auth/index.js",
+          "name": "(anónima)",
+          "line": 30,
+          "ours": 3,
+          "eslint": 3
+        }
+      ]
+    },
+    {
+      "repo": "sindresorhus/ky",
+      "commit": "3541888",
+      "files": 52,
+      "parseErrors": 0,
+      "functionsEslint": 218,
+      "functionsTdr": 145,
+      "matched": 135,
+      "exactPct": 79.3,
+      "within1Pct": 93.3,
+      "mae": 0.47,
+      "spearman": 0.977,
+      "highCcAgreement": {
+        "tdr": 13,
+        "eslint": 14,
+        "both": 13
+      },
+      "largestDiffs": [
+        {
+          "file": "source/core/Ky.ts",
+          "name": "constructor",
+          "line": 458,
+          "ours": 40,
+          "eslint": 21
+        },
+        {
+          "file": "source/errors/ForceRetryError.ts",
+          "name": "constructor",
+          "line": 17,
+          "ours": 11,
+          "eslint": 19
+        },
+        {
+          "file": "source/core/Ky.ts",
+          "name": "calculateRetryDelay",
+          "line": 688,
+          "ours": 21,
+          "eslint": 17
+        },
+        {
+          "file": "source/core/Ky.ts",
+          "name": "fetch",
+          "line": 1218,
+          "ours": 9,
+          "eslint": 6
+        },
+        {
+          "file": "test-d/retry.ts",
+          "name": "InitHook",
+          "line": 17,
+          "ours": 2,
+          "eslint": 5
+        }
+      ]
+    },
+    {
+      "repo": "axios/axios",
+      "commit": "9f0f4dd",
+      "files": 93,
+      "parseErrors": 0,
+      "functionsEslint": 654,
+      "functionsTdr": 527,
+      "matched": 522,
+      "exactPct": 94.6,
+      "within1Pct": 97.9,
+      "mae": 0.08,
+      "spearman": 0.987,
+      "highCcAgreement": {
+        "tdr": 37,
+        "eslint": 38,
+        "both": 37
+      },
+      "largestDiffs": [
+        {
+          "file": "lib/helpers/shouldBypassProxy.js",
+          "name": "normalizeIPAddress",
+          "line": 63,
+          "ours": 21,
+          "eslint": 17
+        },
+        {
+          "file": "lib/helpers/formDataToStream.js",
+          "name": "formDataToStream",
+          "line": 68,
+          "ours": 7,
+          "eslint": 10
+        },
+        {
+          "file": "rollup.config.js",
+          "name": "buildConfig",
+          "line": 123,
+          "ours": 1,
+          "eslint": 4
+        },
+        {
+          "file": "docs/scripts/process-sponsors.js",
+          "name": "getSponsorTier",
+          "line": 218,
+          "ours": 4,
+          "eslint": 2
+        },
+        {
+          "file": "docs/scripts/process-sponsors.js",
+          "name": "getSponsorTier",
+          "line": 256,
+          "ours": 4,
+          "eslint": 2
+        }
+      ]
+    }
+  ]
+}

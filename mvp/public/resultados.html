@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDebtRadar — Deuda técnica priorizada</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="mode-banner" id="mode-banner"></div>
+
+<header class="app-header">
+  <div class="brand">TechDebtRadar</div>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">&larr; <span id="repo-breadcrumb-name">…</span> / resultados</a>
+</div>
+
+<main>
+  <div class="panel" id="progress-panel">
+    <h1>Analizando <span id="progress-repo"></span></h1>
+    <div class="progress-steps" id="progress-steps"></div>
+    <p class="hint" id="progress-message">Iniciando…</p>
+  </div>
+
+  <div class="panel" id="error-panel" hidden>
+    <h1>No se pudo completar el análisis</h1>
+    <div class="inline-alert show" id="error-message"></div>
+    <p><a href="index.html" class="btn btn-secondary">Volver</a></p>
+  </div>
+
+  <div class="panel" id="results-panel" hidden>
+    <h1>Deuda técnica priorizada</h1>
+    <div class="summary-row" id="summary-row"></div>
+    <h2>Ordenado por score de prioridad = métricas estáticas + severidad del evaluador</h2>
+    <ul class="finding-list" id="finding-list"></ul>
+    <p class="hint" id="results-empty" hidden>No se encontraron archivos con señales de deuda técnica.</p>
+    <details class="formula">
+      <summary>¿Cómo se calcula el score?</summary>
+      <p>Score = 0.25·norm(CC) + 0.15·norm(SATD) + 0.20·norm(DUP) + 0.40·Sev. Las métricas se normalizan
+        min-max a [0,10] dentro de este repositorio; la severidad (1-5) del evaluador se reescala a [0,10].
+        Solo los archivos con más señales (top-N) se envían al evaluador.</p>
+    </details>
+  </div>
+</main>
+
+<footer class="app-footer">TechDebtRadar — Proyecto de curso PTIA · MVP (Hito 3)</footer>
+
+<script src="js/app.js"></script>
+<script>initResultsScreen();</script>
+</body>
+</html>

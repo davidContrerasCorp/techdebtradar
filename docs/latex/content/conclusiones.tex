@@ -1,14 +1,26 @@
-\section{Conclusiones}
+\pagebreak\section{Conclusiones}
+\label{sec:conclusiones}
 
-\begin{tcolorbox}[colback=yellow!10!white,colframe=red!75!black,title=Recomendaciones]
-Presentar una reflexión sobre los resultados y hallazgos de su trabajo; lecciones aprendidas
-  \begin{itemize}
-      \item ¿Cuáles son los dos aciertos y dos errores más relevantes? (Aprendizaje de cada uno de ellos)
-      \item ¿Cuáles son las tres conclusiones más evidentes?
-      \item ¿Cuál es una buena idea de trabajo futuro?
-  \end{itemize}
-  
-  \textit{Las conclusiones son una oportunidad para resumir los resultados y hallazgos de una investigación o un proyecto, y para hacer énfasis en la idea o punto principal del escrito al final de su argumento}
-\end{tcolorbox}
+\subsection{Aciertos y errores más relevantes}
 
-\pagebreak
+\textbf{Acierto 1: separar la priorización del LLM y tener un evaluador de respaldo.} Decidir en el Hito 2 que el orden final lo calcula una fórmula determinista, y no el modelo, resultó clave en la implementación: cada \textit{score} se puede descomponer y auditar en la pantalla de detalle, el sistema sigue funcionando si una llamada al LLM falla (ese archivo se evalúa con reglas y se marca), y las pruebas automáticas son reproducibles porque no dependen de un modelo estocástico. \textit{Aprendizaje:} en un sistema con IA conviene aislar el componente no determinista detrás de una interfaz pequeña (entrada: código y métricas; salida: explicación, severidad y sugerencia), para poder probarlo, reemplazarlo y compararlo contra una línea base.
+
+\textbf{Acierto 2: validar las métricas contra una herramienta de referencia.} En lugar de confiar en que el analizador de complejidad era correcto porque pasaba nuestros propios ejemplos, lo comparamos con ESLint sobre más de 1.100 funciones reales (Tabla \ref{tab:validacion-cc}). La comparación reveló casos que no habíamos previsto (genéricos de TypeScript como \texttt{<T>(x: T) =>}, funciones anónimas asignadas a constantes) y nos permitió corregirlos y cuantificar el error restante. \textit{Aprendizaje:} una métrica propia solo es defendible si se contrasta con una referencia independiente; ``las pruebas pasan'' mide la consistencia con nuestras expectativas, no la exactitud.
+
+\textbf{Error 1: usar la complejidad promedio en la fórmula.} La fórmula del Hito 2 usa la CC \emph{promedio} del archivo. El análisis de \texttt{psf/requests} mostró que esto favorece a archivos pequeños con una sola función moderada y penaliza a archivos grandes con una función muy compleja (Sección \ref{sec:resultados}). \textit{Aprendizaje:} las decisiones de agregación (promedio, máximo, suma) cambian el resultado tanto como los pesos, y deben validarse con casos reales desde el inicio; un candidato es usar la CC máxima o la suma de los excesos sobre el umbral de McCabe ($\sum \max(0, CC_f - 10)$).
+
+\textbf{Error 2: dejar la evaluación humana y la integración con el LLM real para el final.} El componente LLM está implementado y probado con un cliente simulado, pero la evaluación con el modelo real y la evaluación humana (objetivos 2 y 3) quedaron para la última etapa, y dependen de credenciales y de tiempo de los dos integrantes. \textit{Aprendizaje:} en un proyecto con IA, el ciclo ``ejecutar con el modelo real $\to$ evaluar $\to$ ajustar el \textit{prompt} y la fórmula'' debe empezar lo antes posible y con un conjunto de evaluación pequeño, aunque el resto del sistema no esté terminado.
+
+\subsection{Conclusiones}
+
+\begin{enumerate}
+    \item \textbf{La combinación de métricas estáticas y un LLM es viable con costo acotado.} Las métricas deterministas analizan un repositorio completo en pocos segundos y permiten enviar al modelo solo los 10 archivos más sospechosos, por lo que el número de llamadas al LLM no crece con el tamaño del repositorio. Esto confirma la estrategia híbrida propuesta en la Sección \ref{sec:diseno}.
+    \item \textbf{Un analizador basado en \textit{tokens} es suficiente para detectar los puntos críticos.} Sin un AST completo, la complejidad calculada coincide con ESLint en el 79--99\,\% de las funciones y detecta 53 de las 55 funciones que ESLint considera complejas (CC $> 10$); todas las que marca como complejas también lo son para ESLint. Para priorizar (que es el objetivo del sistema) no se necesita una exactitud perfecta en las funciones simples.
+    \item \textbf{La explicabilidad depende tanto de la arquitectura como del LLM.} El desglose del \textit{score}, los enlaces a las líneas exactas y la evidencia (funciones, comentarios SATD, bloques duplicados) hacen que cada recomendación sea verificable, incluso cuando la explicación la genera el evaluador heurístico. El LLM aporta el juicio contextual, pero la confianza del usuario se construye con la evidencia trazable.
+\end{enumerate}
+
+\textbf{[PENDIENTE]} \textit{Ajustar o confirmar estas conclusiones con los resultados de los objetivos 2 y 3 (evaluación con el LLM real y evaluación humana).}
+
+\subsection{Trabajo futuro}
+
+La idea de trabajo futuro más valiosa es \textbf{calibrar la priorización con datos}: usar los órdenes manuales del equipo (plantilla de ranking) y, a mayor escala, el historial de cambios del repositorio (archivos que más se modifican y que más \textit{commits} de corrección de errores reciben) para aprender los pesos de la fórmula y la forma de agregar la complejidad, en lugar de fijarlos a mano. Otras extensiones naturales son reemplazar el analizador basado en \textit{tokens} por \texttt{tree-sitter} para soportar más lenguajes con un AST real, y analizar \textit{pull requests} para avisar cuándo un cambio aumenta la deuda técnica antes de integrarlo.

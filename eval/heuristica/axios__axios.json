@@ -1,0 +1,4125 @@
+{
+  "repo": {
+    "slug": "axios/axios",
+    "url": "https://github.com/axios/axios",
+    "branch": "v1.x",
+    "commit": "9f0f4dd"
+  },
+  "summary": {
+    "filesAnalyzed": 93,
+    "filesWithErrors": 0,
+    "errors": [],
+    "languages": [
+      "javascript"
+    ],
+    "totalLoc": 10366,
+    "totalSatd": 0,
+    "findings": 10,
+    "byLevel": {
+      "ALTA": 1,
+      "MEDIA": 3,
+      "BAJA": 6
+    },
+    "level": "ALTA",
+    "provider": "heuristica",
+    "providersUsed": [
+      "heuristica"
+    ],
+    "llmErrors": 0,
+    "model": null,
+    "weights": {
+      "cc": 0.25,
+      "satd": 0.15,
+      "dup": 0.2,
+      "llm": 0.4
+    },
+    "skipped": {
+      "tooLarge": 0,
+      "excluded": 7,
+      "overLimit": 0,
+      "tests": 1
+    },
+    "durationMs": 3368
+  },
+  "findings": [
+    {
+      "id": 1,
+      "path": "lib/adapters/fetch.js",
+      "language": "javascript",
+      "score": 6.8,
+      "level": "ALTA",
+      "severity": 5,
+      "scoreParts": {
+        "cc": 0.84,
+        "satd": 0,
+        "dup": 2,
+        "llm": 4
+      },
+      "norm": {
+        "cc": 3.36,
+        "satd": 0,
+        "dup": 10,
+        "size": 6.79
+      },
+      "metrics": {
+        "loc": 702,
+        "totalLines": 819,
+        "functions": 26,
+        "ccAvg": 8.4,
+        "ccMax": 133,
+        "satd": 0,
+        "longFunctions": 2,
+        "maxFunctionLength": 505,
+        "maxNesting": 4,
+        "dupPct": 1.5
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "(anónima)",
+            "startLine": 261,
+            "endLine": 760,
+            "length": 394,
+            "cc": 133,
+            "nesting": 4
+          },
+          {
+            "name": "factory",
+            "startLine": 120,
+            "endLine": 761,
+            "length": 505,
+            "cc": 18,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "factory",
+            "startLine": 120,
+            "endLine": 761,
+            "length": 505,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 261,
+            "endLine": 760,
+            "length": 394,
+            "cc": 133,
+            "nesting": 4
+          }
+        ],
+        "functions": [
+          {
+            "name": "decodeURIComponentSafe",
+            "startLine": 52,
+            "endLine": 62,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "test",
+            "startLine": 64,
+            "endLine": 70,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "ignoreRejection",
+            "startLine": 76,
+            "endLine": 88,
+            "length": 11,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "cancelProbeBody",
+            "startLine": 95,
+            "endLine": 109,
+            "length": 12,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "maybeWithAuthCredentials",
+            "startLine": 111,
+            "endLine": 118,
+            "length": 8,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "factory",
+            "startLine": 120,
+            "endLine": 761,
+            "length": 505,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "supportsRequestStream",
+            "startLine": 161,
+            "endLine": 180,
+            "length": 16,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "duplex",
+            "startLine": 167,
+            "endLine": 170,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "supportsResponseStream",
+            "startLine": 185,
+            "endLine": 193,
+            "length": 8,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 214,
+            "endLine": 231,
+            "length": 16,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 215,
+            "endLine": 230,
+            "length": 14,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 217,
+            "endLine": 229,
+            "length": 11,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "getBodyLength",
+            "startLine": 233,
+            "endLine": 253,
+            "length": 17,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "resolveBodyLength",
+            "startLine": 255,
+            "endLine": 259,
+            "length": 4,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 261,
+            "endLine": 760,
+            "length": 394,
+            "cc": 133,
+            "nesting": 4
+          },
+          {
+            "name": "unsubscribe",
+            "startLine": 298,
+            "endLine": 300,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "trackRequestStream",
+            "startLine": 432,
+            "endLine": 437,
+            "length": 6,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "create",
+            "startLine": 543,
+            "endLine": 550,
+            "length": 8,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 553,
+            "endLine": 557,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "options",
+            "startLine": 608,
+            "endLine": 610,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "onChunkProgress",
+            "startLine": 623,
+            "endLine": 636,
+            "length": 14,
+            "cc": 4,
+            "nesting": 2
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 639,
+            "endLine": 642,
+            "length": 4,
+            "cc": 3,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 683,
+            "endLine": 692,
+            "length": 10,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "createAdapter",
+            "startLine": 770,
+            "endLine": 776,
+            "length": 5,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "getFetch",
+            "startLine": 787,
+            "endLine": 814,
+            "length": 23,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "configuredEnv",
+            "startLine": 790,
+            "endLine": 794,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 7,
+          "significantLines": 468,
+          "partners": [
+            "lib/adapters/http.js"
+          ],
+          "blocks": [
+            {
+              "fromLine": 52,
+              "toLine": 60,
+              "other": "lib/adapters/http.js"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función (anónima) tiene complejidad ciclomática 133 (muy alta, > 20).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función factory ocupa 505 líneas.",
+          "1.5% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 702 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función (anónima) tiene CC=133), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (factory, 505 líneas) que mezclan varios pasos en un solo bloque. Además, repite código que también existe en lib/adapters/http.js, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir (anónima) en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 133 · función de 505 líneas · 1.5% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 1
+    },
+    {
+      "id": 2,
+      "path": "lib/adapters/http.js",
+      "language": "javascript",
+      "score": 5.6,
+      "level": "MEDIA",
+      "severity": 5,
+      "scoreParts": {
+        "cc": 0.52,
+        "satd": 0,
+        "dup": 1.07,
+        "llm": 4
+      },
+      "norm": {
+        "cc": 2.09,
+        "satd": 0,
+        "dup": 5.33,
+        "size": 10
+      },
+      "metrics": {
+        "loc": 1437,
+        "totalLines": 1634,
+        "functions": 64,
+        "ccAvg": 5.6,
+        "ccMax": 110,
+        "satd": 0,
+        "longFunctions": 5,
+        "maxFunctionLength": 744,
+        "maxNesting": 5,
+        "dupPct": 0.8
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "dispatchHttpRequest",
+            "startLine": 674,
+            "endLine": 1626,
+            "length": 742,
+            "cc": 110,
+            "nesting": 5
+          },
+          {
+            "name": "setProxy",
+            "startLine": 365,
+            "endLine": 541,
+            "length": 126,
+            "cc": 58,
+            "nesting": 4
+          },
+          {
+            "name": "handleResponse",
+            "startLine": 1280,
+            "endLine": 1469,
+            "length": 153,
+            "cc": 23,
+            "nesting": 3
+          },
+          {
+            "name": "getDirectAgent",
+            "startLine": 149,
+            "endLine": 215,
+            "length": 53,
+            "cc": 17,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "httpAdapter",
+            "startLine": 673,
+            "endLine": 1627,
+            "length": 744,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "dispatchHttpRequest",
+            "startLine": 674,
+            "endLine": 1626,
+            "length": 742,
+            "cc": 110,
+            "nesting": 5
+          },
+          {
+            "name": "handleResponse",
+            "startLine": 1280,
+            "endLine": 1469,
+            "length": 153,
+            "cc": 23,
+            "nesting": 3
+          },
+          {
+            "name": "setProxy",
+            "startLine": 365,
+            "endLine": 541,
+            "length": 126,
+            "cc": 58,
+            "nesting": 4
+          },
+          {
+            "name": "getDirectAgent",
+            "startLine": 149,
+            "endLine": 215,
+            "length": 53,
+            "cc": 17,
+            "nesting": 2
+          }
+        ],
+        "functions": [
+          {
+            "name": "handleSocketError",
+            "startLine": 73,
+            "endLine": 78,
+            "length": 6,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "isNodeNativeEnvProxySupported",
+            "startLine": 111,
+            "endLine": 129,
+            "length": 15,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "isNodeEnvProxyEnabled",
+            "startLine": 131,
+            "endLine": 141,
+            "length": 9,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "getProxyEnvAgent",
+            "startLine": 143,
+            "endLine": 147,
+            "length": 5,
+            "cc": 4,
+            "nesting": 0
+          },
+          {
+            "name": "getDirectAgent",
+            "startLine": 149,
+            "endLine": 215,
+            "length": 53,
+            "cc": 17,
+            "nesting": 2
+          },
+          {
+            "name": "destroyWithDirectAgent",
+            "startLine": 196,
+            "endLine": 202,
+            "length": 7,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "setDirectAgent",
+            "startLine": 217,
+            "endLine": 224,
+            "length": 8,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "getTunnelingAgent",
+            "startLine": 226,
+            "endLine": 262,
+            "length": 30,
+            "cc": 8,
+            "nesting": 1
+          },
+          {
+            "name": "axiosTunnelingAgentCallback",
+            "startLine": 250,
+            "endLine": 258,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "supportedProtocols",
+            "startLine": 264,
+            "endLine": 266,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "decodeURIComponentSafe",
+            "startLine": 272,
+            "endLine": 282,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "flushOnFinish",
+            "startLine": 284,
+            "endLine": 288,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "dispatchBeforeRedirect",
+            "startLine": 300,
+            "endLine": 320,
+            "length": 21,
+            "cc": 7,
+            "nesting": 1
+          },
+          {
+            "name": "stripMatchingHeaders",
+            "startLine": 322,
+            "endLine": 332,
+            "length": 10,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 327,
+            "endLine": 331,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "isSameOriginRedirect",
+            "startLine": 334,
+            "endLine": 345,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "setProxy",
+            "startLine": 365,
+            "endLine": 541,
+            "length": 126,
+            "cc": 58,
+            "nesting": 4
+          },
+          {
+            "name": "beforeRedirect",
+            "startLine": 524,
+            "endLine": 536,
+            "length": 11,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapAsync",
+            "startLine": 548,
+            "endLine": 571,
+            "length": 20,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "wrapAsync",
+            "startLine": 549,
+            "endLine": 570,
+            "length": 18,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "done",
+            "startLine": 553,
+            "endLine": 557,
+            "length": 5,
+            "cc": 3,
+            "nesting": 0
+          },
+          {
+            "name": "_resolve",
+            "startLine": 559,
+            "endLine": 562,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_reject",
+            "startLine": 564,
+            "endLine": 567,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "resolveFamily",
+            "startLine": 573,
+            "endLine": 581,
+            "length": 9,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "isObject",
+            "startLine": 584,
+            "endLine": 584,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "normalizeLookup",
+            "startLine": 588,
+            "endLine": 621,
+            "length": 25,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "normalized",
+            "startLine": 598,
+            "endLine": 616,
+            "length": 16,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "normalized",
+            "startLine": 599,
+            "endLine": 615,
+            "length": 14,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "request",
+            "startLine": 624,
+            "endLine": 668,
+            "length": 31,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 645,
+            "endLine": 647,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "req",
+            "startLine": 651,
+            "endLine": 665,
+            "length": 9,
+            "cc": 1,
+            "nesting": 1
+          },
+          {
+            "name": "httpAdapter",
+            "startLine": 673,
+            "endLine": 1627,
+            "length": 744,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "dispatchHttpRequest",
+            "startLine": 674,
+            "endLine": 1626,
+            "length": 742,
+            "cc": 110,
+            "nesting": 5
+          },
+          {
+            "name": "abort",
+            "startLine": 739,
+            "endLine": 748,
+            "length": 9,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "clearConnectPhaseTimer",
+            "startLine": 750,
+            "endLine": 755,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "createTimeoutError",
+            "startLine": 757,
+            "endLine": 771,
+            "length": 15,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "onFinished",
+            "startLine": 775,
+            "endLine": 787,
+            "length": 10,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 796,
+            "endLine": 816,
+            "length": 18,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "offListeners",
+            "startLine": 809,
+            "endLine": 812,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "userBoundary",
+            "startLine": 927,
+            "endLine": 929,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "create",
+            "startLine": 1040,
+            "endLine": 1040,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "create",
+            "startLine": 1045,
+            "endLine": 1057,
+            "length": 13,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "toByteStringHeaderObject",
+            "startLine": 1049,
+            "endLine": 1049,
+            "length": 1,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "direct",
+            "startLine": 1119,
+            "endLine": 1121,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "beforeRedirectAuth",
+            "startLine": 1161,
+            "endLine": 1169,
+            "length": 8,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "beforeRedirectSensitiveHeaders",
+            "startLine": 1203,
+            "endLine": 1207,
+            "length": 5,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "handleResponse",
+            "startLine": 1280,
+            "endLine": 1469,
+            "length": 153,
+            "cc": 23,
+            "nesting": 3
+          },
+          {
+            "name": "enforceMaxContentLength",
+            "startLine": 1379,
+            "endLine": 1393,
+            "length": 15,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "enforceMaxContentLength",
+            "startLine": 1394,
+            "endLine": 1396,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "handleStreamData",
+            "startLine": 1404,
+            "endLine": 1422,
+            "length": 16,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "handlerStreamAborted",
+            "startLine": 1424,
+            "endLine": 1438,
+            "length": 14,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "handleStreamError",
+            "startLine": 1440,
+            "endLine": 1443,
+            "length": 4,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "handleStreamEnd",
+            "startLine": 1445,
+            "endLine": 1460,
+            "length": 16,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 1463,
+            "endLine": 1468,
+            "length": 6,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 1471,
+            "endLine": 1477,
+            "length": 7,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "handleRequestError",
+            "startLine": 1480,
+            "endLine": 1482,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "handleRequestSocket",
+            "startLine": 1495,
+            "endLine": 1512,
+            "length": 11,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "clearCurrentReq",
+            "startLine": 1514,
+            "endLine": 1523,
+            "length": 9,
+            "cc": 3,
+            "nesting": 2
+          },
+          {
+            "name": "handleTimeout",
+            "startLine": 1545,
+            "endLine": 1548,
+            "length": 4,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "errored",
+            "startLine": 1573,
+            "endLine": 1575,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 1577,
+            "endLine": 1580,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 1582,
+            "endLine": 1586,
+            "length": 5,
+            "cc": 3,
+            "nesting": 1
+          },
+          {
+            "name": "transform",
+            "startLine": 1598,
+            "endLine": 1611,
+            "length": 14,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 1616,
+            "endLine": 1618,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 7,
+          "significantLines": 884,
+          "partners": [
+            "lib/adapters/fetch.js"
+          ],
+          "blocks": [
+            {
+              "fromLine": 272,
+              "toLine": 280,
+              "other": "lib/adapters/fetch.js"
+            }
+          ]
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función dispatchHttpRequest tiene complejidad ciclomática 110 (muy alta, > 20).",
+          "Anidamiento de hasta 5 niveles.",
+          "La función httpAdapter ocupa 744 líneas.",
+          "0.8% de líneas duplicadas con otro archivo.",
+          "Archivo extenso: 1437 líneas de código."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función dispatchHttpRequest tiene CC=110), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (httpAdapter, 744 líneas) que mezclan varios pasos en un solo bloque. Además, repite código que también existe en lib/adapters/fetch.js, por lo que un cambio debe hacerse en varios lugares. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir dispatchHttpRequest en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 110 · función de 744 líneas · 0.8% duplicado",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 2
+    },
+    {
+      "id": 3,
+      "path": "lib/helpers/resolveConfig.js",
+      "language": "javascript",
+      "score": 4.5,
+      "level": "MEDIA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 2.5,
+        "satd": 0,
+        "dup": 0,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.9
+      },
+      "metrics": {
+        "loc": 102,
+        "totalLines": 121,
+        "functions": 1,
+        "ccAvg": 23,
+        "ccMax": 23,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 67,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "resolveConfig",
+            "startLine": 27,
+            "endLine": 118,
+            "length": 67,
+            "cc": 23,
+            "nesting": 3
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "resolveConfig",
+            "startLine": 27,
+            "endLine": 118,
+            "length": 67,
+            "cc": 23,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "resolveConfig",
+            "startLine": 27,
+            "endLine": 118,
+            "length": 67,
+            "cc": 23,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 58,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función resolveConfig tiene complejidad ciclomática 23 (muy alta, > 20).",
+          "La función resolveConfig ocupa 67 líneas (> 50)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función resolveConfig tiene CC=23), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (resolveConfig, 67 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir resolveConfig en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 23 · función de 67 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 3
+    },
+    {
+      "id": 5,
+      "path": "lib/defaults/index.js",
+      "language": "javascript",
+      "score": 4,
+      "level": "MEDIA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 0.95,
+        "satd": 0,
+        "dup": 0,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 3.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.71
+      },
+      "metrics": {
+        "loc": 148,
+        "totalLines": 179,
+        "functions": 5,
+        "ccAvg": 9.4,
+        "ccMax": 23,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 53,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "transformRequest",
+            "startLine": 45,
+            "endLine": 107,
+            "length": 53,
+            "cc": 23,
+            "nesting": 3
+          },
+          {
+            "name": "transformResponse",
+            "startLine": 111,
+            "endLine": 142,
+            "length": 28,
+            "cc": 15,
+            "nesting": 4
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "transformRequest",
+            "startLine": 45,
+            "endLine": 107,
+            "length": 53,
+            "cc": 23,
+            "nesting": 3
+          }
+        ],
+        "functions": [
+          {
+            "name": "stringifySafely",
+            "startLine": 24,
+            "endLine": 37,
+            "length": 13,
+            "cc": 6,
+            "nesting": 3
+          },
+          {
+            "name": "transformRequest",
+            "startLine": 45,
+            "endLine": 107,
+            "length": 53,
+            "cc": 23,
+            "nesting": 3
+          },
+          {
+            "name": "transformResponse",
+            "startLine": 111,
+            "endLine": 142,
+            "length": 28,
+            "cc": 15,
+            "nesting": 4
+          },
+          {
+            "name": "validateStatus",
+            "startLine": 162,
+            "endLine": 164,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 174,
+            "endLine": 176,
+            "length": 3,
+            "cc": 1,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 93,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función transformRequest tiene complejidad ciclomática 23 (muy alta, > 20).",
+          "Anidamiento de hasta 4 niveles.",
+          "La función transformRequest ocupa 53 líneas (> 50)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función transformRequest tiene CC=23), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (transformRequest, 53 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir transformRequest en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 23 · función de 53 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 4
+    },
+    {
+      "id": 6,
+      "path": "lib/adapters/xhr.js",
+      "language": "javascript",
+      "score": 3.4,
+      "level": "BAJA",
+      "severity": 4,
+      "scoreParts": {
+        "cc": 0.44,
+        "satd": 0,
+        "dup": 0,
+        "llm": 3
+      },
+      "norm": {
+        "cc": 1.77,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.71
+      },
+      "metrics": {
+        "loc": 344,
+        "totalLines": 385,
+        "functions": 21,
+        "ccAvg": 4.9,
+        "ccMax": 29,
+        "satd": 0,
+        "longFunctions": 3,
+        "maxFunctionLength": 276,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "dispatchXhrRequest",
+            "startLine": 19,
+            "endLine": 383,
+            "length": 274,
+            "cc": 29,
+            "nesting": 2
+          },
+          {
+            "name": "onloadend",
+            "startLine": 87,
+            "endLine": 167,
+            "length": 57,
+            "cc": 16,
+            "nesting": 2
+          },
+          {
+            "name": "done",
+            "startLine": 46,
+            "endLine": 78,
+            "length": 26,
+            "cc": 12,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "isXHRAdapterSupported",
+            "startLine": 18,
+            "endLine": 384,
+            "length": 276,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "dispatchXhrRequest",
+            "startLine": 19,
+            "endLine": 383,
+            "length": 274,
+            "cc": 29,
+            "nesting": 2
+          },
+          {
+            "name": "onloadend",
+            "startLine": 87,
+            "endLine": 167,
+            "length": 57,
+            "cc": 16,
+            "nesting": 2
+          }
+        ],
+        "functions": [
+          {
+            "name": "isXHRAdapterSupported",
+            "startLine": 18,
+            "endLine": 384,
+            "length": 276,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "dispatchXhrRequest",
+            "startLine": 19,
+            "endLine": 383,
+            "length": 274,
+            "cc": 29,
+            "nesting": 2
+          },
+          {
+            "name": "_config",
+            "startLine": 32,
+            "endLine": 35,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "done",
+            "startLine": 46,
+            "endLine": 78,
+            "length": 26,
+            "cc": 12,
+            "nesting": 2
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 53,
+            "endLine": 55,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 60,
+            "endLine": 62,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "onloadend",
+            "startLine": 87,
+            "endLine": 167,
+            "length": 57,
+            "cc": 16,
+            "nesting": 2
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 126,
+            "endLine": 128,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_resolve",
+            "startLine": 154,
+            "endLine": 157,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "_reject",
+            "startLine": 158,
+            "endLine": 161,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "handleLoad",
+            "startLine": 174,
+            "endLine": 192,
+            "length": 12,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "handleAbort",
+            "startLine": 196,
+            "endLine": 206,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "handleError",
+            "startLine": 209,
+            "endLine": 220,
+            "length": 8,
+            "cc": 4,
+            "nesting": 0
+          },
+          {
+            "name": "handleTimeout",
+            "startLine": 223,
+            "endLine": 244,
+            "length": 20,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "onCanceled",
+            "startLine": 280,
+            "endLine": 289,
+            "length": 10,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "sendRequest",
+            "startLine": 316,
+            "endLine": 329,
+            "length": 12,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "setRequestHeader",
+            "startLine": 323,
+            "endLine": 325,
+            "length": 3,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "abortOnTimeout",
+            "startLine": 339,
+            "endLine": 344,
+            "length": 6,
+            "cc": 2,
+            "nesting": 0
+          },
+          {
+            "name": "scheduleTimeout",
+            "startLine": 346,
+            "endLine": 354,
+            "length": 8,
+            "cc": 2,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 360,
+            "endLine": 373,
+            "length": 13,
+            "cc": 6,
+            "nesting": 1
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 374,
+            "endLine": 379,
+            "length": 6,
+            "cc": 2,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 203,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función dispatchXhrRequest tiene complejidad ciclomática 29 (muy alta, > 20).",
+          "La función isXHRAdapterSupported ocupa 276 líneas."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función dispatchXhrRequest tiene CC=29), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (isXHRAdapterSupported, 276 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir dispatchXhrRequest en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 29 · función de 276 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 5
+    },
+    {
+      "id": 9,
+      "path": "lib/helpers/shouldBypassProxy.js",
+      "language": "javascript",
+      "score": 2.8,
+      "level": "BAJA",
+      "severity": 3,
+      "scoreParts": {
+        "cc": 0.81,
+        "satd": 0,
+        "dup": 0,
+        "llm": 2
+      },
+      "norm": {
+        "cc": 3.23,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.69
+      },
+      "metrics": {
+        "loc": 410,
+        "totalLines": 521,
+        "functions": 19,
+        "ccAvg": 8.1,
+        "ccMax": 21,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 51,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "normalizeIPAddress",
+            "startLine": 63,
+            "endLine": 126,
+            "length": 36,
+            "cc": 21,
+            "nesting": 1
+          },
+          {
+            "name": "normalizeCidrBase",
+            "startLine": 349,
+            "endLine": 390,
+            "length": 34,
+            "cc": 15,
+            "nesting": 2
+          },
+          {
+            "name": "hostnameBytes",
+            "startLine": 478,
+            "endLine": 519,
+            "length": 32,
+            "cc": 14,
+            "nesting": 1
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "shouldBypassProxy",
+            "startLine": 453,
+            "endLine": 520,
+            "length": 51,
+            "cc": 8,
+            "nesting": 1
+          }
+        ],
+        "functions": [
+          {
+            "name": "trimTrailingDots",
+            "startLine": 5,
+            "endLine": 13,
+            "length": 7,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "isIPv4Loopback",
+            "startLine": 15,
+            "endLine": 20,
+            "length": 6,
+            "cc": 5,
+            "nesting": 0
+          },
+          {
+            "name": "parseIPv4Octet",
+            "startLine": 44,
+            "endLine": 61,
+            "length": 18,
+            "cc": 10,
+            "nesting": 1
+          },
+          {
+            "name": "normalizeIPAddress",
+            "startLine": 63,
+            "endLine": 126,
+            "length": 36,
+            "cc": 21,
+            "nesting": 1
+          },
+          {
+            "name": "isIPv6Unspecified",
+            "startLine": 134,
+            "endLine": 155,
+            "length": 17,
+            "cc": 9,
+            "nesting": 1
+          },
+          {
+            "name": "isIPv6Loopback",
+            "startLine": 157,
+            "endLine": 186,
+            "length": 18,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "isLoopback",
+            "startLine": 188,
+            "endLine": 194,
+            "length": 7,
+            "cc": 5,
+            "nesting": 0
+          },
+          {
+            "name": "parseNoProxyEntry",
+            "startLine": 204,
+            "endLine": 236,
+            "length": 26,
+            "cc": 8,
+            "nesting": 3
+          },
+          {
+            "name": "unmapIPv4MappedIPv6",
+            "startLine": 248,
+            "endLine": 262,
+            "length": 12,
+            "cc": 5,
+            "nesting": 1
+          },
+          {
+            "name": "ipv4ToBytes",
+            "startLine": 266,
+            "endLine": 273,
+            "length": 7,
+            "cc": 4,
+            "nesting": 0
+          },
+          {
+            "name": "ipv6ToBytes",
+            "startLine": 277,
+            "endLine": 305,
+            "length": 22,
+            "cc": 8,
+            "nesting": 2
+          },
+          {
+            "name": "(anónima)",
+            "startLine": 301,
+            "endLine": 304,
+            "length": 4,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "ipToBytes",
+            "startLine": 307,
+            "endLine": 313,
+            "length": 6,
+            "cc": 4,
+            "nesting": 1
+          },
+          {
+            "name": "normalizeNoProxyHost",
+            "startLine": 315,
+            "endLine": 347,
+            "length": 27,
+            "cc": 10,
+            "nesting": 2
+          },
+          {
+            "name": "normalizeCidrBase",
+            "startLine": 349,
+            "endLine": 390,
+            "length": 34,
+            "cc": 15,
+            "nesting": 2
+          },
+          {
+            "name": "parseCidrEntry",
+            "startLine": 394,
+            "endLine": 429,
+            "length": 26,
+            "cc": 9,
+            "nesting": 2
+          },
+          {
+            "name": "isInSubnet",
+            "startLine": 431,
+            "endLine": 451,
+            "length": 16,
+            "cc": 5,
+            "nesting": 2
+          },
+          {
+            "name": "shouldBypassProxy",
+            "startLine": 453,
+            "endLine": 520,
+            "length": 51,
+            "cc": 8,
+            "nesting": 1
+          },
+          {
+            "name": "hostnameBytes",
+            "startLine": 478,
+            "endLine": 519,
+            "length": 32,
+            "cc": 14,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 270,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función normalizeIPAddress tiene complejidad ciclomática 21 (muy alta, > 20).",
+          "La función shouldBypassProxy ocupa 51 líneas (> 50)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función normalizeIPAddress tiene CC=21), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (shouldBypassProxy, 51 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir normalizeIPAddress en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 21 · función de 51 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 6
+    },
+    {
+      "id": 4,
+      "path": "lib/helpers/fromDataURI.js",
+      "language": "javascript",
+      "score": 2.6,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 1.59,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 6.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.52
+      },
+      "metrics": {
+        "loc": 61,
+        "totalLines": 76,
+        "functions": 1,
+        "ccAvg": 15,
+        "ccMax": 15,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 39,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "fromDataURI",
+            "startLine": 24,
+            "endLine": 75,
+            "length": 39,
+            "cc": 15,
+            "nesting": 3
+          }
+        ],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "fromDataURI",
+            "startLine": 24,
+            "endLine": 75,
+            "length": 39,
+            "cc": 15,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 31,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función fromDataURI tiene complejidad ciclomática 15 (> 10)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función fromDataURI tiene CC=15), lo que la hace difícil de probar por completo y propensa a errores al modificarla. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir fromDataURI en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 15",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 7
+    },
+    {
+      "id": 7,
+      "path": "lib/helpers/formDataToBlob.js",
+      "language": "javascript",
+      "score": 1.9,
+      "level": "BAJA",
+      "severity": 2,
+      "scoreParts": {
+        "cc": 0.85,
+        "satd": 0,
+        "dup": 0,
+        "llm": 1
+      },
+      "norm": {
+        "cc": 3.41,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.79
+      },
+      "metrics": {
+        "loc": 105,
+        "totalLines": 114,
+        "functions": 4,
+        "ccAvg": 8.5,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 59,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [
+          {
+            "name": "formDataToBlob",
+            "startLine": 48,
+            "endLine": 113,
+            "length": 59,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "stringBytes",
+            "startLine": 12,
+            "endLine": 36,
+            "length": 25,
+            "cc": 13,
+            "nesting": 2
+          }
+        ],
+        "topLongFunctions": [
+          {
+            "name": "formDataToBlob",
+            "startLine": 48,
+            "endLine": 113,
+            "length": 59,
+            "cc": 18,
+            "nesting": 2
+          }
+        ],
+        "functions": [
+          {
+            "name": "stringBytes",
+            "startLine": 12,
+            "endLine": 36,
+            "length": 25,
+            "cc": 13,
+            "nesting": 2
+          },
+          {
+            "name": "constructor",
+            "startLine": 40,
+            "endLine": 44,
+            "length": 5,
+            "cc": 1,
+            "nesting": 0
+          },
+          {
+            "name": "formDataToBlob",
+            "startLine": 48,
+            "endLine": 113,
+            "length": 59,
+            "cc": 18,
+            "nesting": 2
+          },
+          {
+            "name": "checkLength",
+            "startLine": 63,
+            "endLine": 65,
+            "length": 3,
+            "cc": 2,
+            "nesting": 0
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 78,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [
+          "La función formDataToBlob tiene complejidad ciclomática 18 (> 10).",
+          "La función formDataToBlob ocupa 59 líneas (> 50)."
+        ],
+        "explicacion": "Este archivo concentra lógica con muchos caminos de ejecución (la función formDataToBlob tiene CC=18), lo que la hace difícil de probar por completo y propensa a errores al modificarla. Además, tiene funciones largas (formDataToBlob, 59 líneas) que mezclan varios pasos en un solo bloque. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "Dividir formDataToBlob en funciones más pequeñas con nombres descriptivos y aplanar condicionales anidados con cláusulas de guarda (early return).",
+        "resumen": "CC máx. 18 · función de 59 líneas",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 8
+    },
+    {
+      "id": 8,
+      "path": "lib/core/createMultipartBody.js",
+      "language": "javascript",
+      "score": 0.9,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 0.91,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 3.64,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.39
+      },
+      "metrics": {
+        "loc": 34,
+        "totalLines": 38,
+        "functions": 1,
+        "ccAvg": 9,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 29,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "createMultipartBody",
+            "startLine": 6,
+            "endLine": 37,
+            "length": 29,
+            "cc": 9,
+            "nesting": 3
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 21,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 9
+    },
+    {
+      "id": 10,
+      "path": "lib/core/assertValidRequestUrl.js",
+      "language": "javascript",
+      "score": 0.8,
+      "level": "BAJA",
+      "severity": 1,
+      "scoreParts": {
+        "cc": 0.8,
+        "satd": 0,
+        "dup": 0,
+        "llm": 0
+      },
+      "norm": {
+        "cc": 3.18,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.3
+      },
+      "metrics": {
+        "loc": 53,
+        "totalLines": 63,
+        "functions": 1,
+        "ccAvg": 8,
+        "ccMax": 8,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 22,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "details": {
+        "satd": [],
+        "topComplexFunctions": [],
+        "topLongFunctions": [],
+        "functions": [
+          {
+            "name": "assertValidRequestUrl",
+            "startLine": 33,
+            "endLine": 62,
+            "length": 22,
+            "cc": 8,
+            "nesting": 1
+          }
+        ],
+        "duplication": {
+          "duplicatedLines": 0,
+          "significantLines": 11,
+          "partners": [],
+          "blocks": []
+        }
+      },
+      "llm": {
+        "provider": "heuristica",
+        "model": null,
+        "senales": [],
+        "explicacion": "Las señales de deuda técnica de este archivo son leves. [Explicación generada por reglas, sin LLM]",
+        "sugerencia": "No requiere acción inmediata; revisar en el próximo ciclo de mantenimiento.",
+        "resumen": "Señales leves",
+        "usage": null,
+        "error": null
+      },
+      "status": "pendiente",
+      "rank": 10
+    }
+  ],
+  "fileMetrics": [
+    {
+      "path": "docs/blog/posts.data.ts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 53,
+        "totalLines": 58,
+        "functions": 2,
+        "ccAvg": 2.5,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 14,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.68,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.19
+      }
+    },
+    {
+      "path": "docs/scripts/process-sponsors.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 326,
+        "totalLines": 365,
+        "functions": 9,
+        "ccAvg": 4.1,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 61,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.41,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.82
+      }
+    },
+    {
+      "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 28,
+        "totalLines": 33,
+        "functions": 1,
+        "ccAvg": 5,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 19,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.26
+      }
+    },
+    {
+      "path": "docs/scripts/utils.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 10,
+        "totalLines": 14,
+        "functions": 3,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.04
+      }
+    },
+    {
+      "path": "eslint.config.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 58,
+        "totalLines": 60,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "examples/abort-controller/server.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 22,
+        "totalLines": 24,
+        "functions": 2,
+        "ccAvg": 2,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 22,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.3
+      }
+    },
+    {
+      "path": "examples/get/server.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 33,
+        "totalLines": 35,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 7,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.09
+      }
+    },
+    {
+      "path": "examples/network_enhanced.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 59,
+        "totalLines": 73,
+        "functions": 3,
+        "ccAvg": 5.3,
+        "ccMax": 14,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 39,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.95,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.52
+      }
+    },
+    {
+      "path": "examples/post/server.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 14,
+        "totalLines": 17,
+        "functions": 3,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 14,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.19
+      }
+    },
+    {
+      "path": "examples/postMultipartFormData/server.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 10,
+        "totalLines": 12,
+        "functions": 3,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.13
+      }
+    },
+    {
+      "path": "examples/server.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 167,
+        "totalLines": 195,
+        "functions": 12,
+        "ccAvg": 3,
+        "ccMax": 14,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 55,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.91,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.74
+      }
+    },
+    {
+      "path": "examples/upload/server.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 11,
+        "totalLines": 14,
+        "functions": 3,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 11,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.15
+      }
+    },
+    {
+      "path": "gulpfile.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 64,
+        "totalLines": 80,
+        "functions": 7,
+        "ccAvg": 1.9,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 19,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.41,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.26
+      }
+    },
+    {
+      "path": "index.d.cts",
+      "language": "javascript",
+      "metrics": {
+        "loc": 700,
+        "totalLines": 806,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 1,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.01
+      }
+    },
+    {
+      "path": "index.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 43,
+        "totalLines": 46,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/adapters/adapters.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 132,
+        "totalLines": 154,
+        "functions": 3,
+        "ccAvg": 6.7,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 39,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.59,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.52
+      }
+    },
+    {
+      "path": "lib/adapters/fetch.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 702,
+        "totalLines": 819,
+        "functions": 26,
+        "ccAvg": 8.4,
+        "ccMax": 133,
+        "satd": 0,
+        "longFunctions": 2,
+        "maxFunctionLength": 505,
+        "maxNesting": 4,
+        "dupPct": 1.5
+      },
+      "norm": {
+        "cc": 3.36,
+        "satd": 0,
+        "dup": 10,
+        "size": 6.79
+      }
+    },
+    {
+      "path": "lib/adapters/http.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 1437,
+        "totalLines": 1634,
+        "functions": 64,
+        "ccAvg": 5.6,
+        "ccMax": 110,
+        "satd": 0,
+        "longFunctions": 5,
+        "maxFunctionLength": 744,
+        "maxNesting": 5,
+        "dupPct": 0.8
+      },
+      "norm": {
+        "cc": 2.09,
+        "satd": 0,
+        "dup": 5.33,
+        "size": 10
+      }
+    },
+    {
+      "path": "lib/adapters/xhr.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 344,
+        "totalLines": 385,
+        "functions": 21,
+        "ccAvg": 4.9,
+        "ccMax": 29,
+        "satd": 0,
+        "longFunctions": 3,
+        "maxFunctionLength": 276,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.77,
+        "satd": 0,
+        "dup": 0,
+        "size": 3.71
+      }
+    },
+    {
+      "path": "lib/axios.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 68,
+        "totalLines": 90,
+        "functions": 3,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.13
+      }
+    },
+    {
+      "path": "lib/cancel/CanceledError.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 19,
+        "totalLines": 23,
+        "functions": 1,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.07
+      }
+    },
+    {
+      "path": "lib/cancel/CancelToken.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 109,
+        "totalLines": 136,
+        "functions": 14,
+        "ccAvg": 1.6,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 36,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.27,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.48
+      }
+    },
+    {
+      "path": "lib/cancel/isCancel.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 4,
+        "totalLines": 6,
+        "functions": 1,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.04
+      }
+    },
+    {
+      "path": "lib/core/assertParamsAcyclic.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 45,
+        "totalLines": 50,
+        "functions": 3,
+        "ccAvg": 6,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 40,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.27,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.54
+      }
+    },
+    {
+      "path": "lib/core/assertValidRequestUrl.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 53,
+        "totalLines": 63,
+        "functions": 1,
+        "ccAvg": 8,
+        "ccMax": 8,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 22,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.18,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.3
+      }
+    },
+    {
+      "path": "lib/core/Axios.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 316,
+        "totalLines": 368,
+        "functions": 13,
+        "ccAvg": 5.6,
+        "ccMax": 27,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 150,
+        "maxNesting": 5,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.09,
+        "satd": 0,
+        "dup": 0,
+        "size": 2.02
+      }
+    },
+    {
+      "path": "lib/core/AxiosError.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 240,
+        "totalLines": 279,
+        "functions": 12,
+        "ccAvg": 4.8,
+        "ccMax": 12,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 38,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.73,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.51
+      }
+    },
+    {
+      "path": "lib/core/AxiosHeaders.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 374,
+        "totalLines": 489,
+        "functions": 34,
+        "ccAvg": 3.6,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 47,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.18,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.63
+      }
+    },
+    {
+      "path": "lib/core/buildFullPath.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 67,
+        "totalLines": 77,
+        "functions": 5,
+        "ccAvg": 2.6,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 14,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.73,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.19
+      }
+    },
+    {
+      "path": "lib/core/createMultipartBody.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 34,
+        "totalLines": 38,
+        "functions": 1,
+        "ccAvg": 9,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 29,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.64,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.39
+      }
+    },
+    {
+      "path": "lib/core/dispatchRequest.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 116,
+        "totalLines": 137,
+        "functions": 6,
+        "ccAvg": 2.7,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 47,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.77,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.63
+      }
+    },
+    {
+      "path": "lib/core/InterceptorManager.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 152,
+        "totalLines": 183,
+        "functions": 11,
+        "ccAvg": 2.8,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 21,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.28
+      }
+    },
+    {
+      "path": "lib/core/mergeConfig.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 208,
+        "totalLines": 238,
+        "functions": 13,
+        "ccAvg": 5,
+        "ccMax": 17,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 38,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.51
+      }
+    },
+    {
+      "path": "lib/core/methodList.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 15,
+        "totalLines": 18,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/core/setFormDataHeaders.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 24,
+        "totalLines": 28,
+        "functions": 2,
+        "ccAvg": 2.5,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 11,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.68,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.15
+      }
+    },
+    {
+      "path": "lib/core/settle.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 25,
+        "totalLines": 28,
+        "functions": 1,
+        "ccAvg": 6,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 14,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.27,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.19
+      }
+    },
+    {
+      "path": "lib/core/transformData.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 23,
+        "totalLines": 29,
+        "functions": 2,
+        "ccAvg": 2.5,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 11,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.68,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.15
+      }
+    },
+    {
+      "path": "lib/defaults/index.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 148,
+        "totalLines": 179,
+        "functions": 5,
+        "ccAvg": 9.4,
+        "ccMax": 23,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 53,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.71
+      }
+    },
+    {
+      "path": "lib/defaults/transitional.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 10,
+        "totalLines": 12,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/helpers/AxiosTransformStream.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 137,
+        "totalLines": 166,
+        "functions": 11,
+        "ccAvg": 2.9,
+        "ccMax": 13,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 81,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.86,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.09
+      }
+    },
+    {
+      "path": "lib/helpers/AxiosURLSearchParams.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 50,
+        "totalLines": 60,
+        "functions": 6,
+        "ccAvg": 1.3,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 13,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.17
+      }
+    },
+    {
+      "path": "lib/helpers/bind.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 13,
+        "totalLines": 15,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.07
+      }
+    },
+    {
+      "path": "lib/helpers/buildURL.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 59,
+        "totalLines": 70,
+        "functions": 3,
+        "ccAvg": 4,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 29,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.39
+      }
+    },
+    {
+      "path": "lib/helpers/callbackify.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 16,
+        "totalLines": 19,
+        "functions": 3,
+        "ccAvg": 2,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 14,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.19
+      }
+    },
+    {
+      "path": "lib/helpers/combineURLs.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 19,
+        "totalLines": 24,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.13
+      }
+    },
+    {
+      "path": "lib/helpers/composeSignals.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 57,
+        "totalLines": 72,
+        "functions": 6,
+        "ccAvg": 3.2,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 53,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.71
+      }
+    },
+    {
+      "path": "lib/helpers/cookies.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 79,
+        "totalLines": 89,
+        "functions": 9,
+        "ccAvg": 2.9,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 20,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.86,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.27
+      }
+    },
+    {
+      "path": "lib/helpers/deprecatedMethod.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 28,
+        "totalLines": 32,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 15,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.2
+      }
+    },
+    {
+      "path": "lib/helpers/estimateDataURLDecodedBytes.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 163,
+        "totalLines": 194,
+        "functions": 7,
+        "ccAvg": 6.9,
+        "ccMax": 16,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 35,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 2.68,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.47
+      }
+    },
+    {
+      "path": "lib/helpers/formDataToBlob.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 105,
+        "totalLines": 114,
+        "functions": 4,
+        "ccAvg": 8.5,
+        "ccMax": 18,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 59,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.41,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.79
+      }
+    },
+    {
+      "path": "lib/helpers/formDataToJSON.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 124,
+        "totalLines": 150,
+        "functions": 9,
+        "ccAvg": 3.6,
+        "ccMax": 11,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 37,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.18,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.5
+      }
+    },
+    {
+      "path": "lib/helpers/formDataToStream.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 91,
+        "totalLines": 120,
+        "functions": 6,
+        "ccAvg": 2.8,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 39,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.52
+      }
+    },
+    {
+      "path": "lib/helpers/fromDataURI.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 61,
+        "totalLines": 76,
+        "functions": 1,
+        "ccAvg": 15,
+        "ccMax": 15,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 39,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 6.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.52
+      }
+    },
+    {
+      "path": "lib/helpers/Http2Sessions.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 95,
+        "totalLines": 123,
+        "functions": 7,
+        "ccAvg": 3.3,
+        "ccMax": 8,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 82,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.05,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.1
+      }
+    },
+    {
+      "path": "lib/helpers/HttpStatusCode.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 86,
+        "totalLines": 89,
+        "functions": 1,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.07
+      }
+    },
+    {
+      "path": "lib/helpers/isAbsoluteURL.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 17,
+        "totalLines": 20,
+        "functions": 1,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 6,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.08
+      }
+    },
+    {
+      "path": "lib/helpers/isAxiosError.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 12,
+        "totalLines": 15,
+        "functions": 1,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.04
+      }
+    },
+    {
+      "path": "lib/helpers/isURLSameOrigin.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 9,
+        "totalLines": 12,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 6,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.08
+      }
+    },
+    {
+      "path": "lib/helpers/normalizeURLForProtocolCheck.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 19,
+        "totalLines": 25,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.13
+      }
+    },
+    {
+      "path": "lib/helpers/null.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 2,
+        "totalLines": 3,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/helpers/parseHeaders.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 64,
+        "totalLines": 73,
+        "functions": 2,
+        "ccAvg": 4.5,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 26,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.59,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.35
+      }
+    },
+    {
+      "path": "lib/helpers/parseProtocol.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 5,
+        "totalLines": 7,
+        "functions": 1,
+        "ccAvg": 3,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 4,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.91,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.05
+      }
+    },
+    {
+      "path": "lib/helpers/progressEventReducer.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 46,
+        "totalLines": 55,
+        "functions": 3,
+        "ccAvg": 4,
+        "ccMax": 10,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 27,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.36
+      }
+    },
+    {
+      "path": "lib/helpers/readBlob.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 13,
+        "totalLines": 16,
+        "functions": 1,
+        "ccAvg": 4,
+        "ccMax": 4,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 11,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.36,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.15
+      }
+    },
+    {
+      "path": "lib/helpers/resolveConfig.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 102,
+        "totalLines": 121,
+        "functions": 1,
+        "ccAvg": 23,
+        "ccMax": 23,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 67,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 10,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.9
+      }
+    },
+    {
+      "path": "lib/helpers/sanitizeHeaderValue.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 43,
+        "totalLines": 61,
+        "functions": 4,
+        "ccAvg": 3.3,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 19,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.05,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.26
+      }
+    },
+    {
+      "path": "lib/helpers/shouldBypassProxy.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 410,
+        "totalLines": 521,
+        "functions": 19,
+        "ccAvg": 8.1,
+        "ccMax": 21,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 51,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 3.23,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.69
+      }
+    },
+    {
+      "path": "lib/helpers/speedometer.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 41,
+        "totalLines": 56,
+        "functions": 2,
+        "ccAvg": 5,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 33,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.82,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.44
+      }
+    },
+    {
+      "path": "lib/helpers/spread.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 27,
+        "totalLines": 29,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 5,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.07
+      }
+    },
+    {
+      "path": "lib/helpers/throttle.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 40,
+        "totalLines": 46,
+        "functions": 4,
+        "ccAvg": 2,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 33,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.44
+      }
+    },
+    {
+      "path": "lib/helpers/toFormData.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 234,
+        "totalLines": 280,
+        "functions": 16,
+        "ccAvg": 4.6,
+        "ccMax": 14,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 133,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.64,
+        "satd": 0,
+        "dup": 0,
+        "size": 1.79
+      }
+    },
+    {
+      "path": "lib/helpers/toURLEncodedForm.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 16,
+        "totalLines": 20,
+        "functions": 3,
+        "ccAvg": 1.7,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 12,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.32,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.16
+      }
+    },
+    {
+      "path": "lib/helpers/trackStream.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 83,
+        "totalLines": 95,
+        "functions": 8,
+        "ccAvg": 2.6,
+        "ccMax": 5,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 42,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.73,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.56
+      }
+    },
+    {
+      "path": "lib/helpers/validator.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 100,
+        "totalLines": 113,
+        "functions": 8,
+        "ccAvg": 3,
+        "ccMax": 9,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 31,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.91,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.42
+      }
+    },
+    {
+      "path": "lib/helpers/ZlibHeaderTransformStream.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 23,
+        "totalLines": 30,
+        "functions": 2,
+        "ccAvg": 2,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 12,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.16
+      }
+    },
+    {
+      "path": "lib/platform/browser/classes/Blob.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 2,
+        "totalLines": 4,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/platform/browser/classes/FormData.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 2,
+        "totalLines": 4,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/platform/browser/classes/URLSearchParams.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 3,
+        "totalLines": 5,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/platform/browser/index.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 12,
+        "totalLines": 14,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/platform/common/utils.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 47,
+        "totalLines": 53,
+        "functions": 1,
+        "ccAvg": 3,
+        "ccMax": 3,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 7,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.91,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.09
+      }
+    },
+    {
+      "path": "lib/platform/index.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 6,
+        "totalLines": 8,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/platform/node/classes/Buffer.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 9,
+        "totalLines": 12,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.04
+      }
+    },
+    {
+      "path": "lib/platform/node/classes/FormData.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 2,
+        "totalLines": 4,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/platform/node/classes/URLSearchParams.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 3,
+        "totalLines": 5,
+        "functions": 0,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 0,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0
+      }
+    },
+    {
+      "path": "lib/platform/node/index.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 31,
+        "totalLines": 38,
+        "functions": 1,
+        "ccAvg": 2,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 10,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.45,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.13
+      }
+    },
+    {
+      "path": "lib/utils.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 1059,
+        "totalLines": 1202,
+        "functions": 52,
+        "ccAvg": 4.1,
+        "ccMax": 15,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 48,
+        "maxNesting": 4,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.41,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.65
+      }
+    },
+    {
+      "path": "rollup.config.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 127,
+        "totalLines": 143,
+        "functions": 4,
+        "ccAvg": 3.5,
+        "ccMax": 7,
+        "satd": 0,
+        "longFunctions": 1,
+        "maxFunctionLength": 56,
+        "maxNesting": 3,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 1.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.75
+      }
+    },
+    {
+      "path": "sandbox/client.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 16,
+        "totalLines": 21,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 3,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.04
+      }
+    },
+    {
+      "path": "sandbox/server.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 110,
+        "totalLines": 131,
+        "functions": 7,
+        "ccAvg": 2.3,
+        "ccMax": 6,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 29,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.59,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.39
+      }
+    },
+    {
+      "path": "scripts/axios-build-instance.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 23,
+        "totalLines": 29,
+        "functions": 1,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 6,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.08
+      }
+    },
+    {
+      "path": "scripts/benchmark-merge-config.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 94,
+        "totalLines": 103,
+        "functions": 3,
+        "ccAvg": 1.3,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 8,
+        "maxNesting": 1,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.14,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.11
+      }
+    },
+    {
+      "path": "vitest.config.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 45,
+        "totalLines": 47,
+        "functions": 2,
+        "ccAvg": 1,
+        "ccMax": 1,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 1,
+        "maxNesting": 0,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.01
+      }
+    },
+    {
+      "path": "webpack.config.js",
+      "language": "javascript",
+      "metrics": {
+        "loc": 23,
+        "totalLines": 27,
+        "functions": 2,
+        "ccAvg": 1.5,
+        "ccMax": 2,
+        "satd": 0,
+        "longFunctions": 0,
+        "maxFunctionLength": 18,
+        "maxNesting": 2,
+        "dupPct": 0
+      },
+      "norm": {
+        "cc": 0.23,
+        "satd": 0,
+        "dup": 0,
+        "size": 0.24
+      }
+    }
+  ]
+}

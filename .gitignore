@@ -21,3 +21,14 @@ node_modules/
 
 # Sistema
 .DS_Store
+
+# MVP: análisis guardados localmente por el servidor
+mvp/data/
+
+# IDE
+.idea/
+.vscode/
+
+# Variables de entorno / credenciales
+.env
+.env.*
