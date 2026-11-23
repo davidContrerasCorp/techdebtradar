@@ -2,46 +2,48 @@ digraph arquitectura {
   rankdir=TB;
   bgcolor="white";
   fontname="Helvetica";
-  node [fontname="Helvetica", fontsize=13, shape=box, style="rounded,filled", color="#7a1f2b", fontcolor="#222222", penwidth=1.4];
+  nodesep=0.4;
+  node [fontname="Helvetica", fontsize=13, shape=box, style="rounded,filled", color="#7a1f2b", fontcolor="#222222", penwidth=1.4, fillcolor="#fdeeee"];
   edge [fontname="Helvetica", fontsize=11, color="#555555", fontcolor="#333333", penwidth=1.2];
 
   labelloc="t";
-  label="Arquitectura propuesta de TechDebtRadar\n(componentes y relaciones)";
+  label="Arquitectura de TechDebtRadar (MVP, Hito 3)\n(componentes y relaciones)";
   fontsize=18;
   fontcolor="#7a1f2b";
 
-  subgraph cluster_impl {
-    label="Implementado y navegable en el Hito 2 (prototipo, datos simulados)";
-    style="dashed";
-    color="#2e7d32";
-    fontcolor="#2e7d32";
-    fontsize=12;
-    UI [label="Interfaz de usuario\n(3 pantallas: analizar / resultados / detalle)", fillcolor="#eaf6ea"];
+  subgraph cluster_front {
+    label="Entradas";
+    style="dashed"; color="#2e7d32"; fontcolor="#2e7d32"; fontsize=12;
+    UI [label="Interfaz web\n(3 pantallas: analizar / resultados / detalle)", fillcolor="#eaf6ea"];
+    CLI [label="Línea de comandos\n(npm run analyze)", fillcolor="#eaf6ea"];
   }
 
-  subgraph cluster_disenado {
-    label="Diseñado para el Hito 3 (aún no implementado ni probado)";
-    style="dashed";
-    color="#7a1f2b";
-    fontcolor="#7a1f2b";
-    fontsize=12;
+  subgraph cluster_back {
+    label="Backend Node.js (API REST + pipeline)";
+    style="dashed"; color="#7a1f2b"; fontcolor="#7a1f2b"; fontsize=12;
 
-    VAL [label="Recepción y validación\nde la URL del repositorio", fillcolor="#fdeeee"];
-    FETCH [label="Obtención del código fuente\n(GitHub REST API, clonado superficial)", fillcolor="#fdeeee"];
-    STATIC [label="Análisis estático\n(métricas por archivo/función:\ncomplejidad, SATD, duplicación, tamaño)", fillcolor="#fdeeee"];
-    SELECT [label="Selección de fragmentos relevantes\n(top-N por métrica, control de costo)", fillcolor="#fdeeee"];
-    LLM [label="Componente LLM\n(explicación + sugerencia de refactor\nvía prompting estructurado)", fillcolor="#fde4c8", penwidth=2.2];
-    PRIOR [label="Motor de priorización\n(score = métricas + juicio del LLM)", fillcolor="#fdeeee"];
+    VAL [label="Recepción y validación\nde la URL (solo github.com, repo público)"];
+    FETCH [label="Obtención del código\n(git clone --depth 1, límites de tamaño y timeout)"];
+    STATIC [label="Análisis estático propio (Python y JS/TS)\n(CC de McCabe, SATD, duplicación, longitud)"];
+    SELECT [label="Normalización (0-10) y selección top-N\n(N = 10, control de costo)"];
+    LLM [label="Componente LLM: Claude\n(explicación, señales, severidad 1-5,\nsugerencia; salida JSON validada)", fillcolor="#fde4c8", penwidth=2.2];
+    HEUR [label="Evaluador heurístico\nde respaldo (reglas)", fillcolor="#f4f4f4", style="rounded,filled,dashed"];
+    PRIOR [label="Motor de priorización determinista\n(Score = 0.25·CC + 0.15·SATD + 0.20·DUP + 0.40·Sev)"];
+    STORE [label="Persistencia de análisis\n(data/analyses/*.json)", shape=cylinder, fillcolor="#f4f4f4"];
   }
 
-  RESULT [label="Presentación de resultados\ny recomendaciones", fillcolor="#eaf6ea"];
+  RESULT [label="Lista priorizada y detalle de cada hallazgo\n(desglose del score, evidencia con enlaces a GitHub)", fillcolor="#eaf6ea"];
 
-  UI -> VAL [label="  URL pegada +\n  clic en Analizar"];
+  UI -> VAL [label="  URL + clic en Analizar"];
+  CLI -> VAL;
   VAL -> FETCH [label="  URL válida"];
-  FETCH -> STATIC [label="  archivos fuente"];
+  FETCH -> STATIC [label="  archivos .py / .js / .ts"];
   STATIC -> SELECT [label="  métricas por archivo"];
-  SELECT -> LLM [label="  fragmentos + métricas\n  (top-N, no todo el repo)"];
-  LLM -> PRIOR [label="  explicación +\n  severidad sugerida"];
-  PRIOR -> RESULT [label="  lista ordenada\n  (score final)"];
-  RESULT -> UI [label="  render en pantallas\n  2 y 3", style=dashed];
+  SELECT -> LLM [label="  código + métricas\n  (solo top-N)"];
+  LLM -> HEUR [label="  si falla o no hay\n  credenciales", style=dashed, constraint=false];
+  LLM -> PRIOR [label="  severidad +\n  explicación"];
+  HEUR -> PRIOR [style=dashed];
+  PRIOR -> STORE [label="  resultado"];
+  STORE -> RESULT [label="  API REST"];
+  RESULT -> UI [label="  pantallas 2 y 3", style=dashed];
 }

@@ -8,22 +8,25 @@ digraph flujo {
   edge [fontname="Helvetica", fontsize=10.5, color="#555555", fontcolor="#333333", penwidth=1.1];
 
   labelloc="t";
-  label="Flujo de datos: de la URL del repositorio a la recomendación priorizada";
+  label="Flujo de datos (MVP): de la URL del repositorio a la recomendación priorizada";
   fontsize=16;
   fontcolor="#7a1f2b";
 
-  U [label="Usuario pega URL pública de GitHub", shape=ellipse, fillcolor="#eaf6ea"];
-  V [label="Validar URL (formato + repo público accesible)"];
-  C [label="Clonado superficial (shallow clone / GitHub API)"];
-  F [label="Filtrar archivos por lenguaje soportado (Python / JS)"];
-  M [label="Calcular métricas estáticas por archivo: complejidad ciclomática, SATD, duplicación, líneas por función"];
-  N [label="Normalizar y ordenar métricas (escala 0-10 por archivo)"];
-  S [label="Seleccionar top-N archivos (ej. N=10) para enviar al LLM"];
-  P [label="Prompt estructurado: código + métricas + contexto del repo"];
-  L [label="LLM genera: explicación · severidad (1-5) · sugerencia de refactor", fillcolor="#fde4c8", penwidth=2.0];
-  SC [label="Score final = f(métricas, severidad LLM)  —  ver fórmula, Sección 6"];
+  U [label="Usuario pega la URL pública de GitHub (pantalla 1)", shape=ellipse, fillcolor="#eaf6ea"];
+  V [label="Validar URL (solo github.com; usuario, repo y rama con caracteres permitidos)"];
+  C [label="git clone --depth 1 (timeout 120 s; máx. 1.500 archivos, 400 KB por archivo, 40 MB en total)"];
+  F [label="Filtrar .py / .js / .ts; excluir node_modules, dist, build, vendor, minificados y pruebas"];
+  M [label="Métricas por archivo: complejidad ciclomática, SATD, duplicación (ventanas de 6 líneas), longitud"];
+  N [label="Normalizar métricas (min-max a 0-10 dentro del repositorio)"];
+  S [label="Seleccionar top-N archivos (N = 10) para enviar al LLM"];
+  P [label="Prompt estructurado: código (o extracto) + métricas + contexto del README"];
+  L [label="Claude devuelve: señales · explicación · severidad (1-5) · sugerencia (JSON validado)", fillcolor="#fde4c8", penwidth=2.0];
+  H [label="Si falla o no hay credenciales: evaluador heurístico", fillcolor="#f4f4f4", style="rounded,filled,dashed"];
+  SC [label="Score = 0.25·CC + 0.15·SATD + 0.20·DUP + 0.40·Sev  →  nivel ALTA / MEDIA / BAJA"];
   R [label="Lista priorizada (pantalla 2)", fillcolor="#eaf6ea"];
-  D [label="Detalle del hallazgo (pantalla 3)", fillcolor="#eaf6ea"];
+  D [label="Detalle del hallazgo con desglose y evidencia (pantalla 3)", fillcolor="#eaf6ea"];
 
   U -> V -> C -> F -> M -> N -> S -> P -> L -> SC -> R -> D;
+  L -> H [style=dashed, constraint=false];
+  H -> SC [style=dashed];
 }
