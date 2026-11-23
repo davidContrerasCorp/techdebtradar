@@ -28,4 +28,4 @@ credenciales el sistema usa un evaluador heurístico y lo indica en la interfaz.
 
 ## Videos
 
-- Hito 2: ver `Video.txt`
+- Hito 3 (video final): ver [`TechDebtRadar_VideoFinal.txt`](TechDebtRadar_VideoFinal.txt) · https://youtu.be/pT76mGj1rPU
